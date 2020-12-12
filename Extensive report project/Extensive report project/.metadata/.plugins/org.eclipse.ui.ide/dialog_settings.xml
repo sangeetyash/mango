@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\ProjectSpace\R-PAC-Diesel"/>
+			<item value="C:\R-PAC\R-PAC new"/>
+			<item value="C:\ProjectSpace\Ext R-PAC"/>
+			<item value="C:\ProjectSpace\R-PAC"/>
+			<item value="C:\ProjectSpace\R-PAC ext"/>
+			<item value="C:\New Workspace\Extensive report project"/>
+			<item value="C:\Users\Global IT\eclipse-workspace\Extensive report project"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="C:\ProjectSpace"/>
+	</section>
+</section>

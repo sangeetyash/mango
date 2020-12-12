@@ -1,0 +1,624 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 805,
+        "name": "Normal and show confirm order in shopping cart check back forth operations also change qty both orders",
+        "description": "",
+        "id": "r-pac-mango-crm-e-coomerece-feature;normal-and-show-confirm-order-in-shopping-cart-check-back-forth-operations-also-change-qty-both-orders;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 17524089200,
+              "status": "passed"
+            },
+            "line": 753,
+            "name": "Navigate user to Login Page \"http://devrtrac.r-pac.com/\" and \"Chrome\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://devrtrac.r-pac.com/",
+                  "offset": 29
+                },
+                {
+                  "val": "Chrome",
+                  "offset": 62
+                }
+              ],
+              "location": "LoginStepDefinition.navigateUser(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19977600,
+              "status": "passed"
+            },
+            "line": 754,
+            "name": "title of login page",
+            "match": {
+              "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 24799978200,
+              "status": "passed"
+            },
+            "line": 755,
+            "name": "user enters \"Test@123.com\" and \"User@123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test@123.com",
+                  "offset": 13
+                },
+                {
+                  "val": "User@123",
+                  "offset": 32
+                }
+              ],
+              "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 162000,
+              "status": "passed"
+            },
+            "line": 756,
+            "name": "user clicks on login button",
+            "match": {
+              "location": "LoginStepDefinition.user_clicks_on_login_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 611700,
+              "status": "passed"
+            },
+            "line": 757,
+            "name": "user is on home page",
+            "match": {
+              "location": "LoginStepDefinition.user_is_on_hopme_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 33155999100,
+              "status": "passed"
+            },
+            "line": 758,
+            "name": "Search Release PO page with CPO ID \"8R07\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "8R07",
+                  "offset": 36
+                }
+              ],
+              "location": "LoginStepDefinition.Release_PO_page(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3137835400,
+              "status": "passed"
+            },
+            "line": 759,
+            "name": "Search supplier ID \"1572\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1572",
+                  "offset": 20
+                }
+              ],
+              "location": "LoginStepDefinition.SuppilerSearch(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11535706000,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 760,
+                "value": "#Then click on PO \"6140\" and select overage \"3\""
+              }
+            ],
+            "line": 761,
+            "name": "click on PO \"8R07\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "8R07",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefinition.POClickb(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6139258800,
+              "status": "passed"
+            },
+            "line": 762,
+            "name": "Select PO items based on EAN plus edit order qty",
+            "match": {
+              "location": "LoginStepDefinition.getEANSelectEditQty(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "EAN",
+                  "qty"
+                ],
+                "line": 763
+              },
+              {
+                "cells": [
+                  "8445306386038",
+                  "50"
+                ],
+                "line": 764
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20918502300,
+              "status": "passed"
+            },
+            "line": 765,
+            "name": "Addtocart",
+            "match": {
+              "location": "LoginStepDefinition.getAddtocart()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4390122300,
+              "status": "passed"
+            },
+            "line": 766,
+            "name": "Show confirm orders",
+            "match": {
+              "location": "LoginStepDefinition.getShowConfirmOrders()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 30827918700,
+              "status": "passed"
+            },
+            "line": 767,
+            "name": "With Confirm orders,Search Release PO page with CPO ID \"8024\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "8024",
+                  "offset": 56
+                }
+              ],
+              "location": "LoginStepDefinition.Confirm_Release_PO_page(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3104363700,
+              "status": "passed"
+            },
+            "line": 768,
+            "name": "Search supplier ID \"1471\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1471",
+                  "offset": 20
+                }
+              ],
+              "location": "LoginStepDefinition.SuppilerSearch(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11587000800,
+              "status": "passed"
+            },
+            "line": 769,
+            "name": "click on PO \"8024\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "8024",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefinition.POClickb(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6092495200,
+              "status": "passed"
+            },
+            "line": 770,
+            "name": "Select PO items based on EAN plus edit order qty",
+            "match": {
+              "location": "LoginStepDefinition.getEANSelectEditQty(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "EAN",
+                  "qty"
+                ],
+                "line": 771
+              },
+              {
+                "cells": [
+                  "8445306619587",
+                  "480"
+                ],
+                "line": 772
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18760934900,
+              "status": "passed"
+            },
+            "line": 773,
+            "name": "Addtocart",
+            "match": {
+              "location": "LoginStepDefinition.getAddtocart()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3509721900,
+              "status": "passed"
+            },
+            "line": 774,
+            "name": "goto checkout page",
+            "match": {
+              "location": "LoginStepDefinition.goto_checkout()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7059057100,
+              "status": "passed"
+            },
+            "line": 775,
+            "name": "Verify All PO data with db",
+            "match": {
+              "location": "LoginStepDefinition.verifyAllPOData()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7552929600,
+              "status": "passed"
+            },
+            "line": 776,
+            "name": "Click on CPO \"8R07\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "8R07",
+                  "offset": 14
+                }
+              ],
+              "location": "LoginStepDefinition.clickoncartCPO(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3034784900,
+              "status": "passed"
+            },
+            "line": 777,
+            "name": "Deselect all",
+            "match": {
+              "location": "LoginStepDefinition.getDeselect()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4901238800,
+              "status": "passed"
+            },
+            "line": 778,
+            "name": "Select PO items based on EAN plus edit order qty",
+            "match": {
+              "location": "LoginStepDefinition.getEANSelectEditQty(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "EAN",
+                  "qty"
+                ],
+                "line": 779
+              },
+              {
+                "cells": [
+                  "8445306386045",
+                  "140"
+                ],
+                "line": 780
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17926765200,
+              "status": "passed"
+            },
+            "line": 781,
+            "name": "Addtocart",
+            "match": {
+              "location": "LoginStepDefinition.getAddtocart()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3301991200,
+              "status": "passed"
+            },
+            "line": 782,
+            "name": "goto checkout page",
+            "match": {
+              "location": "LoginStepDefinition.goto_checkout()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6925293700,
+              "status": "passed"
+            },
+            "line": 783,
+            "name": "Verify All PO data with db",
+            "match": {
+              "location": "LoginStepDefinition.verifyAllPOData()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7571786900,
+              "status": "passed"
+            },
+            "line": 784,
+            "name": "Click on CPO \"8024\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "8024",
+                  "offset": 14
+                }
+              ],
+              "location": "LoginStepDefinition.clickoncartCPO(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3036582800,
+              "status": "passed"
+            },
+            "line": 785,
+            "name": "Deselect all",
+            "match": {
+              "location": "LoginStepDefinition.getDeselect()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5893659400,
+              "status": "passed"
+            },
+            "line": 786,
+            "name": "Select PO items based on EAN plus edit order qty",
+            "match": {
+              "location": "LoginStepDefinition.getEANSelectEditQty(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "EAN",
+                  "qty"
+                ],
+                "line": 787
+              },
+              {
+                "cells": [
+                  "8445306619556",
+                  "1200"
+                ],
+                "line": 788
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18900229700,
+              "status": "passed"
+            },
+            "line": 789,
+            "name": "Addtocart",
+            "match": {
+              "location": "LoginStepDefinition.getAddtocart()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3174344500,
+              "status": "passed"
+            },
+            "line": 790,
+            "name": "goto checkout page",
+            "match": {
+              "location": "LoginStepDefinition.goto_checkout()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6821291800,
+              "status": "passed"
+            },
+            "line": 791,
+            "name": "Verify All PO data with db",
+            "match": {
+              "location": "LoginStepDefinition.verifyAllPOData()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10479938100,
+              "status": "passed"
+            },
+            "line": 792,
+            "name": "Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date",
+            "match": {
+              "location": "LoginStepDefinition.select_checkout_details()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 23294197200,
+              "status": "passed"
+            },
+            "line": 793,
+            "name": "Confirm Order",
+            "match": {
+              "location": "LoginStepDefinition.confirm_order()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5075635100,
+              "status": "passed"
+            },
+            "line": 794,
+            "name": "Verify All RPO data with db",
+            "match": {
+              "location": "LoginStepDefinition.verifyAllRPOData()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 209600,
+              "status": "passed"
+            },
+            "line": 795,
+            "name": "Print Confirmation and done",
+            "match": {
+              "location": "LoginStepDefinition.print_confirmation_done()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 43541695000,
+              "status": "passed"
+            },
+            "line": 796,
+            "name": "Goto Report\u003eOrder Status",
+            "match": {
+              "location": "LoginStepDefinition.order_status_check()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17602832800,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 797,
+                "value": "#Then Search for PO \"7R53\""
+              },
+              {
+                "line": 798,
+                "value": "#Then Search for PO \"7R06\""
+              },
+              {
+                "line": 799,
+                "value": "# Search for PO \"6107\" and Check Status \"Processing\""
+              }
+            ],
+            "line": 800,
+            "name": "Logout",
+            "match": {
+              "location": "LoginStepDefinition.logout()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4229858700,
+              "status": "passed"
+            },
+            "line": 801,
+            "name": "Close Browser",
+            "match": {
+              "location": "LoginStepDefinition.close_the_browser()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 750,
+            "name": "@testcase119"
+          }
+        ]
+      }
+    ],
+    "name": "R-PAC Mango CRM E-Coomerece Feature",
+    "description": "",
+    "id": "r-pac-mango-crm-e-coomerece-feature",
+    "keyword": "Feature",
+    "uri": "scenarios.feature"
+  }
+]
