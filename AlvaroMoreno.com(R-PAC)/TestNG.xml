@@ -5,7 +5,7 @@
 	<test name="R-PAC Test" annotations="JDK"
 		preserve-order="true">
 		<classes>
-			<class name="MyRunner.TestRunner" />
+			<class name="MyRunner.TestRunner"/>
 		</classes>
 	</test>
 </suite>
