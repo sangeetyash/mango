@@ -1,4 +1,4 @@
-Feature: R-PAC Mango CRM E-Coomerece Feature 
+Feature: R-PAC Mango CRM E-Coomerece Feature (Scenario)
 
 
 @loginlogout

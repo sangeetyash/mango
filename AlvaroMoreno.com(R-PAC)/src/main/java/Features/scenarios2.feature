@@ -1,7 +1,7 @@
-Feature: R-PAC Mango CRM E-Coomerece Feature 
+Feature: R-PAC Mango CRM E-Coomerece Feature (Scenario2)
 
 
-@LoginLogoutValidation
+@LoginValidation
 Scenario Outline:  CRM Login Test and logout
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
