@@ -1,67 +1,67 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("scenarios.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("scenarios2.feature");
 formatter.feature({
   "line": 1,
-  "name": "R-PAC Mango CRM E-Coomerece Feature",
+  "name": "R-PACMango.com CRM E-Coomerece Feature Main Finish..",
   "description": "",
-  "id": "r-pac-mango-crm-e-coomerece-feature",
+  "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 460,
+  "line": 5,
   "name": "SQL Catalog back n forth",
   "description": "",
-  "id": "r-pac-mango-crm-e-coomerece-feature;sql-catalog-back-n-forth",
+  "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..;sql-catalog-back-n-forth",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 459,
+      "line": 4,
       "name": "@testcase55"
     }
   ]
 });
 formatter.step({
-  "line": 462,
+  "line": 7,
   "name": "Navigate user to Login Page \"http://devrtrac.r-pac.com/\" and \"Chrome\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 463,
+  "line": 8,
   "name": "title of login page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 464,
+  "line": 9,
   "name": "user enters \"Test@123.com\" and \"User@123\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 465,
+  "line": 10,
   "name": "user clicks on login button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 466,
+  "line": 11,
   "name": "user is on home page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 467,
+  "line": 12,
   "name": "goto catalog screen and PO selection validation check",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 468,
+  "line": 13,
   "name": "Plus Add to cart \"SSW\" and \"100\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 469,
+  "line": 14,
   "name": "goto checkout page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 470,
+  "line": 15,
   "name": "Verify Cart With DB",
   "rows": [
     {
@@ -69,35 +69,35 @@ formatter.step({
         "Catalog",
         "qty"
       ],
-      "line": 471
+      "line": 16
     },
     {
       "cells": [
         "SSW",
         "100"
       ],
-      "line": 472
+      "line": 17
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 473,
+  "line": 18,
   "name": "goto catalog screen and PO selection validation check",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 474,
+  "line": 19,
   "name": "Plus Add to cart \"SSW\" and \"50\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 475,
+  "line": 20,
   "name": "goto checkout page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 476,
+  "line": 21,
   "name": "Verify Cart With DB",
   "rows": [
     {
@@ -105,37 +105,37 @@ formatter.step({
         "Catalog",
         "qty"
       ],
-      "line": 477
+      "line": 22
     },
     {
       "cells": [
         "SSW",
         "100"
       ],
-      "line": 478
+      "line": 23
     },
     {
       "cells": [
         "SSW",
         "50"
       ],
-      "line": 479
+      "line": 24
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 480,
+  "line": 25,
   "name": "Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 481,
+  "line": 26,
   "name": "Confirm Order",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 482,
+  "line": 27,
   "name": "Verify catalog RPO with DB",
   "rows": [
     {
@@ -143,126 +143,126 @@ formatter.step({
         "Catalog",
         "qty"
       ],
-      "line": 483
+      "line": 28
     },
     {
       "cells": [
         "SSW",
         "100"
       ],
-      "line": 484
+      "line": 29
     },
     {
       "cells": [
         "SSW",
         "50"
       ],
-      "line": 485
+      "line": 30
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 486,
+  "line": 31,
   "name": "Print Confirmation and done",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 487,
+  "line": 32,
   "name": "Goto Report\u003eOrder Status",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 488,
+  "line": 33,
   "name": "Logout",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 489,
+  "line": 34,
   "name": "Close Browser",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 491,
+  "line": 36,
   "name": "",
   "description": "",
-  "id": "r-pac-mango-crm-e-coomerece-feature;sql-catalog-back-n-forth;",
+  "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..;sql-catalog-back-n-forth;",
   "rows": [
     {
       "cells": [
         "items",
         "udateitems"
       ],
-      "line": 492,
-      "id": "r-pac-mango-crm-e-coomerece-feature;sql-catalog-back-n-forth;;1"
+      "line": 37,
+      "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..;sql-catalog-back-n-forth;;1"
     },
     {
       "cells": [
         "1111",
         "2222"
       ],
-      "line": 493,
-      "id": "r-pac-mango-crm-e-coomerece-feature;sql-catalog-back-n-forth;;2"
+      "line": 38,
+      "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..;sql-catalog-back-n-forth;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 493,
+  "line": 38,
   "name": "SQL Catalog back n forth",
   "description": "",
-  "id": "r-pac-mango-crm-e-coomerece-feature;sql-catalog-back-n-forth;;2",
+  "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..;sql-catalog-back-n-forth;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 459,
+      "line": 4,
       "name": "@testcase55"
     }
   ]
 });
 formatter.step({
-  "line": 462,
+  "line": 7,
   "name": "Navigate user to Login Page \"http://devrtrac.r-pac.com/\" and \"Chrome\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 463,
+  "line": 8,
   "name": "title of login page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 464,
+  "line": 9,
   "name": "user enters \"Test@123.com\" and \"User@123\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 465,
+  "line": 10,
   "name": "user clicks on login button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 466,
+  "line": 11,
   "name": "user is on home page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 467,
+  "line": 12,
   "name": "goto catalog screen and PO selection validation check",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 468,
+  "line": 13,
   "name": "Plus Add to cart \"SSW\" and \"100\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 469,
+  "line": 14,
   "name": "goto checkout page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 470,
+  "line": 15,
   "name": "Verify Cart With DB",
   "rows": [
     {
@@ -270,35 +270,35 @@ formatter.step({
         "Catalog",
         "qty"
       ],
-      "line": 471
+      "line": 16
     },
     {
       "cells": [
         "SSW",
         "100"
       ],
-      "line": 472
+      "line": 17
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 473,
+  "line": 18,
   "name": "goto catalog screen and PO selection validation check",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 474,
+  "line": 19,
   "name": "Plus Add to cart \"SSW\" and \"50\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 475,
+  "line": 20,
   "name": "goto checkout page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 476,
+  "line": 21,
   "name": "Verify Cart With DB",
   "rows": [
     {
@@ -306,37 +306,37 @@ formatter.step({
         "Catalog",
         "qty"
       ],
-      "line": 477
+      "line": 22
     },
     {
       "cells": [
         "SSW",
         "100"
       ],
-      "line": 478
+      "line": 23
     },
     {
       "cells": [
         "SSW",
         "50"
       ],
-      "line": 479
+      "line": 24
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 480,
+  "line": 25,
   "name": "Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 481,
+  "line": 26,
   "name": "Confirm Order",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 482,
+  "line": 27,
   "name": "Verify catalog RPO with DB",
   "rows": [
     {
@@ -344,42 +344,42 @@ formatter.step({
         "Catalog",
         "qty"
       ],
-      "line": 483
+      "line": 28
     },
     {
       "cells": [
         "SSW",
         "100"
       ],
-      "line": 484
+      "line": 29
     },
     {
       "cells": [
         "SSW",
         "50"
       ],
-      "line": 485
+      "line": 30
     }
   ],
   "keyword": "Then "
 });
 formatter.step({
-  "line": 486,
+  "line": 31,
   "name": "Print Confirmation and done",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 487,
+  "line": 32,
   "name": "Goto Report\u003eOrder Status",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 488,
+  "line": 33,
   "name": "Logout",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 489,
+  "line": 34,
   "name": "Close Browser",
   "keyword": "Then "
 });
@@ -397,14 +397,14 @@ formatter.match({
   "location": "LoginStepDefinition.navigateUser(String,String)"
 });
 formatter.result({
-  "duration": 33571310000,
+  "duration": 20093210000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
 });
 formatter.result({
-  "duration": 20920500,
+  "duration": 12044600,
   "status": "passed"
 });
 formatter.match({
@@ -421,28 +421,28 @@ formatter.match({
   "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 48731169900,
+  "duration": 39470119600,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_clicks_on_login_button()"
 });
 formatter.result({
-  "duration": 309900,
+  "duration": 92400,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_is_on_hopme_page()"
 });
 formatter.result({
-  "duration": 338600,
+  "duration": 114800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.getCatalogScreen()"
 });
 formatter.result({
-  "duration": 25349162500,
+  "duration": 18480340100,
   "status": "passed"
 });
 formatter.match({
@@ -459,28 +459,28 @@ formatter.match({
   "location": "LoginStepDefinition.getAddCatalog(String,String)"
 });
 formatter.result({
-  "duration": 13983408000,
+  "duration": 13787249700,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.goto_checkout()"
 });
 formatter.result({
-  "duration": 6162617600,
+  "duration": 4361800500,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 4803304100,
+  "duration": 4910239300,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.getCatalogScreen()"
 });
 formatter.result({
-  "duration": 15099360200,
+  "duration": 14733832400,
   "status": "passed"
 });
 formatter.match({
@@ -497,65 +497,70 @@ formatter.match({
   "location": "LoginStepDefinition.getAddCatalog(String,String)"
 });
 formatter.result({
-  "duration": 13764331400,
+  "duration": 13346734800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.goto_checkout()"
 });
 formatter.result({
-  "duration": 3303408400,
+  "duration": 3115531600,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 5105279400,
+  "duration": 5393166400,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.select_checkout_details()"
 });
 formatter.result({
-  "duration": 10798086700,
-  "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cinput placeholder\u003d\"yyyy-mm-dd\" readonly\u003d\"true\" autocomplete\u003d\"off\" class\u003d\"form-control hasDatepicker\" data-val\u003d\"true\" data-val-required\u003d\"Please Select Requested Shippment Date.\" id\u003d\"txtdtExpected\" name\u003d\"dtExpected\" type\u003d\"text\" value\u003d\"\"\u003e is not clickable at point (631, 403). Other element would receive the click: \u003cdiv id\u003d\"smartAlert\" data-type\u003d\"info\" data-cancel\u003d\"true\" data-icon\u003d\"info\" data-align\u003d\"left\" data-draggable\u003d\"undefined\" data-pie\u003d\"htc\" data-chrome\u003d\"87\" data-webkit\u003d\"87\" style\u003d\"visibility: visible; z-index: 210000;\"\u003e...\u003c/div\u003e\n  (Session info: chrome\u003d87.0.4280.88)\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-M0JQEN5\u0027, ip: \u0027192.168.43.59\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\GLOBAL~1\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:62107}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 18f30d97cfb8d7d777e03c4ae4ab5df6\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)\r\n\tat pageObjects.CheckOut.expectedDate(CheckOut.java:152)\r\n\tat stepDefinitions.LoginStepDefinition.select_checkout_details(LoginStepDefinition.java:733)\r\n\tat ✽.Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date(scenarios.feature:480)\r\n",
-  "status": "failed"
+  "duration": 10595279100,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.confirm_order()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22692777600,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.RPOWithDB(DataTable)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2330697600,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.print_confirmation_done()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 60100,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.order_status_check()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19426596400,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.logout()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17897006100,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.close_the_browser()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3875138800,
+  "status": "passed"
 });
 });
