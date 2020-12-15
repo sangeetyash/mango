@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [BDD Test Suite]" parallel="methods">
-  <test thread-count="2" name="R-PAC Test(failed)" parallel="methods">
+<suite thread-count="2" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [BDD Test Suite]" parallel="tests">
+  <test thread-count="2" name="R-PAC Test1(failed)" parallel="tests">
+    <classes>
+      <class name="MyRunner.TestRunner2">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- MyRunner.TestRunner2 -->
+    </classes>
+  </test> <!-- R-PAC Test1(failed) -->
+  <test thread-count="2" name="R-PAC Test(failed)" parallel="tests">
     <classes>
       <class name="MyRunner.TestRunner">
         <methods>
           <include name="feature" invocation-numbers="0"/>
-          <include name="feature1" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>

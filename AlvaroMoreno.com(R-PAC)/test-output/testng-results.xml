@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="BDD Test Suite" duration-ms="42475" started-at="2020-12-14T08:15:07Z" finished-at="2020-12-14T08:15:49Z">
+  <suite name="BDD Test Suite" duration-ms="77499" started-at="2020-12-14T10:09:32Z" finished-at="2020-12-14T10:10:49Z">
     <groups>
       <group name="cucumber">
         <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" class="MyRunner.TestRunner"/>
-        <method signature="TestRunner.feature1(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature1" class="MyRunner.TestRunner"/>
+        <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@21213b92]" name="feature" class="MyRunner.TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="R-PAC Test" duration-ms="42475" started-at="2020-12-14T08:15:07Z" finished-at="2020-12-14T08:15:49Z">
+    <test name="R-PAC Test1" duration-ms="75535" started-at="2020-12-14T10:09:32Z" finished-at="2020-12-14T10:10:47Z">
       <class name="MyRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="setUpClass" is-config="true" duration-ms="231" started-at="2020-12-14T08:15:07Z" finished-at="2020-12-14T08:15:07Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@21213b92]" name="setUpClass" is-config="true" duration-ms="301" started-at="2020-12-14T10:09:32Z" finished-at="2020-12-14T10:09:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" duration-ms="9" started-at="2020-12-14T08:15:07Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-14T08:15:07Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@21213b92]" name="feature" duration-ms="74932" started-at="2020-12-14T10:09:32Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-14T10:10:47Z">
           <params>
             <param index="0">
               <value>
@@ -23,42 +23,22 @@
               </value>
             </param>
           </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[Only one formatter can use STDOUT, now both pretty and pretty use it. If you use more than one formatter you must specify output path with PLUGIN:PATH_OR_URL]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: Only one formatter can use STDOUT, now both pretty and pretty use it. If you use more than one formatter you must specify output path with PLUGIN:PATH_OR_URL
-at cucumber.runtime.formatter.PluginFactory.defaultOutOrFailIfAlreadyUsed(PluginFactory.java:185)
-at cucumber.runtime.formatter.PluginFactory.convertOrNull(PluginFactory.java:144)
-at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:99)
-at cucumber.runtime.formatter.PluginFactory.create(PluginFactory.java:87)
-at cucumber.runtime.RuntimeOptions.getPlugins(RuntimeOptions.java:245)
-at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:291)
-at com.sun.proxy.$Proxy15.uri(Unknown Source)
-at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:160)
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
-at MyRunner.TestRunner.feature(TestRunner.java:57)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="FAIL" signature="feature1(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature1" duration-ms="42083" started-at="2020-12-14T08:15:07Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-14T08:15:49Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@21213b92]" name="tearDownClass" is-config="true" duration-ms="104" started-at="2020-12-14T10:10:47Z" finished-at="2020-12-14T10:10:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- MyRunner.TestRunner -->
+    </test> <!-- R-PAC Test1 -->
+    <test name="R-PAC Test" duration-ms="77499" started-at="2020-12-14T10:09:32Z" finished-at="2020-12-14T10:10:49Z">
+      <class name="MyRunner.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="setUpClass" is-config="true" duration-ms="320" started-at="2020-12-14T10:09:32Z" finished-at="2020-12-14T10:09:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" duration-ms="76971" started-at="2020-12-14T10:09:32Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-14T10:10:49Z">
           <params>
             <param index="0">
               <value>
@@ -66,76 +46,10 @@ at java.lang.Thread.run(Unknown Source)
               </value>
             </param>
           </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".user\-name"}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '192.168.43.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7d9bbfc68bc3e996bb41b2af6bf41dce
-*** Element info: {Using=class name, value=user-name}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".user\-name"}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '192.168.43.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7d9bbfc68bc3e996bb41b2af6bf41dce
-*** Element info: {Using=class name, value=user-name}
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-at MyRunner.TestRunner.feature1(TestRunner.java:63)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".user\-name"}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '192.168.43.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7d9bbfc68bc3e996bb41b2af6bf41dce
-*** Element info: {Using=class name, value=user-name}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:405)
-at org.openqa.selenium.By$ByClassName.findElement(By.java:391)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-at pageObjects.LoginUserPassword.logout(LoginUserPassword.java:56)
-at stepDefinitions.LoginStepDefinition.logout(LoginStepDefinition.java:904)
-at ✽.Then Logout(scenarios2.feature:15)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- feature1 -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="tearDownClass" is-config="true" duration-ms="15" started-at="2020-12-14T08:15:49Z" finished-at="2020-12-14T08:15:49Z">
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="tearDownClass" is-config="true" duration-ms="37" started-at="2020-12-14T10:10:49Z" finished-at="2020-12-14T10:10:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

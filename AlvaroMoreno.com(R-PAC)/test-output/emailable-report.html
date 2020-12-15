@@ -9,61 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">BDD Test Suite</th></tr>
-<tr><td><a href="#t0">R-PAC Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">42,475</td><td></td><td></td></tr>
+<tr><td><a href="#t0">R-PAC Test1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">75,535</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">R-PAC Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">77,499</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num">0</th><th class="num">153,034</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">BDD Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">R-PAC Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">MyRunner.TestRunner</td><td><a href="#m0">feature</a></td><td rowspan="1">1607933707744</td><td rowspan="1">9</td></tr><tr class="failedeven"><td><a href="#m1">feature1</a></td><td rowspan="1">1607933707744</td><td rowspan="1">42083</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">BDD Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">R-PAC Test1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">MyRunner.TestRunner</td><td><a href="#m0">feature</a></td><td rowspan="1">1607940572723</td><td rowspan="1">74932</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">R-PAC Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">MyRunner.TestRunner</td><td><a href="#m1">feature</a></td><td rowspan="1">1607940572723</td><td rowspan="1">76971</td></tr></tbody>
 </table>
-<h2>R-PAC Test</h2><h3 id="m0">MyRunner.TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>R-PAC Mango CRM E-Coomerece Feature (Scenario2)</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: Only one formatter can use STDOUT, now both pretty and pretty use it. If you use more than one formatter you must specify output path with PLUGIN:PATH_OR_URL
-	at cucumber.runtime.formatter.PluginFactory.defaultOutOrFailIfAlreadyUsed(PluginFactory.java:185)
-	at cucumber.runtime.formatter.PluginFactory.convertOrNull(PluginFactory.java:144)
-	at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:99)
-	at cucumber.runtime.formatter.PluginFactory.create(PluginFactory.java:87)
-	at cucumber.runtime.RuntimeOptions.getPlugins(RuntimeOptions.java:245)
-	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:291)
-	at com.sun.proxy.$Proxy15.uri(Unknown Source)
-	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:160)
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
-	at MyRunner.TestRunner.feature(TestRunner.java:57)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">MyRunner.TestRunner#feature1</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>R-PAC Mango CRM E-Coomerece Feature (Scenario2)</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.user\-name&quot;}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-M0JQEN5&apos;, ip: &apos;192.168.43.59&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7d9bbfc68bc3e996bb41b2af6bf41dce
-*** Element info: {Using=class name, value=user-name}
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at MyRunner.TestRunner.feature1(TestRunner.java:63)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.user\-name&quot;}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-M0JQEN5&apos;, ip: &apos;192.168.43.59&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 7d9bbfc68bc3e996bb41b2af6bf41dce
-*** Element info: {Using=class name, value=user-name}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:405)
-	at org.openqa.selenium.By$ByClassName.findElement(By.java:391)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-	at pageObjects.LoginUserPassword.logout(LoginUserPassword.java:56)
-	at stepDefinitions.LoginStepDefinition.logout(LoginStepDefinition.java:904)
-	at ✽.Then Logout(scenarios2.feature:15)
-... Removed 14 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>R-PAC Test1</h2><h3 id="m0">MyRunner.TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>R-PAC Mango CRM E-Coomerece Feature (Scenario2)</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>R-PAC Test</h2><h3 id="m1">MyRunner.TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>R-PAC Mango CRM E-Coomerece Feature (Scenario2)</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
