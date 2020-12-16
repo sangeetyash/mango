@@ -68,7 +68,7 @@ public class POALLQTYCheck {
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num ;
 			            
 			            // System.out.println("SQL Query="+selectSql);
@@ -191,13 +191,13 @@ public class POALLQTYCheck {
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num +"AND varEAN=" +"'"+catItem +"'";
 			             System.out.println("SQL Query="+selectSql);
 
 			            //String selectSql = 
 			            //		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            //		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            //		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            //		"	where bigintShoppingCartNo = "+ num + "AND bigintOrdQty= "+corqty +"AND varEAN=" +"'"+catItem +"'";
 			            
 			            
@@ -329,12 +329,12 @@ public class POALLQTYCheck {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num+"AND varEAN=" +"'"+catItem +"'" ;
 			            
 			             System.out.println("SQL Query="+selectSql2);
 			            //String selectSql2=
-			            //		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+			            //		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            //		+ "where bigintShoppingCartNo  = "+ num+"AND varEAN=" +"'"+catItem +"'" +"AND bigIntOriginalTotal_Size_Qty="+corqty;
 			            
 						 connection = DriverManager.getConnection(connectionUrl);

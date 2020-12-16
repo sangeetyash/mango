@@ -78,7 +78,7 @@ public class PORPOCheck {
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num + "AND varEAN=" +"'"+EANC +"'";
 			            
 			            System.out.println("SQL Query = " + selectSql);
@@ -205,7 +205,7 @@ public class PORPOCheck {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num + "AND varEAN=" +"'"+EANC +"'" ;
 			            System.out.println("SQL Query = " + selectSql2);
 						 connection = DriverManager.getConnection(connectionUrl);

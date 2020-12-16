@@ -64,7 +64,7 @@ public class SqlConnection
             // Create and execute a SELECT SQL statement.
             String selectSql = 
             		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
             		"	where bigintShoppingCartNo = "+ num;
              resultSet = statement.executeQuery(selectSql);
             int i=1;
@@ -143,7 +143,7 @@ public class SqlConnection
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num + "AND bigintOrdQty= "+corqty +"AND varItemCode=" +"'"+catItem +"'";
 			            
 				    	System.out.println(selectSql);
@@ -277,7 +277,7 @@ public class SqlConnection
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num+"AND varItemCode=" +"'"+catItem +"'" +"AND bigIntOriginalTotal_Size_Qty="+corqty;
 				    	System.out.println(selectSql2);
 

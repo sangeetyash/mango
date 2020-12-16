@@ -81,7 +81,7 @@ public class POShoppingCart {
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num + "AND varEAN=" +"'"+EANC +"'";
 			            
 			            	System.out.println("SQL Query = " + selectSql);
@@ -207,7 +207,7 @@ public class POShoppingCart {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num + "AND varEAN=" +"'"+EANC +"'" ;
 			            
 						 connection = DriverManager.getConnection(connectionUrl);

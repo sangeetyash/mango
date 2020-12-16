@@ -79,7 +79,7 @@ public class ShoppingCart {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = " + num+ 
 			            		" AND bigIntOriginalTotal_Size_Qty=" +corqty+ 
 			            		" AND varItemCode=" + "'" +catItem + "'" ;

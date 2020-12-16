@@ -397,14 +397,14 @@ formatter.match({
   "location": "LoginStepDefinition.navigateUser(String,String)"
 });
 formatter.result({
-  "duration": 22343889700,
+  "duration": 16512322000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
 });
 formatter.result({
-  "duration": 6128600,
+  "duration": 14851500,
   "status": "passed"
 });
 formatter.match({
@@ -421,28 +421,28 @@ formatter.match({
   "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 25351540900,
+  "duration": 24107391200,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_clicks_on_login_button()"
 });
 formatter.result({
-  "duration": 117400,
+  "duration": 81000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_is_on_hopme_page()"
 });
 formatter.result({
-  "duration": 94200,
+  "duration": 117300,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.getCatalogScreen()"
 });
 formatter.result({
-  "duration": 15923705300,
+  "duration": 15719871900,
   "status": "passed"
 });
 formatter.match({
@@ -459,28 +459,28 @@ formatter.match({
   "location": "LoginStepDefinition.getAddCatalog(String,String)"
 });
 formatter.result({
-  "duration": 14038676400,
+  "duration": 13407917900,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.goto_checkout()"
 });
 formatter.result({
-  "duration": 6502118300,
+  "duration": 3488864500,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 4773354300,
+  "duration": 4506800000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.getCatalogScreen()"
 });
 formatter.result({
-  "duration": 15627179000,
+  "duration": 14884494300,
   "status": "passed"
 });
 formatter.match({
@@ -497,57 +497,57 @@ formatter.match({
   "location": "LoginStepDefinition.getAddCatalog(String,String)"
 });
 formatter.result({
-  "duration": 14141843600,
+  "duration": 13845627700,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.goto_checkout()"
 });
 formatter.result({
-  "duration": 3224351800,
+  "duration": 3047306800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 4490287300,
+  "duration": 3843003400,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.select_checkout_details()"
 });
 formatter.result({
-  "duration": 10711423800,
+  "duration": 10571775900,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.confirm_order()"
 });
 formatter.result({
-  "duration": 22276138600,
+  "duration": 22303924100,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.RPOWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 2693503900,
+  "duration": 1539321100,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.print_confirmation_done()"
 });
 formatter.result({
-  "duration": 220100,
+  "duration": 225800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.order_status_check()"
 });
 formatter.result({
-  "duration": 20924328900,
-  "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d87.0.4280.88)\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-M0JQEN5\u0027, ip: \u002720.0.0.8\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\GLOBAL~1\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:54523}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 30e5f30faaf2d42fd83fb7de66123b94\n*** Element info: {Using\u003dxpath, value\u003d.//*[@id\u003d\u0027tblMangoOrderStatus_length\u0027]/span[2]/span/span}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)\r\n\tat pageObjects.OrderStatus.getSearch(OrderStatus.java:41)\r\n\tat stepDefinitions.LoginStepDefinition.order_status_check(LoginStepDefinition.java:858)\r\n\tat ✽.Then Goto Report\u003eOrder Status(scenarios2.feature:51)\r\n",
+  "duration": 8732404700,
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\".//*[@id\u003d\u0027tblMangoOrderStatus_length\u0027]/span[2]/span/span\"}\n  (Session info: chrome\u003d87.0.4280.88)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-M0JQEN5\u0027, ip: \u002720.0.0.12\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\GLOBAL~1\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:56611}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: c7b13711be639345a3b784e778988887\n*** Element info: {Using\u003dxpath, value\u003d.//*[@id\u003d\u0027tblMangoOrderStatus_length\u0027]/span[2]/span/span}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)\r\n\tat pageObjects.OrderStatus.getSearch(OrderStatus.java:41)\r\n\tat stepDefinitions.LoginStepDefinition.order_status_check(LoginStepDefinition.java:858)\r\n\tat ✽.Then Goto Report\u003eOrder Status(scenarios2.feature:51)\r\n",
   "status": "failed"
 });
 formatter.match({
