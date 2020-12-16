@@ -79,7 +79,7 @@ public class ShoppingCart {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
+			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = " + num+ 
 			            		" AND bigIntOriginalTotal_Size_Qty=" +corqty+ 
 			            		" AND varItemCode=" + "'" +catItem + "'" ;
@@ -110,16 +110,16 @@ public class ShoppingCart {
 						                );
 						                
 						                //String status2=resultSet1.getString("intStatus");
-								    	//System.out.println("tbl_Cust_Mango_ShoppingCart recorde status" + resultSet2.getString(5));
+								    	//System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart recorde status" + resultSet2.getString(5));
 
 								    	//resultSet2.getString("intStatus")
 								    	if((resultSet2.getString(5)).equalsIgnoreCase("4"))
 								             {
-								            	 System.out.println("tbl_Cust_Mango_ShoppingCart table check Pass");
+								            	 System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart table check Pass");
 								             }
 								             else
 								             {
-								            	 System.out.println("tbl_Cust_Mango_ShoppingCart table check Fail");
+								            	 System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart table check Fail");
 								             }
 						                j=j+1;
 						            }

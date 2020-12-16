@@ -64,7 +64,7 @@ public class SqlConnection
             // Create and execute a SELECT SQL statement.
             String selectSql = 
             		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
+            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
             		"	where bigintShoppingCartNo = "+ num;
              resultSet = statement.executeQuery(selectSql);
             int i=1;
@@ -143,7 +143,7 @@ public class SqlConnection
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
+			            		"	FROM [MANGODB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num + "AND bigintOrdQty= "+corqty +"AND varItemCode=" +"'"+catItem +"'";
 			            
 				    	System.out.println(selectSql);
@@ -194,19 +194,19 @@ public class SqlConnection
 					                );
 					                
 					                String status=resultSet1.getString("intStatus");
-					                //System.out.println("tbl_Cust_Mango_Parser recorde status" + status);
+					                //System.out.println("tbl_Cust_AlvaroMoreno_Parser recorde status" + status);
 
 							             if (status.equalsIgnoreCase("3"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass");
 							             }
 							             else if(status.equalsIgnoreCase("4"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass");
 							             }
 							             else
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Fail");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail");
 							             }
 					                i=i+1;
 					            }
