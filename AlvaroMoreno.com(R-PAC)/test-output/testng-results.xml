@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="BDD Test Suite" duration-ms="6892" started-at="2020-12-17T16:57:52Z" finished-at="2020-12-17T16:57:59Z">
+  <suite name="BDD Test Suite" duration-ms="4516" started-at="2020-12-17T18:52:09Z" finished-at="2020-12-17T18:52:13Z">
     <groups>
       <group name="cucumber">
         <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" class="MyRunner.TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="R-PAC Test1" duration-ms="6892" started-at="2020-12-17T16:57:52Z" finished-at="2020-12-17T16:57:59Z">
+    <test name="R-PAC Test1" duration-ms="4516" started-at="2020-12-17T18:52:09Z" finished-at="2020-12-17T18:52:13Z">
       <class name="MyRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="setUpClass" is-config="true" duration-ms="250" started-at="2020-12-17T16:57:52Z" finished-at="2020-12-17T16:57:53Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="setUpClass" is-config="true" duration-ms="215" started-at="2020-12-17T18:52:09Z" finished-at="2020-12-17T18:52:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" duration-ms="6463" started-at="2020-12-17T16:57:53Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-17T16:57:59Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" duration-ms="4148" started-at="2020-12-17T18:52:09Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-17T18:52:13Z">
           <params>
             <param index="0">
               <value>
@@ -24,25 +24,23 @@
           </params>
           <exception class="cucumber.runtime.CucumberException">
             <message>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#username"}
-  (Session info: chrome=87.0.4280.88)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: #username
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '192.168.43.88', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bdb7d00719c56553f464f4efca012a50
+System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 84.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201211215739, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 20352, moz:profile: C:\Users\Global IT\AppData\..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5425f48d-93b9-4856-8b42-aa93d00099e2
 *** Element info: {Using=id, value=username}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#username"}
-  (Session info: chrome=87.0.4280.88)
+              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: Unable to locate element: #username
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '192.168.43.88', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bdb7d00719c56553f464f4efca012a50
+System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 84.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201211215739, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 20352, moz:profile: C:\Users\Global IT\AppData\..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5425f48d-93b9-4856-8b42-aa93d00099e2
 *** Element info: {Using=id, value=username}
 at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 at MyRunner.TestRunner.feature(TestRunner.java:57)
@@ -66,14 +64,13 @@ at java.util.concurrent.FutureTask.run(Unknown Source)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#username"}
-  (Session info: chrome=87.0.4280.88)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: #username
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '192.168.43.88', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bdb7d00719c56553f464f4efca012a50
+System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 84.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201211215739, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 20352, moz:profile: C:\Users\Global IT\AppData\..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5425f48d-93b9-4856-8b42-aa93d00099e2
 *** Element info: {Using=id, value=username}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -89,16 +86,16 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)
 at org.openqa.selenium.By$ById.findElement(By.java:218)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-at pageObjects.LoginUserPassword.usercredentials(LoginUserPassword.java:86)
-at stepDefinitions.LoginStepDefinition.getCrentials(LoginStepDefinition.java:603)
-at ✽.Then user enters credentials(scenarios2.feature:21)
+at pageObjects.LoginUserPassword.usernamepassword_LoginUserPassword(LoginUserPassword.java:37)
+at stepDefinitions.LoginStepDefinition.user_enters_username_and_password(LoginStepDefinition.java:190)
+at ✽.Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"(scenarios2.feature:40)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="tearDownClass" is-config="true" duration-ms="24" started-at="2020-12-17T16:57:59Z" finished-at="2020-12-17T16:57:59Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="tearDownClass" is-config="true" duration-ms="22" started-at="2020-12-17T18:52:13Z" finished-at="2020-12-17T18:52:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -74,22 +74,19 @@ public class LoginStepDefinition
 		
 		  //System.setProperty("webdriver.chrome.driver","F:\\ProjectSpace\\Cucumber-TestNG-master two\\Cucumber-TestNG-master\\Drivers\\chromedriver.exe"); 
 		  
-		  if(browser.equalsIgnoreCase("chrome")) {
+		  if(browser.equalsIgnoreCase("chrome")) 
+		  {
 		  
 		  Thread.sleep(2000);
 		  System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver1.exe");
-		  driver = new ChromeDriver(); } else if(browser.equalsIgnoreCase("firefox")) {
+		  driver = new ChromeDriver();
+		  }
+		  else if(browser.equalsIgnoreCase("firefox")) 
+		  {
 		  System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
 		  driver = new FirefoxDriver(); 
 		  }
-		 		
-		  else if (browser == "Chrome") 
-		  {
-		  System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver.exe");
-		  driver = new ChromeDriver(); } else if (browser == "Firefox") { driver = new
-		  FirefoxDriver(); } else if (browser == "IE") { driver = new
-		  InternetExplorerDriver(); 
-		  }
+		 	
 		  else 
 		  {
 			  System.out.println("Invalid unsupported browser");
@@ -107,7 +104,7 @@ public class LoginStepDefinition
 		  //browserSelectType=pageObjectManager.getBrowserSelectType();
 		  //browserSelectType.selectBrowser(browser);
 		  browserSelectType.navigateTo_LoginUserPassword(url);
-		  loginUserPassword=pageObjectManager.getLoginUserPassword();
+		  //loginUserPassword=pageObjectManager.getLoginUserPassword();
 		  //loginUserPassword.navigateTo_LoginUserPassword(url);
 		  
 		  endTime = System.currentTimeMillis();

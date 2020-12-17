@@ -9,18 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">BDD Test Suite</th></tr>
-<tr><td><a href="#t0">R-PAC Test1</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">6,892</td><td></td><td></td></tr>
+<tr><td><a href="#t0">R-PAC Test1</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">4,516</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">BDD Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">R-PAC Test1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">MyRunner.TestRunner</td><td><a href="#m0">feature</a></td><td rowspan="1">1608224273168</td><td rowspan="1">6463</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">BDD Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">R-PAC Test1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">MyRunner.TestRunner</td><td><a href="#m0">feature</a></td><td rowspan="1">1608231129547</td><td rowspan="1">4148</td></tr></tbody>
 </table>
-<h2>R-PAC Test1</h2><h3 id="m0">MyRunner.TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>R-PAC Mango CRM E-Coomerece Feature (Scenario2)</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#username&quot;}
-  (Session info: chrome=87.0.4280.88)
+<h2>R-PAC Test1</h2><h3 id="m0">MyRunner.TestRunner#feature</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>R-PAC Mango CRM E-Coomerece Feature (Scenario2)</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: Unable to locate element: #username
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-M0JQEN5&apos;, ip: &apos;192.168.43.88&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bdb7d00719c56553f464f4efca012a50
+System info: host: &apos;DESKTOP-M0JQEN5&apos;, ip: &apos;20.0.0.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 84.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201211215739, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 20352, moz:profile: C:\Users\Global IT\AppData\..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5425f48d-93b9-4856-8b42-aa93d00099e2
 *** Element info: {Using=id, value=username}
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at MyRunner.TestRunner.feature(TestRunner.java:57)
@@ -28,14 +27,13 @@ Session ID: bdb7d00719c56553f464f4efca012a50
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#username&quot;}
-  (Session info: chrome=87.0.4280.88)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: #username
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-M0JQEN5&apos;, ip: &apos;192.168.43.88&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bdb7d00719c56553f464f4efca012a50
+System info: host: &apos;DESKTOP-M0JQEN5&apos;, ip: &apos;20.0.0.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 84.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201211215739, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 20352, moz:profile: C:\Users\Global IT\AppData\..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5425f48d-93b9-4856-8b42-aa93d00099e2
 *** Element info: {Using=id, value=username}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
@@ -47,9 +45,9 @@ Session ID: bdb7d00719c56553f464f4efca012a50
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)
 	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-	at pageObjects.LoginUserPassword.usercredentials(LoginUserPassword.java:86)
-	at stepDefinitions.LoginStepDefinition.getCrentials(LoginStepDefinition.java:603)
-	at ✽.Then user enters credentials(scenarios2.feature:21)
+	at pageObjects.LoginUserPassword.usernamepassword_LoginUserPassword(LoginUserPassword.java:37)
+	at stepDefinitions.LoginStepDefinition.user_enters_username_and_password(LoginStepDefinition.java:190)
+	at ✽.Then user enters &quot;admin@AlvaroMoreno.com&quot; and &quot;Lousie#786&quot;(scenarios2.feature:40)
 ... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -3,20 +3,20 @@
     "line": 1,
     "elements": [
       {
-        "line": 31,
-        "name": "CRM Login Test and logout",
+        "line": 69,
+        "name": "SQL Catalog back n forth",
         "description": "",
-        "id": "r-pac-mango-crm-e-coomerece-feature-(scenario2);crm-login-test-and-logout;;2",
+        "id": "r-pac-mango-crm-e-coomerece-feature-(scenario2);sql-catalog-back-n-forth;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 6330897200,
+              "duration": 4053060500,
               "status": "passed"
             },
-            "line": 18,
-            "name": "Navigate user to Login Page \"http://devrtrac.r-pac.com/\" and \"chrome\"",
+            "line": 38,
+            "name": "Navigate user to Login Page \"http://devrtrac.r-pac.com/\" and \"firefox\"",
             "match": {
               "arguments": [
                 {
@@ -24,7 +24,7 @@
                   "offset": 29
                 },
                 {
-                  "val": "chrome",
+                  "val": "firefox",
                   "offset": 62
                 }
               ],
@@ -34,10 +34,10 @@
           },
           {
             "result": {
-              "duration": 14357400,
+              "duration": 5167000,
               "status": "passed"
             },
-            "line": 19,
+            "line": 39,
             "name": "title of login page",
             "match": {
               "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
@@ -46,43 +46,32 @@
           },
           {
             "result": {
-              "duration": 53666600,
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#username\"}\n  (Session info: chrome\u003d87.0.4280.88)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-M0JQEN5\u0027, ip: \u0027192.168.43.88\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\\Users\\GLOBAL~1\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:56668}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: bdb7d00719c56553f464f4efca012a50\n*** Element info: {Using\u003did, value\u003dusername}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)\r\n\tat pageObjects.LoginUserPassword.usercredentials(LoginUserPassword.java:86)\r\n\tat stepDefinitions.LoginStepDefinition.getCrentials(LoginStepDefinition.java:603)\r\n\tat ✽.Then user enters credentials(scenarios2.feature:21)\r\n",
+              "duration": 25787700,
+              "error_message": "org.openqa.selenium.NoSuchElementException: Unable to locate element: #username\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-M0JQEN5\u0027, ip: \u002720.0.0.5\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 84.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201211215739, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 20352, moz:profile: C:\\Users\\Global IT\\AppData\\..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 5425f48d-93b9-4856-8b42-aa93d00099e2\n*** Element info: {Using\u003did, value\u003dusername}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:365)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)\r\n\tat pageObjects.LoginUserPassword.usernamepassword_LoginUserPassword(LoginUserPassword.java:37)\r\n\tat stepDefinitions.LoginStepDefinition.user_enters_username_and_password(LoginStepDefinition.java:190)\r\n\tat ✽.Then user enters \"admin@AlvaroMoreno.com\" and \"Lousie#786\"(scenarios2.feature:40)\r\n",
               "status": "failed"
             },
-            "comments": [
-              {
-                "line": 20,
-                "value": "#Then user enters \"Test@123.com\" and \"User@123\""
-              }
-            ],
-            "line": 21,
-            "name": "user enters credentials",
+            "line": 40,
+            "name": "user enters \"admin@AlvaroMoreno.com\" and \"Lousie#786\"",
             "match": {
-              "location": "LoginStepDefinition.getCrentials(DataTable)"
+              "arguments": [
+                {
+                  "val": "admin@AlvaroMoreno.com",
+                  "offset": 13
+                },
+                {
+                  "val": "Lousie#786",
+                  "offset": 42
+                }
+              ],
+              "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
             },
-            "rows": [
-              {
-                "cells": [
-                  "admin@AlvaroMoreno.com",
-                  "Lousie#786"
-                ],
-                "line": 22
-              }
-            ],
             "keyword": "Then "
           },
           {
             "result": {
               "status": "skipped"
             },
-            "comments": [
-              {
-                "line": 23,
-                "value": "#Then enters \"\u003cusername\u003e\" and \"\u003cpassword\u003e\""
-              }
-            ],
-            "line": 24,
+            "line": 41,
             "name": "user clicks on login button",
             "match": {
               "location": "LoginStepDefinition.user_clicks_on_login_button()"
@@ -93,7 +82,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 25,
+            "line": 42,
             "name": "user is on home page",
             "match": {
               "location": "LoginStepDefinition.user_is_on_hopme_page()"
@@ -104,7 +93,184 @@
             "result": {
               "status": "skipped"
             },
-            "line": 26,
+            "line": 43,
+            "name": "goto catalog screen and PO selection validation check",
+            "match": {
+              "location": "LoginStepDefinition.getCatalogScreen()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 44,
+            "name": "Plus Add to cart \"ALMO_MCM01\" and \"100\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ALMO_MCM01",
+                  "offset": 18
+                },
+                {
+                  "val": "100",
+                  "offset": 35
+                }
+              ],
+              "location": "LoginStepDefinition.getAddCatalog(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 45,
+            "name": "goto checkout page",
+            "match": {
+              "location": "LoginStepDefinition.goto_checkout()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 46,
+            "name": "Verify Cart With DB",
+            "match": {
+              "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Catalog",
+                  "qty"
+                ],
+                "line": 47
+              },
+              {
+                "cells": [
+                  "ALMO_MCM01",
+                  "100"
+                ],
+                "line": 48
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 49,
+                "value": "#Then goto catalog screen and PO selection validation check"
+              },
+              {
+                "line": 50,
+                "value": "#Then Plus Add to cart \"ALMO_MCM01\" and \"50\""
+              },
+              {
+                "line": 51,
+                "value": "#Then goto checkout page"
+              },
+              {
+                "line": 52,
+                "value": "#Then Verify Cart With DB"
+              },
+              {
+                "line": 53,
+                "value": "#| Catalog | qty |"
+              },
+              {
+                "line": 54,
+                "value": "#| ALMO_MCM01     | 100 |"
+              },
+              {
+                "line": 55,
+                "value": "#| ALMO_MCM01    | 50  |"
+              }
+            ],
+            "line": 56,
+            "name": "Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date",
+            "match": {
+              "location": "LoginStepDefinition.select_checkout_details()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 57,
+            "name": "Confirm Order",
+            "match": {
+              "location": "LoginStepDefinition.confirm_order()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 58,
+            "name": "Verify catalog RPO with DB",
+            "match": {
+              "location": "LoginStepDefinition.RPOWithDB(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Catalog",
+                  "qty"
+                ],
+                "line": 59
+              },
+              {
+                "cells": [
+                  "ALMO_MCM01",
+                  "100"
+                ],
+                "line": 60
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 61,
+                "value": "#| ALMO_MCM01    | 50  |"
+              }
+            ],
+            "line": 62,
+            "name": "Print Confirmation and done",
+            "match": {
+              "location": "LoginStepDefinition.print_confirmation_done()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 63,
+            "name": "Goto Report\u003eOrder Status",
+            "match": {
+              "location": "LoginStepDefinition.order_status_check()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 64,
             "name": "Logout",
             "match": {
               "location": "LoginStepDefinition.logout()"
@@ -115,7 +281,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 27,
+            "line": 65,
             "name": "Close Browser",
             "match": {
               "location": "LoginStepDefinition.close_the_browser()"
@@ -125,8 +291,8 @@
         ],
         "tags": [
           {
-            "line": 15,
-            "name": "@LoginValidation"
+            "line": 35,
+            "name": "@CatalogItem"
           }
         ]
       }
