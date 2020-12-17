@@ -62,10 +62,28 @@ public class SqlConnection
 		    long num = Long.parseLong(b);
 		    //System.out.println(num);
             // Create and execute a SELECT SQL statement.
+			/*
+			 * String selectSql =
+			 * "	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*"
+			 * + "	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" +
+			 * "	where bigintShoppingCartNo = "+ num;
+			 */
+            
             String selectSql = 
-            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
+            		"	SELECT [bigintId],[bigIntRPO],[varVendorId]" + 
+            		"		  ,[bigIntShoppingCartNo],[intStatus],[varPONumber]" + 
+            		"		  ,[varEAN],[intQuantity],[intPOLineNo],[bigintOriginalId]" + 
+            		"		  ,[bigintOrderQty],[Brand],[Qty],[varItemCode],*" + 
+            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
             		"	where bigintShoppingCartNo = "+ num;
+			/*
+			 * SELECT TOP (1000) [bigintId],[bigIntRPO]
+			 * ,[bigIntShoppingCartNo],[intStatus],[varPONumber],[varVendorId],[varItemCode]
+			 * ,[varEAN],[intQuantity],[intPOLineNo],[bigintOriginalId]
+			 * ,[bigintOrderQty],[Brand],[Qty] ,* FROM
+			 * [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where
+			 * bigIntShoppingCartNo=3000007113
+			 */
              resultSet = statement.executeQuery(selectSql);
             int i=1;
             // Print results from select statement
@@ -87,7 +105,6 @@ public class SqlConnection
             	System.out.println
             	(			" | N"	 	
 		                + " | " + "bigintShoppingCartNo"
-		                + " | "	+ "bigintOriginalQty"
 		                + " | " + "bigintOrdQty"
 		                + " | " + "intStatus"
 		                + " | " + "bigIntRPO"
@@ -96,8 +113,8 @@ public class SqlConnection
                 System.out.println
                 (
                   " | "	+ i	
-                + " | "	+ resultSet.getString("bigintOriginalQty")
-                + " | " + resultSet.getString("bigintOrdQty")
+                + " | "	+ resultSet.getString("bigintShoppingCartNo")
+                + " | " + resultSet.getString("bigintOrderQty")
                 + " | " + resultSet.getString("intStatus")
                 + " | " + resultSet.getString("bigIntRPO")
                 + " | " + resultSet.getString("varItemCode")
@@ -141,11 +158,23 @@ public class SqlConnection
 					    	String corqty=(list.get(k).get("qty"));
 					    	//System.out.println("Customer order qty" + corqty);
 					 // Create SELECT SQL statement.
-			            String selectSql = 
-			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
-			            		"	where bigintShoppingCartNo = "+ num + "AND bigintOrdQty= "+corqty +"AND varItemCode=" +"'"+catItem +"'";
-			            
+					    	
+					    	String selectSql= 
+				            		"	SELECT [bigintId],[bigIntRPO],[varVendorId]" + 
+				            		"		  ,[bigIntShoppingCartNo],[intStatus],[varPONumber]" + 
+				            		"		  ,[varEAN],[intQuantity],[intPOLineNo],[bigintOriginalId]" + 
+				            		"		  ,[bigintOrderQty],[Brand],[Qty],[varItemCode],*" + 
+				            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+				            		"	where bigintShoppingCartNo = "+ num
+				            		+ " AND intQuantity= "+corqty
+				            		+ " AND varItemCode=" +"'"+catItem +"'";
+				/*
+				 * String selectSql =
+				 * "	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*"
+				 * + "	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" +
+				 * "	where bigintShoppingCartNo = "+ num + "AND bigintOrdQty= "+corqty
+				 * +"AND varItemCode=" +"'"+catItem +"'";
+				 */
 				    	System.out.println(selectSql);
 
 						 connection = DriverManager.getConnection(connectionUrl);
@@ -175,8 +204,7 @@ public class SqlConnection
 					            	System.out.println
 					            	(" | N"	 	
 							                + " | " + "bigintShoppingCartNo"
-							                + " | "	+ "bigintOriginalQty"
-							                + " | " + "bigintOrdQty"
+							                + " | " + "intQuantity"
 							                + " | " + "intStatus"
 							                + " | " + "bigIntRPO"
 							                + " | " + "varItemCode"
@@ -185,8 +213,7 @@ public class SqlConnection
 					                (
 					                  " | "	+ i	
 						                + " | " + resultSet1.getString("bigintShoppingCartNo")
-						                + " | "	+ resultSet1.getString("bigintOriginalQty")
-						                + " | " + resultSet1.getString("bigintOrdQty")
+						                + " | "	+ resultSet1.getString("intQuantity")
 						                + " | " + resultSet1.getString("intStatus")
 						                + " | " + resultSet1.getString("bigIntRPO")
 						                + " | " + resultSet1.getString("varItemCode")
@@ -194,19 +221,19 @@ public class SqlConnection
 					                );
 					                
 					                String status=resultSet1.getString("intStatus");
-					                //System.out.println("tbl_Cust_Mango_Parser recorde status" + status);
+					                //System.out.println("tbl_Cust_AlvaroMoreno_Parser recorde status" + status);
 
 							             if (status.equalsIgnoreCase("3"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass");
 							             }
 							             else if(status.equalsIgnoreCase("4"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass");
 							             }
 							             else
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Fail");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail");
 							             }
 					                i=i+1;
 					            }
@@ -277,16 +304,16 @@ public class SqlConnection
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
-			            		+ "where bigintShoppingCartNo  = "+ num+"AND varItemCode=" +"'"+catItem +"'" +"AND bigIntOriginalTotal_Size_Qty="+corqty;
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+			            		+ "where bigintShoppingCartNo  = "+ num
+			            		+" AND varItemCode=" +"'"+catItem +"'" 
+			            		+" AND bigintQuantity="+corqty;
 				    	System.out.println(selectSql2);
 
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement1 = connection.createStatement();
 					    
-			             
-			             	
-			          
+			       
 			            int j=1;
 			            resultSet2=null;
 			            resultSet2 = statement1.executeQuery(selectSql2);
@@ -297,21 +324,17 @@ public class SqlConnection
 						            	System.out.println
 						            	(" | N"	 	
 								                + " | " + "bigintShoppingCartNo"
-								                + " | "	+ "bigintOriginalQty"
-								                + " | " + "bigintOrdQty"
+								                + " | "	+ "bigintQuantity"
 								                + " | " + "intStatus"
-								                + " | " + "bigIntRPO"
 								                + " | " + "varItemCode"
 								                + " | ");
 						                System.out.println
 						                (
 						                		" | "	+ j	
-						                		+ " | " + resultSet2.getString("bigIntId")
 						                		+ " | " + resultSet2.getString("bigintShoppingCartNo")
-						                		+ " | " + resultSet2.getString("varItemCode")
-						                		+ " | " + resultSet2.getString("varItemCode")
+						                		+ " | " + resultSet2.getString("bigintQuantity")
 						                		+ " | " + resultSet2.getString("intStatus")
-						                		+ " | " + resultSet2.getString("bigIntOriginalTotal_Size_Qty")
+						                		+ " | " + resultSet2.getString("varItemCode")
 						                		+ " | "
 						                );
 						                

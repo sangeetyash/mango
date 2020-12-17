@@ -65,8 +65,25 @@ public class LoginStepDefinition
 
 		  //System.setProperty("webdriver.chrome.driver","F:\\ProjectSpace\\Cucumber-TestNG-master two\\Cucumber-TestNG-master\\Drivers\\chromedriver.exe"); 
 		 Thread.sleep(2000);
-		 System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver.exe"); 
-		 driver = new ChromeDriver();
+		 if(browser.equalsIgnoreCase("chrome")) 
+		  {
+		  
+		  Thread.sleep(2000);
+		  System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver1.exe");
+		  driver = new ChromeDriver();
+		  }
+		  else if(browser.equalsIgnoreCase("Firefox")) 
+		  {
+		  System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
+		  driver = new FirefoxDriver(); 
+		  }
+		 	
+		  else 
+		  {
+			  System.out.println("Invalid unsupported browser");
+
+		  }
+		 
 		 //System.out.println("Browser"+browser);
 		/*
 		 * if (browser == "Chrome") {

@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 //import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 //import pageObjects.Wait;
@@ -27,14 +28,21 @@ public class CatalogItems {
 	}
 	
 	public void getCatlogScreen() throws InterruptedException 
-	{
-		
-		 WebElement username = driver.findElement(By.className("Order"));
-		 username.click();
-		 getWait(4000); 
+	{		        
+			
+		 Actions actions = new Actions(driver);
+
+		 getWait(2000); 
+		 WebElement Ordermenu = driver.findElement(By.className("Order"));
+		 actions.moveToElement(Ordermenu).perform();
+
+		 //Ordermenu.click();
+		 getWait(3000); 
 		 // *[@id="Catalog Items"] 
-		 WebElement catalog = driver.findElement(By.id("Catalog")); 
-		 catalog.click();
+		 WebElement catalogsubmenu = driver.findElement(By.id("Catalog")); 
+		 actions.moveToElement(catalogsubmenu).perform();
+		 getWait(1500);
+		 catalogsubmenu.click();
 		 getWait(3000);
 		 //WebElement addToCart=driver.findElement(By.name("AddToCart"));
 		 //id=btnSave
@@ -164,6 +172,7 @@ public class CatalogItems {
 				  //System.out.println("itemvise if condition");
 				  WebElement cheoxckb = driver.findElement(By.xpath("//table[@id='tblUserProfile']/tbody/tr[" + r + "]/td[1]/div/input"));
 				  cheoxckb.click();
+				  
 				  WebElement addToCart=driver.findElement(By.id("btnSave"));
 
 				  addToCart.click();
@@ -183,7 +192,8 @@ public class CatalogItems {
 				  WebElement itemQty = driver.findElement(By.xpath("//table[@id='tblUserProfile']/tbody/tr[" + r + "]/td[5]/input"));
 				  itemQty.clear();
 				  itemQty.sendKeys(qty);
-				
+				  getWait(1000);
+
 				//WebElement addToCart=driver.findElement(By.name("AddToCart"));
 				  addToCart.click();
 				  getWait(2000);

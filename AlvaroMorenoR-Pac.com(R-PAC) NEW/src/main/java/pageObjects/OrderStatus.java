@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 import com.project.managers.PageObjectManager;
@@ -23,13 +24,18 @@ public class OrderStatus {
 	
 	public void getOrderStutus() throws InterruptedException
 	{
+		Actions actions = new Actions(driver);
+
+	
 		getWait(2000);
 
 		WebElement lreport = driver.findElement(By.className("Reports"));
+		actions.moveToElement(lreport).perform();
 		lreport.click();
 		getWait(2000);
 		// *[@id="Release"]
 		WebElement oStatus = driver.findElement(By.linkText("Order Status"));
+		actions.moveToElement(oStatus).perform();
 		oStatus.click();
 		getWait(2000);
 		

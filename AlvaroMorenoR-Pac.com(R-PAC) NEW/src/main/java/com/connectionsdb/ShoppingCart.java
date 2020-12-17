@@ -78,11 +78,27 @@ public class ShoppingCart {
 					    	//System.out.println("Customer order qty" + corqty);
 					 // Create SELECT SQL statement.
 			            
-			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
-			            		+ "where bigintShoppingCartNo  = " + num+ 
-			            		" AND bigIntOriginalTotal_Size_Qty=" +corqty+ 
-			            		" AND varItemCode=" + "'" +catItem + "'" ;
+					    	 String selectSql2=
+					            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+					            		+ "where bigintShoppingCartNo  = "+ num+
+					            		" AND varItemCode=" +"'"+catItem +"'" +
+					            		" AND bigintOrderQty="+corqty;
+			            
+				/*
+				 * String selectSql2=
+				 * "SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] " +
+				 * "where bigintShoppingCartNo  = "+ num+ "AND varItemCode=" +"'"+catItem +"'" +
+				 * "AND bigintOrderQty="+corqty;
+				 */
+				/*
+				 * String selectSql= "	SELECT [bigintId],[bigIntRPO],[varVendorId]" +
+				 * "		  ,[bigIntShoppingCartNo],[intStatus],[varPONumber]" +
+				 * "		  ,[varEAN],[intQuantity],[intPOLineNo],[bigintOriginalId]" +
+				 * "		  ,[bigintOrderQty],[Brand],[Qty],[varItemCode],*" +
+				 * "	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" +
+				 * "	where bigintShoppingCartNo = "+ num
+				 * +"AND intQuantity= "+corqty+" AND varItemCode=" +"'"+catItem +"'";
+				 */
 			            System.out.println(selectSql2);
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement1 = connection.createStatement();
@@ -97,29 +113,33 @@ public class ShoppingCart {
 						            while (resultSet2.next())
 						            {
 						            	
-
+						            	System.out.println
+						            	(" | N"	 	
+								                + " | " + "bigintShoppingCartNo"
+								                + " | "	+ "bigintQuantity"
+								                + " | " + "intStatus"
+								                + " | " + "varItemCode"
+								                + " | ");
 						                System.out.println
 						                (
 						                		" | "	+ j	
-						                		+ " | " + resultSet2.getString(1)
-						                		+ " | " + resultSet2.getString(2)
-						                		+ " | " + resultSet2.getString(4)
-						                		+ " | " + resultSet2.getString(5)
-						                		+ " | " + resultSet2.getString(6)
+						                		+ " | " + resultSet2.getString("bigintShoppingCartNo")
+						                		+ " | " + resultSet2.getString("bigintQuantity")
+						                		+ " | " + resultSet2.getString("intStatus")
+						                		+ " | " + resultSet2.getString("varItemCode")
 						                		+ " | "
 						                );
-						                
 						                //String status2=resultSet1.getString("intStatus");
-								    	//System.out.println("tbl_Cust_Mango_ShoppingCart recorde status" + resultSet2.getString(5));
+								    	//System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart recorde status" + resultSet2.getString(5));
 
 								    	//resultSet2.getString("intStatus")
-								    	if((resultSet2.getString(5)).equalsIgnoreCase("4"))
+								    	if(resultSet2.getString("intStatus").equalsIgnoreCase("4"))
 								             {
-								            	 System.out.println("tbl_Cust_Mango_ShoppingCart table check Pass");
+								            	 System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart table check Pass");
 								             }
 								             else
 								             {
-								            	 System.out.println("tbl_Cust_Mango_ShoppingCart table check Fail");
+								            	 System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart table check Fail");
 								             }
 						                j=j+1;
 						            }
