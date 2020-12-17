@@ -82,7 +82,8 @@ public class POShoppingCart {
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
 			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
-			            		"	where bigintShoppingCartNo = "+ num + "AND varEAN=" +"'"+EANC +"'";
+			            		"	where bigintShoppingCartNo = "+ num 
+			            		+ "AND varEAN=" +"'"+EANC +"'";
 			            
 			            	System.out.println("SQL Query = " + selectSql);
 						 connection = DriverManager.getConnection(connectionUrl);
@@ -208,7 +209,8 @@ public class POShoppingCart {
 			            
 			            String selectSql2=
 			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
-			            		+ "where bigintShoppingCartNo  = "+ num + "AND varEAN=" +"'"+EANC +"'" ;
+			            		+ "where bigintShoppingCartNo  = "+ num 
+			            		+ "AND varEAN=" +"'"+EANC +"'" ;
 			            
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement1 = connection.createStatement();

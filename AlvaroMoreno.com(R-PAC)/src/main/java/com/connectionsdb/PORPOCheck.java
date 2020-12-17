@@ -206,8 +206,10 @@ public class PORPOCheck {
 			            
 			            String selectSql2=
 			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
-			            		+ "where bigintShoppingCartNo  = "+ num + "AND varEAN=" +"'"+EANC +"'" ;
-			            System.out.println("SQL Query = " + selectSql2);
+			            		+ "where bigintShoppingCartNo  = "+ num 
+			            		+ " AND varEAN=" +"'"+EANC +"'" ;
+			            
+			             System.out.println("SQL Query = " + selectSql2);
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement1 = connection.createStatement();
 					    

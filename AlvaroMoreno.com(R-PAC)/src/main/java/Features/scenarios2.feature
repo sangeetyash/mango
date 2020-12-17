@@ -34,19 +34,19 @@ Then goto checkout page
 Then Verify Cart With DB
 | Catalog | qty |
 | ALMO_MCM01    | 100 |
-Then goto catalog screen and PO selection validation check
-Then Plus Add to cart "ALMO_MCM01" and "50"
-Then goto checkout page
-Then Verify Cart With DB
-| Catalog | qty |
-| ALMO_MCM01     | 100 |
-| ALMO_MCM01    | 50  |
+#Then goto catalog screen and PO selection validation check
+#Then Plus Add to cart "ALMO_MCM01" and "50"
+#Then goto checkout page
+#Then Verify Cart With DB
+#| Catalog | qty |
+#| ALMO_MCM01     | 100 |
+#| ALMO_MCM01    | 50  |
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
 Then Confirm Order
 Then Verify catalog RPO with DB
 | Catalog | qty |
 | ALMO_MCM01     | 100 |
-| ALMO_MCM01    | 50  |
+#| ALMO_MCM01    | 50  |
 Then Print Confirmation and done
 Then Goto Report>Order Status
 Then Logout

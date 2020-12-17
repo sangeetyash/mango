@@ -81,13 +81,14 @@ public class RPOScreen {
 				    		
 					    	String catItem=(list.get(k).get("Catalog"));
 					    	//System.out.println("Catalog item" + catItem);
-					    	String corqty=(list.get(k).get("Qty"));
+					    	String corqty=(list.get(k).get("qty"));
 					    	//System.out.println("Customer order qty" + corqty);
 					 // Create SELECT SQL statement.
 			            String selectSql = 
 			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
 			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
-			            		"	where bigintShoppingCartNo = "+ num + "AND varItemCode=" +"'"+catItem +"'";
+			            		"	where bigintShoppingCartNo = "+ num 
+			            		+ " AND varItemCode=" +"'"+catItem +"'";
 			            System.out.println(selectSql);
 			            
 						 connection = DriverManager.getConnection(connectionUrl);
@@ -111,29 +112,31 @@ public class RPOScreen {
 						 */
 			            i=1;
 			            
-					            while (resultSet1.next())
-					            {
-					            	System.out.println
-					            	(" | N"	 	
-							                + " | " + "bigintShoppingCartNo"
-							                + " | "	+ "bigintOriginalQty"
-							                + " | " + "bigintOrdQty"
-							                + " | " + "intStatus"
-							                + " | " + "bigIntRPO"
-							                + " | " + "varItemCode"
-							                + " | ");
-					            	
-					                System.out.println
-					                (
-					                  " | "	+ i	
-						                + " | " + resultSet1.getString("bigintShoppingCartNo")
-						                + " | "	+ resultSet1.getString("bigintOriginalQty")
-						                + " | " + resultSet1.getString("bigintOrdQty")
-						                + " | " + resultSet1.getString("intStatus")
-						                + " | " + resultSet1.getString("bigIntRPO")
-						                + " | " + resultSet1.getString("varItemCode")
-						                + " | "
-					                );
+			        
+			            
+			            while (resultSet1.next())
+			            {
+			            	
+			            	System.out.println
+			            	(			" | N"	 	
+					                + " | " + "bigintShoppingCartNo"
+					                + " | " + "bigintOrdQty"
+					                + " | " + "intStatus"
+					                + " | " + "bigIntRPO"
+					                + " | " + "varItemCode"
+					                + " | ");
+			                System.out.println
+			                (
+			                  " | "	+ i	
+			                + " | "	+ resultSet.getString("bigintShoppingCartNo")
+			                + " | " + resultSet.getString("bigintOrderQty")
+			                + " | " + resultSet.getString("intStatus")
+			                + " | " + resultSet.getString("bigIntRPO")
+			                + " | " + resultSet.getString("varItemCode")
+			                + " | "
+			                );
+			           
+
 					                
 					                String status=resultSet1.getString("intStatus");
 							    	//System.out.println("tbl_Cust_AlvaroMoreno_Parser recorde status" + status);
@@ -150,19 +153,19 @@ public class RPOScreen {
 							             {
 							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail");
 							             }
-					                i=i+1;
-					            }
+			             i=i+1;
+					    }
 					            
 			            //resultSet1.close();
 			            
 			            
 			            
 			            //statement.close();
-					}
+		}
 
-        }
-		
         
+		
+        }
         catch (SQLException e) 
         {
             e.printStackTrace();
@@ -220,10 +223,19 @@ public class RPOScreen {
 					    	//System.out.println("Customer order qty" + corqty);
 					 // Create SELECT SQL statement.
 			            
-			            String selectSql2=
-			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
-			            		+ "where bigintShoppingCartNo  = "+ num+"AND varItemCode=" +"'"+catItem +"'" +"AND bigIntOriginalTotal_Size_Qty="+corqty;
-			            System.out.println(selectSql2);
+				/*
+				 * String selectSql2=
+				 * "SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] " +
+				 * "where bigintShoppingCartNo  = "+ num+"AND varItemCode=" +"'"+catItem +"'"
+				 * +"AND bigIntOriginalTotal_Size_Qty="+corqty;
+				 */
+
+			            String selectSql2=	"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+	            		+ "where bigintShoppingCartNo  = "+ num
+	            		+" AND varItemCode=" +"'"+catItem +"'" 
+	            		+" AND bigintOrderQty="+corqty;
+			            
+			             System.out.println(selectSql2);
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement1 = connection.createStatement();
 					    
