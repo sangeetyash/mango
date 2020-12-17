@@ -2,13 +2,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="BDD Test Suite" verbose="1" parallel="tests"
 	thread-count="2" configfailurepolicy="continue">
-	<test name="R-PAC Test" annotations="JDK"
+	<test name="R-PAC Test1" annotations="JDK"
 		preserve-order="true">
 		<classes>
 			<class name="MyRunner.TestRunner"/>
 		</classes>
 		
 	</test>
+	<!-- <test name="R-PAC Test" annotations="JDK"
+		preserve-order="true">
+		<classes>
+			<class name="MyRunner.TestRunner2"/>
+		</classes>
+		
+	</test> -->
 	
 	<!-- 
 		<test name="R-PAC Test1" annotations="JDK"

@@ -8,7 +8,7 @@ import pageObjects.ReleasePO;
 import pageObjects.CatalogItems;
 import pageObjects.*;
 import com.connectionsdb.*;
-
+import enums.*;
 
 public class PageObjectManager 
 {
@@ -25,6 +25,7 @@ public class PageObjectManager
 	private POShoppingCart poShoppingCart;
 	private POALLQTYShopping poALLQTYShopping;
 	private POALLQTYCheck poALLQTYCheck;
+	private BrowserSelectType browserSelectType;
 
 	
 	public PageObjectManager(WebDriver driver) 
@@ -100,4 +101,10 @@ public class PageObjectManager
 	{
 		return (poALLQTYCheck == null) ? poALLQTYCheck=new POALLQTYCheck(driver) : poALLQTYCheck;
 	}
+	
+	public BrowserSelectType getBrowserSelectType()
+	{
+		return (browserSelectType == null) ? browserSelectType=new BrowserSelectType(driver) : browserSelectType;
+	}
+
 }

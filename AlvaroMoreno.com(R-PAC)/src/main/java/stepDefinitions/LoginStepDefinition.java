@@ -4,10 +4,17 @@ package stepDefinitions;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.DataTable;
 //import cucumber.api.DataTable;
@@ -15,7 +22,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pageObjects.*;
-
+import enums.*;
 import com.connectionsdb.*;
 import com.project.managers.*;
 //import MyRunner.TestRunner;
@@ -41,7 +48,7 @@ public class LoginStepDefinition
 	POShoppingCart poShoppingCart;
 	POALLQTYShopping poALLQTYShopping;
 	POALLQTYCheck poALLQTYCheck;
-	
+	BrowserSelectType browserSelectType;	 
 	WebDriver driver;
 	List<String> lst,rpoLIST=null;
 	String RPO="";
@@ -61,30 +68,60 @@ public class LoginStepDefinition
 	 @Given("^Navigate user to Login Page \"(.*)\" and \"(.*)\"$")
 	 public void navigateUser(String url, String browser) throws InterruptedException
 	 {
+		 try{
 	     startTime = System.currentTimeMillis();
 
-		  //System.setProperty("webdriver.chrome.driver","F:\\ProjectSpace\\Cucumber-TestNG-master two\\Cucumber-TestNG-master\\Drivers\\chromedriver.exe"); 
-		 Thread.sleep(2000);
-		 System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver.exe"); 
-		 driver = new ChromeDriver();
-		 //System.out.println("Browser"+browser);
-		/*
-		 * if (browser == "Chrome") {
-		 * System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver.exe");
-		 * driver = new ChromeDriver(); } else if (browser == "Firefox") { driver = new
-		 * FirefoxDriver(); } else if (browser == "IE") { driver = new
-		 * InternetExplorerDriver(); }
-		 */
 		
-		  driver.manage().window().maximize();
+		  //System.setProperty("webdriver.chrome.driver","F:\\ProjectSpace\\Cucumber-TestNG-master two\\Cucumber-TestNG-master\\Drivers\\chromedriver.exe"); 
+		  
+		  if(browser.equalsIgnoreCase("chrome")) {
+		  
+		  Thread.sleep(2000);
+		  System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver1.exe");
+		  driver = new ChromeDriver(); } else if(browser.equalsIgnoreCase("firefox")) {
+		  System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
+		  driver = new FirefoxDriver(); 
+		  }
+		 		
+		  else if (browser == "Chrome") 
+		  {
+		  System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver.exe");
+		  driver = new ChromeDriver(); } else if (browser == "Firefox") { driver = new
+		  FirefoxDriver(); } else if (browser == "IE") { driver = new
+		  InternetExplorerDriver(); 
+		  }
+		  else 
+		  {
+			  System.out.println("Invalid unsupported browser");
+
+		  }
+		 
+		
+		  //driver.manage().window().maximize();
+		  //driver.manage().deleteAllCookies();
+		  //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		  //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	     
 		  pageObjectManager=new PageObjectManager(driver);
+		  
+		  //browserSelectType=pageObjectManager.getBrowserSelectType();
+		  //browserSelectType.selectBrowser(browser);
+		  browserSelectType.navigateTo_LoginUserPassword(url);
 		  loginUserPassword=pageObjectManager.getLoginUserPassword();
-		  loginUserPassword.navigateTo_LoginUserPassword(url);
+		  //loginUserPassword.navigateTo_LoginUserPassword(url);
+		  
 		  endTime = System.currentTimeMillis();
 		  totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;
+		  
 		  System.out.println("^Navigate user to Login Page with " + browser + " -> " + url );
 		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 }
+		 catch(Exception e)
+		 {
+			 System.out.println("Exception e");
+
+		 }
 	 }
 	
 	
@@ -104,7 +141,17 @@ public class LoginStepDefinition
 		  System.out.println("And  time taken=" +totalTime+" secs\n");
 	 }
 	
+	 @When("^start$")
+	 public void start()
+	 {
+		  startTime = System.currentTimeMillis();
+		  endTime = System.currentTimeMillis();
+		  totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
 
+		  System.out.println("^start"  );
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
+	 }
 	 @When("^Connection$")
 	 public void Connection() throws InterruptedException
 	 {
@@ -240,7 +287,15 @@ public class LoginStepDefinition
 
 		 
 		}
-	 
+	 @Then("^Google Search \"([^\"]*)\"$")
+	 public void googlesarch(String search) throws InterruptedException, SQLException
+	 { 		 
+		 pageObjectManager=new PageObjectManager(driver);
+		  
+		  browserSelectType=pageObjectManager.getBrowserSelectType();
+		  browserSelectType.getTitle();
+		 
+	 }
 	 // Search supplier ID "0593"
 	 @Then("^Search supplier ID \"([^\"]*)\"$")
 	 public void SuppilerSearch(String suid) throws InterruptedException 
@@ -1123,6 +1178,8 @@ public class LoginStepDefinition
 			 System.exit(0);
 		 }
 	 }
+	 
+	//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/input
 	 
 	 @Then("^Verify EAN and RPO with DB$")
 	 public void verifyEANQtyRPOData(DataTable EANQtyRPOData) throws InterruptedException, SQLException
