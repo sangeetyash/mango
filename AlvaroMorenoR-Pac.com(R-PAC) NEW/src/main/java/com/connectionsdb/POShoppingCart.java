@@ -206,7 +206,7 @@ public class POShoppingCart {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
+			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num 
 			            		+ "AND varEAN=" +"'"+EANC +"'" ;
 			            

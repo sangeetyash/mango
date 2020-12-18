@@ -109,7 +109,7 @@ public class ReleasePO {
 	}
 
 	public void searchSupplier(String suppiler_id) throws InterruptedException {
-		WebElement seaech1 = driver.findElement(By.id("searchId4"));
+		WebElement seaech1 = driver.findElement(By.id("searchId1"));
 		seaech1.sendKeys(suppiler_id);
 		seaech1.sendKeys(Keys.ENTER);
 		// driver.findElement(By.id("searchId0")).sendKeys(Keys.ENTER);

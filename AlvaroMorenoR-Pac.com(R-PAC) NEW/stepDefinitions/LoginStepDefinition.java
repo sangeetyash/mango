@@ -57,7 +57,10 @@ public class LoginStepDefinition
 	//2. \"(.*)\"
 	//   e.g. "sample"
 	//3. \"([^\"]*)\"$"
-
+	public LoginStepDefinition(WebDriver driver) 
+	{
+		this.driver = driver;
+	}
 	 @Given("^Navigate user to Login Page \"(.*)\" and \"(.*)\"$")
 	 public void navigateUser(String url, String browser) throws InterruptedException
 	 {
@@ -719,7 +722,7 @@ public class LoginStepDefinition
 	 {
 		 startTime = System.currentTimeMillis();
 
-		 checkout=pageObjectManager.getcheckOut();
+	 checkout=pageObjectManager.getcheckOut();
 		 ShoppingCartNo=checkout.shoppingCartNo();
 		 checkout.orderConfirm();
 		 

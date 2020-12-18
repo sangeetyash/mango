@@ -304,7 +304,8 @@ public class SqlConnection
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+			            		"SELECT * "
+			            		+ "FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num
 			            		+" AND varItemCode=" +"'"+catItem +"'" 
 			            		+" AND bigintQuantity="+corqty;

@@ -68,12 +68,21 @@ public class POALLQTYShopping {
 		    //System.out.println(num);
 	
 					 // Create SELECT SQL statement.
-			            String selectSql = 
-			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
-			            		"	where bigintShoppingCartNo = "+ num ;
+			/*
+			 * String selectSql = "	SELECT *" +
+			 * "	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" +
+			 * "	where bigintShoppingCartNo = "+ num ;
+			 */
 			            
-			             System.out.println("SQL Query="+selectSql);
+			            String selectSql = 
+			            		"SELECT [bigintId],[bigIntRPO],[varVendorId]" + 
+			            		",[bigIntShoppingCartNo],[intStatus],[varPONumber]" + 
+			            		",[varEAN],[intQuantity],[intPOLineNo],[bigintOriginalId]" + 
+			            		",[bigintOrderQty],[Brand],[Qty],[varItemCode],*" + 
+			            		"FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"where bigintShoppingCartNo = "+ num;
+			            
+			             System.out.println("SQL Query="+selectSql+"\n");
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement = connection.createStatement();
 					     resultSet1= null;
@@ -97,12 +106,19 @@ public class POALLQTYShopping {
 			            
 					            while (resultSet1.next())
 					            {
+					            	System.out.println
+					            	(" | No."	 	
+							                + " | " + "bigintShoppingCartNo"
+							                + " | " + "bigintOrderQty"
+							                + " | " + "intStatus"
+							                + " | " + "bigIntRPO"
+							                + " | " + "varItemCode"
+							                + " | ");
 					                System.out.println
 					                (
 					                  " | "	+ i	
 						                + " | " + resultSet1.getString("bigintShoppingCartNo")
-						                + " | "	+ resultSet1.getString("bigintOriginalQty")
-						                + " | " + resultSet1.getString("bigintOrdQty")
+						                + " | " + resultSet1.getString("bigintOrderQty")
 						                + " | " + resultSet1.getString("intStatus")
 						                + " | " + resultSet1.getString("bigIntRPO")
 						                + " | " + resultSet1.getString("varItemCode")
@@ -114,15 +130,15 @@ public class POALLQTYShopping {
 
 							             if (status.equalsIgnoreCase("3"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
 							             }
 							             else if(status.equalsIgnoreCase("4"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
 							             }
 							             else
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Fail");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail\n");
 							             }
 					                i=i+1;
 					            }
@@ -179,11 +195,14 @@ public class POALLQTYShopping {
 
 		    	
 					 // Create SELECT SQL statement.
-			            
+			
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
+			            		"SELECT [bigIntId],[bigIntShoppingCartNo] ,[varPOnumber] "
+			            		+ ",[varItemCode] ,[varVendorId],[bigintQuantity] "
+			            		+ ",[bigintOrderQty] ,[intStatus] ,[bigintLeadTime],* "
+			            		+ "FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num  ;
-			             System.out.println("SQL Query="+selectSql2);
+			             System.out.println("SQL Query="+selectSql2+"\n");
 
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement1 = connection.createStatement();
@@ -198,14 +217,20 @@ public class POALLQTYShopping {
 							            {
 							            	
 
+							            	System.out.println
+							            	(" | No."	 	
+									                + " | " + "bigintShoppingCartNo"
+									                + " | "	+ "bigintQuantity"
+									                + " | " + "intStatus"
+									                + " | " + "varItemCode"
+									                + " | ");
 							                System.out.println
 							                (
 							                		" | "	+ j	
-							                		+ " | " + resultSet2.getString(1)
-							                		+ " | " + resultSet2.getString(2)
-							                		+ " | " + resultSet2.getString(4)
-							                		+ " | " + resultSet2.getString(5)
-							                		+ " | " + resultSet2.getString(6)
+							                		+ " | " + resultSet2.getString("bigintShoppingCartNo")
+							                		+ " | " + resultSet2.getString("bigintQuantity")
+							                		+ " | " + resultSet2.getString("intStatus")
+							                		+ " | " + resultSet2.getString("varItemCode")
 							                		+ " | "
 							                );
 							                
@@ -213,13 +238,13 @@ public class POALLQTYShopping {
 									    	//System.out.println("tbl_Cust_Mango_ShoppingCart recorde status" + resultSet2.getString(5));
 
 									    	//resultSet2.getString("intStatus")
-									    	if((resultSet2.getString(5)).equalsIgnoreCase("4"))
+									    	if((resultSet2.getString("intStatus")	).equalsIgnoreCase("4"))
 									             {
-									            	 System.out.println("tbl_Cust_Mango_ShoppingCart table check Pass");
+									            	 System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart table check Pass\n");
 									             }
 									             else
 									             {
-									            	 System.out.println("tbl_Cust_Mango_ShoppingCart table check Fail");
+									            	 System.out.println("tbl_Cust_AlvaroMoreno_ShoppingCart table check Fail\n");
 									             }
 							                j=j+1;
 							            }

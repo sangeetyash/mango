@@ -1,5 +1,21 @@
 Feature: R-PACMango.com CRM E-Coomerece Feature Main Finish..
+	
+@testcase50
+Scenario Outline: SQL Catalog back n forth
 
+Given Navigate user to Login Page "https://devrtrac.r-pac.com/Login/Index" and "Chrome"
+When title of login page
+Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user clicks on login button
+Then user is on home page
+Then Logout
+Then Close Browser	
+
+Examples:
+	| items | udateitems | 
+	| 1111  | 2222  |
+	
+	
 	
 @testcase55
 Scenario Outline: SQL Catalog back n forth
@@ -43,7 +59,7 @@ Scenario Outline: select 2 to 3 SKU and click on cart button then go to add to c
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "Test@123.com" and "User@123"
+Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
 Then Search Release PO page with CPO ID "8016"

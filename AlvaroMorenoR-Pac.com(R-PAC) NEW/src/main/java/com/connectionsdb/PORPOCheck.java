@@ -467,5 +467,215 @@ public class PORPOCheck {
 
 	}
 	
+	public void checkRPACTable1(String newList)
+	{
+		
+		String a="select * from [r-tracDB].[dbo].[tblOrder] where bigIntRPO in ("+newList+")";
+		String b="select * from [r-tracDB].[dbo].[tblOrderDetails] where bigIntRPO in ("+newList+")";
+		String c="select * from [r-tracDB].[dbo].[tblOrderSummary] where bigIntRPO in ("+newList+")";
+		String d="select * from [r-tracDB].[dbo].[tblOrderAddress] where bigIntRPO in ("+newList+")";
+		
+		  
+		 
+		/*
+		 * try {
+		 * 
+		 * 
+		 * 
+		 * // Create SELECT SQL statement.
+		 * 
+		 * 
+		 * connection = DriverManager.getConnection(connectionUrl); Statement statement1
+		 * = connection.createStatement();
+		 * 
+		 * resultSet7 = statement1.executeQuery(a); resultSet6=
+		 * statement1.executeQuery(b); resultSet5= statement1.executeQuery(c);
+		 * resultSet4= statement1.executeQuery(d);
+		 * 
+		 * if(resultSet7.next()) {
+		 * System.out.println("[r-tracDB].[dbo].[tblOrder] table updated successfully."
+		 * ); } else { System.out.
+		 * println("[r-tracDB].[dbo].[tblOrder] table updated unsuccessfully."); }
+		 * if(resultSet6.next()) {
+		 * System.out.println("[r-tracDB].[dbo].[tblOrder] table updated successfully."
+		 * ); } else { System.out.
+		 * println("[r-tracDB].[dbo].[tblOrder] table updated unsuccessfully."); }
+		 * 
+		 * if(resultSet5.next()) { System.out.
+		 * println("[r-tracDB].[dbo].[tblOrderSummary] table updated successfully."); }
+		 * else { System.out.
+		 * println("[r-tracDB].[dbo].[tblOrderSummary] table updated unsuccessfully.");
+		 * } if(resultSet4.next()) {
+		 * System.out.println("[dbo].[tblOrderAddress] table updated successfully."); }
+		 * else {
+		 * System.out.println("[dbo].[tblOrderAddress] table updated unsuccessfully.");
+		 * } }
+		 * 
+		 * 
+		 * catch (SQLException e) { e.printStackTrace(); } finally { if (resultSet7 !=
+		 * null) { try { resultSet7.close(); } catch (SQLException e) {
+		 * e.printStackTrace();} } if (resultSet6 != null) { try { resultSet6.close(); }
+		 * catch (SQLException e) { e.printStackTrace();} } if (resultSet5 != null) {
+		 * try { resultSet5.close(); } catch (SQLException e) { e.printStackTrace();} }
+		 * if (resultSet4 != null) { try { resultSet4.close(); } catch (SQLException e)
+		 * { e.printStackTrace();} } if (statement1 != null) { try { statement1.close();
+		 * } catch (SQLException e) { e.printStackTrace();} } if (connection != null) {
+		 * try { connection.close(); } catch (SQLException e) { e.printStackTrace();} }
+		 * }
+		 */
+		  checkRPACTabletblOrder1(newList);
+		  checkRPACTabletblOrderDetails1(newList);
+		  checkRPACTabletblOrderSummary1(newList);
+	}
+	public void checkRPACTabletblOrderSummary1(String newList)
+	{
 	
+		
+		String c="select * from [r-tracDB].[dbo].[tblOrderSummary] where bigIntRPO in ("+newList+")";
+		  System.out.println(c);
+
+		  try {
+	
+				  // Create SELECT SQL statement.
+				  
+				  
+				  connection = DriverManager.getConnection(connectionUrl); 
+				  Statement statement1= connection.createStatement();
+				  resultSet6 = statement1.executeQuery(c); 
+				  
+				  if(resultSet6.next()) 
+				  {
+				  System.out.println("[r-tracDB].[dbo].[tblOrderSummary] table updated successfully." ); 
+				  }
+				  else 
+				  { 
+					  System.out.println("[r-tracDB].[dbo].[tblOrderSummary] table updated unsuccessfully."); 
+				  }
+		   
+		  }
+		  
+		  catch (SQLException e) 
+		  { 
+			  e.printStackTrace();
+		   } 
+		  finally 
+		  {
+			  if (resultSet6 !=null) 
+			  { 
+				  try { resultSet6.close(); } catch (SQLException e) {
+		  e.printStackTrace();} 
+				  } 
+			  if (statement1 != null) 
+			  { try { statement1.close();
+		  } catch (SQLException e) { e.printStackTrace();} } 
+			  if (connection != null) {
+		  try { connection.close(); } catch (SQLException e) { e.printStackTrace();} }
+		  }
+		 
+
+	}
+	
+	public void checkRPACTabletblOrderDetails1(String newList)
+	{
+		
+		
+		String b="select * from [r-tracDB].[dbo].[tblOrderDetails] where bigIntRPO in ("+newList+")";
+		
+		
+		 System.out.println(b);
+		
+		  try {
+		  
+		  
+		  
+				  // Create SELECT SQL statement.
+				  
+				  
+				  connection = DriverManager.getConnection(connectionUrl); 
+				  Statement statement1= connection.createStatement();
+				  
+				  resultSet6 = statement1.executeQuery(b); 
+				 
+				  
+				  if(resultSet6.next()) 
+				  {
+				  System.out.println("[r-tracDB].[dbo].[tblOrderDetails] table updated successfully." ); 
+				  }
+				  else 
+				  { 
+					  System.out.println("[r-tracDB].[dbo].[tblOrderDetails] table updated unsuccessfully."); 
+				  }
+		   
+		  }
+		  
+		  catch (SQLException e) 
+		  { 
+			  e.printStackTrace();
+		   } 
+		  finally 
+		  {
+			  if (resultSet6 !=null) 
+			  { 
+				  try { resultSet6.close(); } catch (SQLException e) {
+		  e.printStackTrace();} 
+				  } 
+			  if (statement1 != null) 
+			  { try { statement1.close();
+		  } catch (SQLException e) { e.printStackTrace();} } 
+			  if (connection != null) {
+		  try { connection.close(); } catch (SQLException e) { e.printStackTrace();} }
+		  }
+		 
+
+	}
+	
+	public void checkRPACTabletblOrder1(String newList)
+	{
+		
+		String a="select * from [r-tracDB].[dbo].[tblOrder] where bigIntRPO in ("+newList+")";
+		
+		  System.out.println(a);
+
+		 
+		
+		  try {
+				  // Create SELECT SQL statement.
+				  
+				  
+				  connection = DriverManager.getConnection(connectionUrl); 
+				  Statement statement1= connection.createStatement();
+				  
+				  resultSet7 = statement1.executeQuery(a); 
+				  
+				  if(resultSet7.next()) 
+				  {
+				  System.out.println("[r-tracDB].[dbo].[tblOrder] table updated successfully." ); 
+				  }
+				  else 
+				  { 
+					  System.out.println("[r-tracDB].[dbo].[tblOrder] table updated unsuccessfully."); 
+				  }
+		   }
+		  
+		  
+		  catch (SQLException e) 
+		  { 
+			  e.printStackTrace();
+		   } 
+		  finally 
+		  {
+			  if (resultSet7 !=null) 
+			  { 
+				  try { resultSet7.close(); } catch (SQLException e) {
+		  e.printStackTrace();} 
+				  } 
+			  if (statement1 != null) 
+			  { try { statement1.close();
+		  } catch (SQLException e) { e.printStackTrace();} } 
+			  if (connection != null) {
+		  try { connection.close(); } catch (SQLException e) { e.printStackTrace();} }
+		  }
+		 
+
+	}
 }

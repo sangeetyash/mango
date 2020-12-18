@@ -59,7 +59,10 @@ public class LoginStepDefinition
 	//   e.g. "sample"
 	//3. \"([^\"]*)\"$"
 
-	 @Given("^Navigate user to Login Page \"(.*)\" and \"(.*)\"$")
+	
+
+
+	@Given("^Navigate user to Login Page \"(.*)\" and \"(.*)\"$")
 	 public void navigateUser(String url, String browser) throws InterruptedException
 	 {
 	     startTime = System.currentTimeMillis();
@@ -260,7 +263,7 @@ public class LoginStepDefinition
 		}
 	 
 	 // Search supplier ID "0593"
-	 @Then("^Search supplier ID \"([^\"]*)\"$")
+	 @Then("^Search Vendor ID \"([^\"]*)\"$")
 	 public void SuppilerSearch(String suid) throws InterruptedException 
 	 	{
 		 startTime = System.currentTimeMillis();
@@ -444,7 +447,7 @@ public class LoginStepDefinition
 		 	Thread.sleep(2000);
 
 			 releasePO.printArry();
-			 	Thread.sleep(2000);
+			 Thread.sleep(2000);
 
 		 	releasePO.addToCart();
 		 	Thread.sleep(2000);
@@ -1118,8 +1121,11 @@ public class LoginStepDefinition
 		 Thread.sleep(1200);
 		 checkout.printRPO(rpoLIST);
 		 Thread.sleep(2000);
+		 //checkout.printRPO(rpoLIST);
+		 //Thread.sleep(2000);
 
-		 poALLQTYCheck.checkRPACTable(rpoLIST);
+		 rpoScreen.checkRPACTable1(rpoListStr);
+		 //poALLQTYCheck.checkRPACTable(rpoLIST);
 		 Thread.sleep(1200);
 		 //poALLQTYShopping.allpoWithDBSCart(ShoppingCartNo);
 		 endTime = System.currentTimeMillis();

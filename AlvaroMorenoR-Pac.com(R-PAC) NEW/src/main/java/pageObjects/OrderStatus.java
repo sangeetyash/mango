@@ -45,8 +45,8 @@ public class OrderStatus {
 	}
 	
 	public void getSearch() throws InterruptedException
-	{	
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+	{		driver.get("http://devalvaromoreno.r-pac.com/AlvaroMoreno/OrderStatus/Index");
+        	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 			getWait(3000);
 	  		WebElement search = driver.findElement(By.xpath(".//*[@id='tblMangoOrderStatus_length']/span[2]/span/span"));
