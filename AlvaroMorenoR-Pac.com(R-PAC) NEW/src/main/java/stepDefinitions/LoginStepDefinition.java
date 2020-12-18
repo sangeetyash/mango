@@ -47,6 +47,7 @@ public class LoginStepDefinition
 	String RPO="";
 	String shID="";
 	String ShoppingCartNo;
+	String rpoListStr="";
 
 	
 	
@@ -808,9 +809,14 @@ public class LoginStepDefinition
 		 
 		 Thread.sleep(2000);
 		 rpoScreen=pageObjectManager.getRPOScreen();
+		 Thread.sleep(2000);
 		 rpoLIST=checkout.return_RPO();
 		 Thread.sleep(2000);
+		 checkout.printRPO(rpoLIST);
+		 rpoListStr=checkout.getRPOListString(rpoLIST);
+		 Thread.sleep(2000);
 		 rpoScreen.checkRPACTable(rpoLIST);
+		 
 		 checkout=pageObjectManager.getcheckOut();
 		 lst=checkout.return_RPO();
 		  shID=checkout.shoppingCart();
@@ -819,12 +825,12 @@ public class LoginStepDefinition
 		 checkout.orderDone();
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Confirm Order$" + "");	 
 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 @Then("^Confirm Order with double click$")
@@ -873,9 +879,11 @@ public class LoginStepDefinition
 		 orderStatus.getOrderStutus();
 		 Thread.sleep(2000);
 		 orderStatus.getSearch();
-		 Thread.sleep(1000);
+		 Thread.sleep(2000);
 		 orderStatus.searchRPO(rpoLIST);
-		 
+		 Thread.sleep(2000);
+		 checkout.printRPO(rpoLIST);
+
 		 endTime = System.currentTimeMillis();
 		totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;
@@ -1019,6 +1027,10 @@ public class LoginStepDefinition
 		 rpoScreen=pageObjectManager.getRPOScreen();
 		 rpoScreen.rpoCheckWithDBParse(ShoppingCartNo, dtRPO);
 		 rpoScreen.rpoWithDBSCart(ShoppingCartNo, dtRPO);
+
+		 checkout.printRPO(rpoLIST);
+		 Thread.sleep(2000);
+
 		 rpoScreen.checkRPACTable(rpoLIST);
 		 endTime = System.currentTimeMillis();
 		totalTime =(endTime-startTime)/1000;
@@ -1048,6 +1060,9 @@ public class LoginStepDefinition
 		 poRPOCheck.rpoCheckWithDBParse(ShoppingCartNo, dtaPOData);
 		 poRPOCheck.rpoWithDBSCart(ShoppingCartNo, dtaPOData);
 		 //rpoLIST= checkout.return_RPO();
+		 checkout.printRPO(rpoLIST);
+		 Thread.sleep(2000);
+
 		 poRPOCheck.checkRPACTable(rpoLIST);
 		 
 		 endTime = System.currentTimeMillis();
@@ -1101,6 +1116,9 @@ public class LoginStepDefinition
 		 poALLQTYCheck=pageObjectManager.getPOALLQTYCheck();
 		 poALLQTYCheck.allrpoCheckWithDBParse(ShoppingCartNo);
 		 Thread.sleep(1200);
+		 checkout.printRPO(rpoLIST);
+		 Thread.sleep(2000);
+
 		 poALLQTYCheck.checkRPACTable(rpoLIST);
 		 Thread.sleep(1200);
 		 //poALLQTYShopping.allpoWithDBSCart(ShoppingCartNo);
@@ -1150,6 +1168,9 @@ public class LoginStepDefinition
 		 poALLQTYCheck=pageObjectManager.getPOALLQTYCheck();
 		 poALLQTYCheck.rpoCheckWithDBParse(ShoppingCartNo, EANQtyRPOData);
 		 poALLQTYCheck.rpoWithDBSCart(ShoppingCartNo, EANQtyRPOData);
+		 checkout.printRPO(rpoLIST);
+		 Thread.sleep(2000);
+
 		 poALLQTYCheck.checkRPACTable(rpoLIST);
 		 
 		 endTime = System.currentTimeMillis();

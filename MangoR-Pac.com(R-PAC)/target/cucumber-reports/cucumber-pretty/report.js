@@ -397,14 +397,14 @@ formatter.match({
   "location": "LoginStepDefinition.navigateUser(String,String)"
 });
 formatter.result({
-  "duration": 17038060100,
+  "duration": 15603996100,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
 });
 formatter.result({
-  "duration": 5946300,
+  "duration": 12848100,
   "status": "passed"
 });
 formatter.match({
@@ -421,28 +421,28 @@ formatter.match({
   "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 25337602500,
+  "duration": 23868101000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_clicks_on_login_button()"
 });
 formatter.result({
-  "duration": 304200,
+  "duration": 76200,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_is_on_hopme_page()"
 });
 formatter.result({
-  "duration": 105600,
+  "duration": 99100,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.getCatalogScreen()"
 });
 formatter.result({
-  "duration": 15606326700,
+  "duration": 16351384800,
   "status": "passed"
 });
 formatter.match({
@@ -459,28 +459,28 @@ formatter.match({
   "location": "LoginStepDefinition.getAddCatalog(String,String)"
 });
 formatter.result({
-  "duration": 13608421400,
+  "duration": 13625498400,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.goto_checkout()"
 });
 formatter.result({
-  "duration": 3987696600,
+  "duration": 3733300700,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 4647129300,
+  "duration": 4076050800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.getCatalogScreen()"
 });
 formatter.result({
-  "duration": 15071229600,
+  "duration": 14711715500,
   "status": "passed"
 });
 formatter.match({
@@ -497,69 +497,70 @@ formatter.match({
   "location": "LoginStepDefinition.getAddCatalog(String,String)"
 });
 formatter.result({
-  "duration": 13337117600,
+  "duration": 13345808500,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.goto_checkout()"
 });
 formatter.result({
-  "duration": 2937371600,
+  "duration": 2791829100,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.verifyCartWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 4816257900,
+  "duration": 4391311900,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.select_checkout_details()"
 });
 formatter.result({
-  "duration": 10608709700,
+  "duration": 10597390000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.confirm_order()"
 });
 formatter.result({
-  "duration": 22087170800,
+  "duration": 25490463400,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.RPOWithDB(DataTable)"
 });
 formatter.result({
-  "duration": 2288942900,
+  "duration": 4788087300,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.print_confirmation_done()"
 });
 formatter.result({
-  "duration": 143800,
+  "duration": 69200,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.order_status_check()"
 });
 formatter.result({
-  "duration": 4138132900,
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"link text\",\"selector\":\"Order Status\"}\n  (Session info: chrome\u003d87.0.4280.88)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-M0JQEN5\u0027, ip: \u002720.0.0.5\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\GLOBAL~1\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:58273}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: c11b51ae605be3804d3f149a00b02c01\n*** Element info: {Using\u003dlink text, value\u003dOrder Status}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:373)\r\n\tat org.openqa.selenium.By$ByLinkText.findElement(By.java:246)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)\r\n\tat pageObjects.OrderStatus.getOrderStutus(OrderStatus.java:32)\r\n\tat stepDefinitions.LoginStepDefinition.order_status_check(LoginStepDefinition.java:856)\r\n\tat ✽.Then Goto Report\u003eOrder Status(scenarios2.feature:32)\r\n",
-  "status": "failed"
+  "duration": 12670096000,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.logout()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16712372100,
+  "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.close_the_browser()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3679646500,
+  "status": "passed"
 });
 });

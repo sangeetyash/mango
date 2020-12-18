@@ -77,7 +77,7 @@ public class PORPOCheck {
 		    	
 					 // Create SELECT SQL statement.
 			            String selectSql = 
-			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
+			            		"	SELECT *" + 
 			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num + "AND varEAN=" +"'"+EANC +"'";
 			            
@@ -110,8 +110,7 @@ public class PORPOCheck {
 					            	System.out.println
 					            	(" | N"	 	
 							                + " | " + "bigintShoppingCartNo"
-							                + " | "	+ "bigintOriginalQty"
-							                + " | " + "bigintOrdQty"
+							                + " | " + "bigintOrderQty"
 							                + " | " + "intStatus"
 							                + " | " + "bigIntRPO"
 							                + " | " + "varItemCode"
@@ -120,8 +119,7 @@ public class PORPOCheck {
 					                (
 					                  " | "	+ i	
 						                + " | " + resultSet1.getString("bigintShoppingCartNo")
-						                + " | "	+ resultSet1.getString("bigintOriginalQty")
-						                + " | " + resultSet1.getString("bigintOrdQty")
+						                + " | " + resultSet1.getString("bigintOrderQty")
 						                + " | " + resultSet1.getString("intStatus")
 						                + " | " + resultSet1.getString("bigIntRPO")
 						                + " | " + resultSet1.getString("varItemCode")

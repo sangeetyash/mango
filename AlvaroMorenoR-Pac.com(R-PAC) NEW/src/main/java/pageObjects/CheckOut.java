@@ -345,6 +345,23 @@ public class CheckOut
 		  
 		return newarryICodeAndTqty;
 	  }
+	 public void printRPO(List<String> RPO)
+	 {
+		 	List<String> nList= RPO;
+			int i =nList.size();
+			System.out.println("size"+i);
+	        String string = String.join(", ", nList); 
+	        System.out.println(string);
+	 }
 	 
-	
+	 public String getRPOListString(List<String> RPOn)
+	 {		String string ="";
+		 List<String> nList= RPOn;
+			int i =RPOn.size();
+			//System.out.println("size"+i);
+	        string = String.join(", ", nList); 
+	        System.out.println(string);
+	        
+	        return string;
+	 }
 }

@@ -85,7 +85,7 @@ public class RPOScreen {
 					    	//System.out.println("Customer order qty" + corqty);
 					 // Create SELECT SQL statement.
 			            String selectSql = 
-			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
+			            		"	SELECT *" + 
 			            		"	FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
 			            		"	where bigintShoppingCartNo = "+ num 
 			            		+ " AND varItemCode=" +"'"+catItem +"'";
@@ -118,9 +118,9 @@ public class RPOScreen {
 			            {
 			            	
 			            	System.out.println
-			            	(			" | N"	 	
+			            	(" | N"	 	
 					                + " | " + "bigintShoppingCartNo"
-					                + " | " + "bigintOrdQty"
+					                + " | " + "bigintOrderQty"
 					                + " | " + "intStatus"
 					                + " | " + "bigIntRPO"
 					                + " | " + "varItemCode"
@@ -128,13 +128,14 @@ public class RPOScreen {
 			                System.out.println
 			                (
 			                  " | "	+ i	
-			                + " | "	+ resultSet.getString("bigintShoppingCartNo")
-			                + " | " + resultSet.getString("bigintOrderQty")
-			                + " | " + resultSet.getString("intStatus")
-			                + " | " + resultSet.getString("bigIntRPO")
-			                + " | " + resultSet.getString("varItemCode")
-			                + " | "
+				                + " | " + resultSet1.getString("bigintShoppingCartNo")
+				                + " | " + resultSet1.getString("bigintOrderQty")
+				                + " | " + resultSet1.getString("intStatus")
+				                + " | " + resultSet1.getString("bigIntRPO")
+				                + " | " + resultSet1.getString("varItemCode")
+				                + " | "
 			                );
+			                
 			           
 
 					                
@@ -299,16 +300,16 @@ public class RPOScreen {
 		List<String> nList= newList;
 		int i =newList.size();
 		//System.out.println("size"+i);
-        String string = String.join(", ", newList); 
-        //System.out.println(string);
+        String string1 = String.join(", ", newList); 
+        System.out.println(string1);
 		for (int v = 0;v< i; v++)
 		{
 			//System.out.println(newList.get(v).toString());
 		}
-		String a="select * from [r-tracDB].[dbo].[tblOrder] where bigIntRPO in ("+string+")";
-		String b="select * from [r-tracDB].[dbo].[tblOrderDetails] where bigIntRPO in ("+string+")";
-		String c="select * from [r-tracDB].[dbo].[tblOrderSummary] where bigIntRPO in ("+string+")";
-		String d="select * from [r-tracDB].[dbo].[tblOrderAddress] where bigIntRPO in ("+string+")";
+		String a="select * from [r-tracDB].[dbo].[tblOrder] where bigIntRPO in ("+string1+")";
+		String b="select * from [r-tracDB].[dbo].[tblOrderDetails] where bigIntRPO in ("+string1+")";
+		String c="select * from [r-tracDB].[dbo].[tblOrderSummary] where bigIntRPO in ("+string1+")";
+		String d="select * from [r-tracDB].[dbo].[tblOrderAddress] where bigIntRPO in ("+string1+")";
 		
 		  
 		 

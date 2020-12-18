@@ -35,13 +35,13 @@ public class CatalogItems {
 		 getWait(2000); 
 		 WebElement Ordermenu = driver.findElement(By.className("Order"));
 		 actions.moveToElement(Ordermenu).perform();
-
 		 //Ordermenu.click();
 		 getWait(3000); 
 		 // *[@id="Catalog Items"] 
 		 WebElement catalogsubmenu = driver.findElement(By.id("Catalog")); 
+		 getWait(2500);
 		 actions.moveToElement(catalogsubmenu).perform();
-		 getWait(1500);
+		 getWait(2500);
 		 catalogsubmenu.click();
 		 getWait(3000);
 		 //WebElement addToCart=driver.findElement(By.name("AddToCart"));
