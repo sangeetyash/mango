@@ -815,7 +815,7 @@ public class LoginStepDefinition
 		 checkout.printRPO(rpoLIST);
 		 rpoListStr=checkout.getRPOListString(rpoLIST);
 		 Thread.sleep(2000);
-		 rpoScreen.checkRPACTable(rpoLIST);
+		 rpoScreen.checkRPACTable1(rpoListStr);
 		 
 		 checkout=pageObjectManager.getcheckOut();
 		 lst=checkout.return_RPO();
@@ -1031,7 +1031,7 @@ public class LoginStepDefinition
 		 checkout.printRPO(rpoLIST);
 		 Thread.sleep(2000);
 
-		 rpoScreen.checkRPACTable(rpoLIST);
+		 rpoScreen.checkRPACTable1(rpoListStr);
 		 endTime = System.currentTimeMillis();
 		totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;

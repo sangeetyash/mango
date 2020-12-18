@@ -3,6 +3,7 @@ package pageObjects;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,8 +46,12 @@ public class OrderStatus {
 	
 	public void getSearch() throws InterruptedException
 	{	
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
 			getWait(3000);
 	  		WebElement search = driver.findElement(By.xpath(".//*[@id='tblMangoOrderStatus_length']/span[2]/span/span"));
+	        js.executeScript("arguments[0].scrollIntoView();",search);
+	  	    getWait(1000);
 	  		search.click();
 	  	    getWait(3000);
 	  	    
