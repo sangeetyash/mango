@@ -67,9 +67,11 @@ public class POALLQTYCheck {
 	
 					 // Create SELECT SQL statement.
 			            String selectSql = 
-			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
-			            		"	where bigintShoppingCartNo = "+ num ;
+			            		"	SELECT [bigIntRPO],[varPONumber][varEAN],[intQuantity],[bigintOrderQty],"
+			            		+ "[bigIntShoppingCartNo],[intStatus],[varVendorId],[varItemCode],"
+			            		+ "[intPOLineNo],[bigintOriginalId],[Brand],[Qty],*" + 
+			            		"[AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		"where bigintShoppingCartNo = "+ num ;
 			            
 			            // System.out.println("SQL Query="+selectSql);
 						 connection = DriverManager.getConnection(connectionUrl);
@@ -95,32 +97,40 @@ public class POALLQTYCheck {
 			            
 					            while (resultSet1.next())
 					            {
+					            	System.out.println
+					            	(" | No."	 	
+							                + " | " + "bigintShoppingCartNo"
+							                + " | " + "bigintOrderQty"
+							                + " | " + "intStatus"
+							                + " | " + "bigIntRPO"
+							                + " | " + "varItemCode"
+							                + " | ");
 					                System.out.println
 					                (
 					                  " | "	+ i	
 						                + " | " + resultSet1.getString("bigintShoppingCartNo")
-						                + " | "	+ resultSet1.getString("bigintOriginalQty")
-						                + " | " + resultSet1.getString("bigintOrdQty")
+						                + " | " + resultSet1.getString("bigintOrderQty")
 						                + " | " + resultSet1.getString("intStatus")
 						                + " | " + resultSet1.getString("bigIntRPO")
 						                + " | " + resultSet1.getString("varItemCode")
 						                + " | "
 					                );
 					                
+					                
 					                String status=resultSet1.getString("intStatus");
 							    	//System.out.println("tbl_Cust_Mango_Parser recorde status" + status);
 
 							             if (status.equalsIgnoreCase("6"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
 							             }
 							             else if(status.equalsIgnoreCase("8"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
 							             }
 							             else
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Fail");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail\n");
 							             }
 					                i=i+1;
 					            }
@@ -189,11 +199,15 @@ public class POALLQTYCheck {
 					    	String corqty=(list.get(k).get("qty"));
 					    	//System.out.println("Customer order qty" + corqty);
 					 // Create SELECT SQL statement.
+					    	
+					    	
 			            String selectSql = 
-			            		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
-			            		"	FROM [MANGODB].[dbo].[tbl_Cust_Mango_Parser]" + 
-			            		"	where bigintShoppingCartNo = "+ num +"AND varEAN=" +"'"+catItem +"'";
-			             System.out.println("SQL Query="+selectSql);
+			            		"	SELECT [bigIntRPO],[varPONumber][varEAN],[intQuantity],[bigintOrderQty],"
+					            		+ "[bigIntShoppingCartNo],[intStatus],[varVendorId],[varItemCode],"
+					            		+ "[intPOLineNo],[bigintOriginalId],[Brand],[Qty],*" + 
+					            		"[AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+					            		"where bigintShoppingCartNo = "+ num +"AND varEAN=" +"'"+catItem +"'";
+			             System.out.println("SQL Query="+selectSql+"\n");
 
 			            //String selectSql = 
 			            //		"	SELECT bigintOriginalQty,bigintOrdQty,intStatus,bigIntRPO ,varItemCode,*" + 
@@ -225,10 +239,9 @@ public class POALLQTYCheck {
 					            while (resultSet1.next())
 					            {
 					            	System.out.println
-					            	(" | N"	 	
+					            	(" | No."	 	
 							                + " | " + "bigintShoppingCartNo"
-							                + " | "	+ "bigintOriginalQty"
-							                + " | " + "bigintOrdQty"
+							                + " | " + "bigintOrderQty"
 							                + " | " + "intStatus"
 							                + " | " + "bigIntRPO"
 							                + " | " + "varItemCode"
@@ -237,28 +250,28 @@ public class POALLQTYCheck {
 					                (
 					                  " | "	+ i	
 						                + " | " + resultSet1.getString("bigintShoppingCartNo")
-						                + " | "	+ resultSet1.getString("bigintOriginalQty")
-						                + " | " + resultSet1.getString("bigintOrdQty")
+						                + " | " + resultSet1.getString("bigintOrderQty")
 						                + " | " + resultSet1.getString("intStatus")
 						                + " | " + resultSet1.getString("bigIntRPO")
 						                + " | " + resultSet1.getString("varItemCode")
 						                + " | "
 					                );
 					                
+					                
 					                String status=resultSet1.getString("intStatus");
 							    	//System.out.println("tbl_Cust_Mango_Parser recorde status" + status);
 
 							             if (status.equalsIgnoreCase("6"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
 							             }
 							             else if(status.equalsIgnoreCase("8"))
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Pass");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
 							             }
 							             else
 							             {
-							            	 System.out.println("tbl_Cust_Mango_Parser table check Fail");
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail\n");
 							             }
 					                i=i+1;
 					            }
@@ -329,10 +342,10 @@ public class POALLQTYCheck {
 					 // Create SELECT SQL statement.
 			            
 			            String selectSql2=
-			            		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
+			            		"SELECT * [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
 			            		+ "where bigintShoppingCartNo  = "+ num+"AND varEAN=" +"'"+catItem +"'" ;
 			            
-			             System.out.println("SQL Query="+selectSql2);
+			             System.out.println("SQL Query="+selectSql2+"\n");
 			            //String selectSql2=
 			            //		"SELECT * FROM [MANGODB].[dbo].[tbl_Cust_Mango_ShoppingCart] "
 			            //		+ "where bigintShoppingCartNo  = "+ num+"AND varEAN=" +"'"+catItem +"'" +"AND bigIntOriginalTotal_Size_Qty="+corqty;
@@ -840,14 +853,27 @@ public class POALLQTYCheck {
 		  {
 			  if (resultSet7 !=null) 
 			  { 
-				  try { resultSet7.close(); } catch (SQLException e) {
-		  e.printStackTrace();} 
+				  try 
+				  { resultSet7.close(); } 
+				  catch (SQLException e) 
+				  {
+					  e.printStackTrace();} 
 				  } 
 			  if (statement1 != null) 
-			  { try { statement1.close();
-		  } catch (SQLException e) { e.printStackTrace();} } 
-			  if (connection != null) {
-		  try { connection.close(); } catch (SQLException e) { e.printStackTrace();} }
+			  { 
+				  try { statement1.close();
+				  		} 
+				  catch (SQLException e) 
+				  { 
+					  e.printStackTrace();
+					  } 
+				  } 
+			  if (connection != null)
+			  {
+		  try { connection.close(); 
+		  } 
+		  catch (SQLException e) 
+		  { e.printStackTrace();} }
 		  }
 		 
 
