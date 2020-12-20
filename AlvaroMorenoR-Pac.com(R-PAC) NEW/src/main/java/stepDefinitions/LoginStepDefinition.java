@@ -150,7 +150,7 @@ public class LoginStepDefinition
 		 loginUserPassword=pageObjectManager.getLoginUserPassword();
 		 loginUserPassword.usernamepassword_LoginUserPassword(username, password);
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
+		 totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;
 
 		 System.out.println("^enters  username and password ");
@@ -271,8 +271,8 @@ public class LoginStepDefinition
 		 releasePO=pageObjectManager.getreleasePO();
 		 releasePO.searchSupplier(suid);
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Search supplier ID " + suid + "");	 
 	
@@ -446,7 +446,7 @@ public class LoginStepDefinition
 		 	releasePO=pageObjectManager.getreleasePO();
 		 	Thread.sleep(2000);
 
-			 releasePO.printArry();
+			 //releasePO.printArry();
 			 Thread.sleep(2000);
 
 		 	releasePO.addToCart();
@@ -458,7 +458,33 @@ public class LoginStepDefinition
 			totalTime =(endTime-startTime)/1000;
 			  executionTime=executionTime+totalTime;
 
-			 System.out.println("^Addtocart" + "");	 
+			 System.out.println("^Addtocart$" + "");	 
+			  System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
+	 
+	 @Then("^Addtocart Confirm Order$")
+	 public void getAddtocartConfirmOrder()throws InterruptedException
+	 {
+		 	startTime = System.currentTimeMillis();
+
+		 	releasePO=pageObjectManager.getreleasePO();
+		 	Thread.sleep(2000);
+
+			 //releasePO.printArry();
+			 Thread.sleep(2000);
+
+		 	releasePO.addToCart();
+		 	Thread.sleep(2000);
+		 	releasePO.qtyAlert();
+		 	Thread.sleep(2000);
+		 	releasePO.addToCartsucess();
+
+		 	endTime = System.currentTimeMillis();
+			totalTime =(endTime-startTime)/1000;
+			  executionTime=executionTime+totalTime;
+
+			 System.out.println("^Addtocart Confirm Order$");	 
 			  System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }

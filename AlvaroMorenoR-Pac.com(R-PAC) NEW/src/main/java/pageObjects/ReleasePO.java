@@ -490,87 +490,78 @@ public class ReleasePO {
 			// .executeScript("window.scrollTo(0, document.body.scrollHeight)");
 			Thread.sleep(50);
 			// *[@id="tblPOMango"]/tbody/tr[1]/td[5]
+			//*[@id="tblPODetails"]/tbody/tr[1]/td[1]
+			//*[@id="tblPODetails"]/tbody/tr[1]/td[1]
+			WebElement vendorID = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[1]"));
+			WebElement itemCode = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[2]"));
+			WebElement OGqty = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[3]"));
+			WebElement orderqty = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[4]/input"));
+			WebElement EAN = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[5]"));
+
+			//WebElement EAN = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[6]"));
+			//WebElement supplier = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[3]"));
+			//WebElement format = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[4]"));
 			
-			WebElement PON = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[2]"));
-			WebElement supplier = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[3]"));
-			WebElement format = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[4]"));
-			WebElement itemCode = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[5]"));
-			WebElement EAN = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[6]"));
-			WebElement OGqty = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[7]"));
-			//*[@id="txtOrderQty_152553"]
-			//*[@id="tblPOMango"]/tbody/tr[1]/td[8]
-			//int orgqty = Integer.parseInt(OGqty.getText());
-			WebElement orderqty = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[8]/input"));
 			//int orqty = Integer.parseInt(orderqty.getText());
 			// System.out.println("("+PON.getText()+" , "+supplier.getText()+" ,
 			// "+format.getText()+" , " +itemCode.getText()+" , "+EAN.getText()+" , "
 			// +OGqty.getText()+" , "+orderqty.getText()+")");
 			// if(check.isSelected()==true)
-			String icode = itemCode.getText();
+			//String vendorCode = itemCode.getText();
+
 			List<Map<String, String>> list = dtEANAEditqty.asMaps(String.class, String.class);
 		    int col=list.size();
 		    int row=list.get(0).size();
 
 	    	//System.out.println("col" + col);
-	    	for(int i=0; i<list.size(); i++) {
-	    		//System.out.println(list.get(i).get("EAN"));
-	    		//System.out.println(list.get(i).get("qty"));
+	    	for(int i=0; i<list.size(); i++) 
+	    	
+	    	{
+	    		
 	    		
 	    		String EANN=EAN.getText();
-		    	//System.out.println("EANN" + EANN);
 		    	String EANC=(list.get(i).get("EAN"));
-		    	//System.out.println("EANC" + EANC);
-		    	String corqty=(list.get(i).get("qty"));
+		    	
+				String itemsCode = itemCode.getText();
+		    	String itemCodeC=(list.get(i).get("ItemCode"));
+		    	
+				
+				//String ordqtyC = (list.get(i).get("ItemCode"));
+		    	String corqtyC=(list.get(i).get("qty"));
+		    	
+		    	 
 		    	//System.out.println("Customer order qty" + corqty);
+		    	
 
-
-		    	if (EANN.equalsIgnoreCase(EANC))
+		    	if (EANN.equalsIgnoreCase(EANC) && itemsCode.equalsIgnoreCase(itemCodeC))
 		    	{
-			    	//System.out.println("Inside");
+		    		System.out.println("Customer ItemCode->" +list.get(i).get("ItemCode"));
+		    		System.out.println("Customer EAN->" +list.get(i).get("EAN"));
+		    		System.out.println("Customer order qty->" +list.get(i).get("qty"));
 
-		    		WebElement check = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[1]"));
-					check.click();	
-					WebElement orderqtyn = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[8]/input"));
-					orderqtyn.clear();
-					orderqtyn.sendKeys(corqty);
-					
+		    		//WebElement check = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[1]"));
+					//check.click();
+			    	
+		    		 orderqty=null;	
+					 orderqty = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[4]/input"));
+					 
+					 Actions actions = new Actions(driver);
+					 actions.moveToElement(orderqty);
+					 actions.perform();
+					 orderqty.clear();
+					 //wait(1500);
+					 orderqty.sendKeys(corqtyC);
+					//*[@id="heading"]
+					//*[@id="spnPODetails"]
+					 js.executeScript("window.scrollTo(0, 0)"); 
 		    	}
 	    	}
-			/*
-			 * for(int aa=0 ; aa < col; aa++) { String EANN=EAN.getText();
-			 * System.out.println("EANN" + EANN); String EANC=(rows.get(0).get(aa));
-			 * System.out.println("EANC" + EANC);
-			 * 
-			 * if (EANN.equalsIgnoreCase(EANC)) { System.out.println("Inside");
-			 * 
-			 * WebElement check =
-			 * driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r +
-			 * "]/td[1]")); check.click();
-			 * 
-			 * } }
-			 */
-			
-			/*
-			 * if(check.isSelected()==false) { System.out.println("selected");
-			 * 
-			 * a=orgqty; b=orqty; c=String.valueOf(a); d=String.valueOf(b);
-			 * 
-			 * Thread.sleep(50); System.out.println("itemcode->"+icode +"original qty-> "+
-			 * c); map3.put(icode, c); Thread.sleep(50);
-			 * System.out.println("itemcode->"+icode +"Order qty-> "+ d); map4.put(icode,d);
-			 * }
-			 */
+	    	 //JavascriptExecutor js = (JavascriptExecutor) driver;
+			 	
 		}
 
-		/*
-		 * for (Entry<String, String> entry : map3.entrySet()) { //
-		 * System.out.println("MAP3->"+ entry.getKey() + " => " + entry.getValue() ); }
-		 * 
-		 * for (Entry<String, String> entry : map4.entrySet()) { //
-		 * System.out.println("MAP4->"+ entry.getKey() + " => " +entry.getValue() ); }
-		  */
-		 JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("window.scrollTo(0, 0)"); 
+		
+		
 		
 		
 	}
@@ -680,13 +671,24 @@ public class ReleasePO {
 	{
 		// *[@id="smartAlertScrollArea"]
 		// *[@id="smartAlertButtons"]/div
+		//*[@id="smartAlertButtons"]/div
 		WebElement ok = driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div"));
 		getWait(3000);
 		// WebElement ok=driver.findElement(By.className("smartAlertButton
 		// smartAlertActive"));
 		ok.click();
 	}
-
+	public void qtyAlert() throws InterruptedException 
+	{
+		// *[@id="smartAlertScrollArea"]
+		// *[@id="smartAlertButtons"]/div
+		//*[@id="smartAlertButtons"]/div
+		WebElement ok = driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div"));
+		getWait(3000);
+		// WebElement ok=driver.findElement(By.className("smartAlertButton
+		// smartAlertActive"));
+		ok.click();
+	}
 	public void addToCart() throws InterruptedException 
 	{
 		getWait(3000);

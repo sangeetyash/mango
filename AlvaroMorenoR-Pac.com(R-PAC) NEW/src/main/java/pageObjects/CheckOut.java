@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 //import java.awt.List;
@@ -272,6 +273,8 @@ public class CheckOut
 	
 	public  List<String> return_RPO() 
 	{
+		
+		//*[@id="tblEmployee"]/tbody/tr[1]/td[1]
 	       //define string array
 		List<String> return_RPO = new ArrayList<String>();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -362,4 +365,43 @@ public class CheckOut
 	        
 	        return str;
 	 }
+	 
+	 public String getRPOLinkListString(LinkedList<String> RPOn)
+	 {		
+		 	String str ="";
+		 	LinkedList<String> nList= RPOn;
+		 	
+			int i =RPOn.size();
+			str = String.join(",", nList);
+	        
+	        System.out.println(str);
+	        
+	        return str;
+	 }
+	 
+	 public  LinkedList<String> return_RPOLinkList() 
+		{
+			
+			//*[@id="tblEmployee"]/tbody/tr[1]/td[1]
+		       //define string array
+		 	LinkedList<String> return_RPOList = new LinkedList<String>();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+			
+			List<WebElement> itemsfiler = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
+			//*[@id="tblEmployee"]/tbody/tr[1]
+			int trnofilter = itemsfiler.size() + 1;
+			//System.out.println("itemvise" + trnofilter);
+			
+			for (int t = 1; t < trnofilter; t++)
+				{
+				//*[@id="tblEmployee"]/tbody/tr[1]/td[1]				
+				WebElement rpo = driver.findElement(By.xpath("//table[@id='tblEmployee']/tbody/tr[" + t + "]/td[1]"));
+					String srpo=rpo.getText();
+					return_RPOList.add(srpo);
+				}
+			
+		       return return_RPOList;	
+
+		   }
 }

@@ -3,6 +3,7 @@ package stepDefinitions;
 
 
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,7 +49,7 @@ public class LoginStepDefinition
 	String shID="";
 	String ShoppingCartNo;
 
-	
+	 LinkedList<String> listlink=new LinkedList<String>();
 	
 	long startTime,endTime,totalTime,executionTime;
 	//Cucumber Reg Exp:
@@ -363,7 +364,7 @@ public class LoginStepDefinition
 	 
 	 
 	 @Then("^click on PO \"(.*)\"$")
-	 public void POClickb(String PO) throws InterruptedException 
+	 public void POClick(String PO) throws InterruptedException 
 	 	{
 		 
 		 startTime = System.currentTimeMillis();
@@ -745,7 +746,7 @@ public class LoginStepDefinition
 	 
 	 @Then("^goto checkout page$")
 	 public void goto_checkout()throws InterruptedException 
-	 {
+	 {	
 		 startTime = System.currentTimeMillis();
 
 		 checkout=pageObjectManager.getcheckOut();
@@ -753,8 +754,8 @@ public class LoginStepDefinition
 		 ShoppingCartNo=checkout.shoppingCartNo();
 		 Thread.sleep(2000);
 		 
-		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
+		  endTime = System.currentTimeMillis();
+		  totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;
 
 		 System.out.println("^goto checkout page$" + "");	 
@@ -784,25 +785,29 @@ public class LoginStepDefinition
 	 public void confirm_order()throws InterruptedException 
 	 {
 		 startTime = System.currentTimeMillis();
+		 listlink=null;
 
 		 checkout=pageObjectManager.getcheckOut();
+		 rpoScreen=pageObjectManager.getRPOScreen();
+
 		 ShoppingCartNo=checkout.shoppingCartNo();
 		 checkout.orderConfirm();
 		 
 		 Thread.sleep(2000);
-		 rpoScreen=pageObjectManager.getRPOScreen();
 		 rpoLIST=checkout.return_RPO();
 		 Thread.sleep(2000);
 		 rpoScreen.checkRPACTable(rpoLIST);
-		 checkout=pageObjectManager.getcheckOut();
+		 
 		 lst=checkout.return_RPO();
 		  shID=checkout.shoppingCart();
+		  
 		 checkout.printOrderDetails();
-		 Thread.sleep(10000);
+		 
+		 Thread.sleep(8000);
 		 checkout.orderDone();
 		 
-		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
+		  endTime = System.currentTimeMillis();
+		  totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;
 
 		 System.out.println("^Confirm Order$" + "");	 
@@ -825,7 +830,7 @@ public class LoginStepDefinition
 		 checkout.orderDone();
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
+		 totalTime =(endTime-startTime)/1000;
 		  executionTime=executionTime+totalTime;
 
 		 System.out.println("^Confirm Order with double click$" + "");	 
