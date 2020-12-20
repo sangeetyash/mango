@@ -340,21 +340,26 @@ public class CheckOut
 	  }
 	 public void printRPO(List<String> RPO)
 	 {
+		 	String strig1="";
 		 	List<String> nList= RPO;
+		 	
 			int i =nList.size();
 			System.out.println("size"+i);
-	        String string = String.join(", ", nList); 
-	        System.out.println(string);
+			
+			strig1 = String.join(",", nList); 
+	        System.out.println(strig1);
 	 }
 	 
 	 public String getRPOListString(List<String> RPOn)
-	 {		String string ="";
-		 List<String> nList= RPOn;
+	 {		
+		 	String str ="";
+		 	List<String> nList= RPOn;
+		 	
 			int i =RPOn.size();
-			//System.out.println("size"+i);
-	        string = String.join(", ", nList); 
-	        System.out.println(string);
+			str = String.join(",", nList);
 	        
-	        return string;
+	        System.out.println(str);
+	        
+	        return str;
 	 }
 }

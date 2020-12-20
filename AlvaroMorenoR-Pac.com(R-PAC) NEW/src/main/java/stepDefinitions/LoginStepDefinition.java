@@ -804,37 +804,45 @@ public class LoginStepDefinition
 	 @Then("^Confirm Order$")
 	 public void confirm_order()throws InterruptedException 
 	 { 
-		 rpoLIST=null;
-		 rpoListStr="";
+		 
 		 startTime = System.currentTimeMillis();
 
 		 checkout=pageObjectManager.getcheckOut();
-		 ShoppingCartNo=checkout.shoppingCartNo();
-		 
-		 checkout.orderConfirm();
-		 Thread.sleep(2000);
-		 
 		 rpoScreen=pageObjectManager.getRPOScreen();
+
+		 ShoppingCartNo=checkout.shoppingCartNo();
 		 Thread.sleep(2000);
+
+		 checkout.orderConfirm();
+		 Thread.sleep(3000);
 		 
+		 rpoLIST=null;
+	 
 		 rpoLIST=checkout.return_RPO();
-		 Thread.sleep(2000);
+		 Thread.sleep(3000);
 		 
 		 checkout.printRPO(rpoLIST);
-		 Thread.sleep(2000);
+		 Thread.sleep(3000);
 		 
+		 rpoListStr="";
+
 		 rpoListStr=checkout.getRPOListString(rpoLIST);
 		 Thread.sleep(2000);
 		 
 		 rpoScreen.checkRPACTable1(rpoListStr);
 		 Thread.sleep(2000);
 		 
-		 lst=checkout.return_RPO();
-		 shID=checkout.shoppingCart();
+		 //lst=checkout.return_RPO();
+		 //shID=checkout.shoppingCart();
+		 
+		 Thread.sleep(2000);
+
 		 checkout.printOrderDetails();
-		 Thread.sleep(10000);
+		 
+		 Thread.sleep(8000);
 		 
 		 checkout.orderDone();
+		 Thread.sleep(1500);
 		 
 		 endTime = System.currentTimeMillis();
 		 totalTime =(endTime-startTime)/1000;
