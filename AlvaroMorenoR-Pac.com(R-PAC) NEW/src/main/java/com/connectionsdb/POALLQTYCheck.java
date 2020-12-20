@@ -59,21 +59,20 @@ public class POALLQTYCheck {
 	
 	public void allrpoCheckWithDBParse(String a) throws SQLException
 	{
+		
+		long num = Long.parseLong(a);
+
 		try  
         {
 			
-			long num = Long.parseLong(a);
 		    //System.out.println(num);
 	
 					 // Create SELECT SQL statement.
-			            String selectSql = 
-			            		"	SELECT [bigIntRPO],[varPONumber][varEAN],[intQuantity],[bigintOrderQty],"
-			            		+ "[bigIntShoppingCartNo],[intStatus],[varVendorId],[varItemCode],"
-			            		+ "[intPOLineNo],[bigintOriginalId],[Brand],[Qty],*" + 
-			            		"[AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
-			            		"where bigintShoppingCartNo = "+ num ;
+			            String selectSql = "SELECT * " + 
+					            		"FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		        "WHERE bigintShoppingCartNo = "+ num ;
 			            
-			            // System.out.println("SQL Query="+selectSql);
+			            System.out.println("SQL Query="+selectSql);
 						 connection = DriverManager.getConnection(connectionUrl);
 						 Statement statement = connection.createStatement();
 					     resultSet1= null;
@@ -97,8 +96,9 @@ public class POALLQTYCheck {
 			            
 					            while (resultSet1.next())
 					            {
+
 					            	System.out.println
-					            	(" | No."	 	
+					            	(" | N"	 	
 							                + " | " + "bigintShoppingCartNo"
 							                + " | " + "bigintOrderQty"
 							                + " | " + "intStatus"
@@ -115,6 +115,7 @@ public class POALLQTYCheck {
 						                + " | " + resultSet1.getString("varItemCode")
 						                + " | "
 					                );
+					                
 					                
 					                
 					                String status=resultSet1.getString("intStatus");
@@ -173,7 +174,60 @@ public class POALLQTYCheck {
             }
 		}
 		
-
+		try {
+			String selectSql2=
+            		"SELECT * FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_ShoppingCart] "
+            		+ "where bigintShoppingCartNo  = "+ num  ;
+            
+             System.out.println("SQL Query = " + selectSql2);
+			 connection = DriverManager.getConnection(connectionUrl);
+			 Statement statement1 = connection.createStatement();
+		    
+             
+             	
+          
+            //int j=1;
+            resultSet2=null;
+            resultSet2 = statement1.executeQuery(selectSql2);
+            if (resultSet2.next()==false)
+            {
+            	System.out.println("Cart has been cleared");
+            }
+            else
+            {
+            	System.out.println("Something Went, Cart has not been cleared");
+            }
+			           
+            
+		}
+		 catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } catch (SQLException e) 
+                { e.printStackTrace();}
+            }
+		}
+		
     }
 	
 	public void rpoCheckWithDBParse(String a,DataTable dtrpo) throws SQLException

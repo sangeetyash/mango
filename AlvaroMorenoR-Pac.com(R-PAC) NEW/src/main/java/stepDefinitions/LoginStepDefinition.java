@@ -803,28 +803,37 @@ public class LoginStepDefinition
 	 
 	 @Then("^Confirm Order$")
 	 public void confirm_order()throws InterruptedException 
-	 {
+	 { 
+		 rpoLIST=null;
+		 rpoListStr="";
 		 startTime = System.currentTimeMillis();
 
 		 checkout=pageObjectManager.getcheckOut();
 		 ShoppingCartNo=checkout.shoppingCartNo();
-		 checkout.orderConfirm();
 		 
+		 checkout.orderConfirm();
 		 Thread.sleep(2000);
+		 
 		 rpoScreen=pageObjectManager.getRPOScreen();
 		 Thread.sleep(2000);
+		 
 		 rpoLIST=checkout.return_RPO();
 		 Thread.sleep(2000);
+		 
 		 checkout.printRPO(rpoLIST);
+		 Thread.sleep(2000);
+		 
 		 rpoListStr=checkout.getRPOListString(rpoLIST);
 		 Thread.sleep(2000);
-		 rpoScreen.checkRPACTable1(rpoListStr);
 		 
-		 checkout=pageObjectManager.getcheckOut();
+		 rpoScreen.checkRPACTable1(rpoListStr);
+		 Thread.sleep(2000);
+		 
 		 lst=checkout.return_RPO();
-		  shID=checkout.shoppingCart();
+		 shID=checkout.shoppingCart();
 		 checkout.printOrderDetails();
 		 Thread.sleep(10000);
+		 
 		 checkout.orderDone();
 		 
 		 endTime = System.currentTimeMillis();
@@ -879,23 +888,55 @@ public class LoginStepDefinition
 		 startTime = System.currentTimeMillis();
 
 		 orderStatus=pageObjectManager.getOrderStatus();
+		 
 		 orderStatus.getOrderStutus();
 		 Thread.sleep(2000);
-		 orderStatus.getSearch();
-		 Thread.sleep(2000);
-		 orderStatus.searchRPO(rpoLIST);
-		 Thread.sleep(2000);
+		 
+		 //orderStatus.getSearch();
+		 //Thread.sleep(2000);
+		 //orderStatus.searchRPO(rpoLIST);
+		 //Thread.sleep(2000);
+		 
 		 checkout.printRPO(rpoLIST);
+		 orderStatus.gotoRPODetailScreen(rpoLIST);
+		 Thread.sleep(2000);
 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Goto Report>Order Status" + "");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 
+	 @Then("Goto Report>Order Status->Cancel Order$")
+	 public void order_status_check_cancel()throws InterruptedException
+	 {
+		 startTime = System.currentTimeMillis();
+
+		 orderStatus=pageObjectManager.getOrderStatus();
+		 
+		 orderStatus.getOrderStutus();
+		 Thread.sleep(2000);
+		 
+		 //orderStatus.getSearch();
+		 //Thread.sleep(2000);
+		 //orderStatus.searchRPO(rpoLIST);
+		 //Thread.sleep(2000);
+		 
+		 checkout.printRPO(rpoLIST);
+		 orderStatus.gotoRPODetailScreen(rpoLIST);
+		 Thread.sleep(2000);
+
+		 endTime = System.currentTimeMillis();
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+
+		 System.out.println("^Goto Report>Order Status->Cancel Order" + "");	 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
 	 
 	 @Then("^Close Browser$")
 	 public void close_the_browser() throws InterruptedException
@@ -919,7 +960,32 @@ public class LoginStepDefinition
 
 	
 	 }
-	 
+	 @Then("^Login validation check$")
+	 public void loginValidations(DataTable credentialsdtn) throws Throwable 
+	 	{
+		 
+		 try
+		 {
+		 startTime = System.currentTimeMillis();
+
+		 loginUserPassword=pageObjectManager.getLoginUserPassword();
+		 loginUserPassword.loginValidation(credentialsdtn);
+		 
+		 endTime = System.currentTimeMillis();
+		totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
+
+		 System.out.println("^Login validation check" + "");	 
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
+
+		 }
+		 catch(Exception e)
+		 {
+			 System.out.println("Exception e");
+			 System.exit(0);
+		 }
+		 	
+	 	}
 
 	 @Then("^Logout$")
 	 public void logout() throws InterruptedException
@@ -1132,7 +1198,7 @@ public class LoginStepDefinition
 		 totalTime =(endTime-startTime)/1000;
 		 executionTime=executionTime+totalTime;
 
-		 System.out.println("^Verify All PO data with db$" + "");	 
+		 System.out.println("^Verify All RPO data with db$" + "");	 
 		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 		

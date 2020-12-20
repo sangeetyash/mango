@@ -89,7 +89,8 @@ public class CheckOut
 			{
 				System.out.println("Invalid choose");
 			}
-		
+		//*[@id="smartAlertButtons"]/div[2]
+		//*[@id="smartAlertButtons"]/div[1]
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		js1.executeScript("window.scrollTo(0, 0)");
 		getWait(1000);
@@ -288,14 +289,6 @@ public class CheckOut
 				String srpo=rpo.getText();
 				return_RPO.add(srpo);
 			}
-	        //return string array
-		    //*[@id="tblEmployee"]/tbody/tr[1]
-		    //*[@id="tblEmployee"]/thead/tr
-		    //*[@id="tblEmployee"]/tbody
-		    //*[@id="tblEmployee"]/tbody/tr[3]
-		    //*[@id="tblEmployee"]/tbody/tr[1]
-		   //*[@id="tblEmployee"]/tbody/tr[1]/td[1]
-	      //*[@id="divlbl"]/table/tbody/tr/td[3]/label[5]
 		
 	       return return_RPO;	
 

@@ -2,7 +2,9 @@ package pageObjects;
 
 //import java.awt.List;
 
-import java.util.List; 
+import java.util.List;
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -126,4 +128,109 @@ public class LoginUserPassword
 				  driver.manage().deleteAllCookies();
 
 			}
+		 public void loginValidation(DataTable usercredentials) throws Throwable 
+		 {
+			 //http://devalvaromoreno.r-pac.com/Dashboard/LandingPage
+			 String pwdURL="http://devrtrac.r-pac.com/Login/Password";
+			 String homeURL="http://devalvaromoreno.r-pac.com/Dashboard/LandingPage";
+			 String initURL="http://devrtrac.r-pac.com/";
+			 String user,pwd,currentURL="";
+			 try 
+			 {
+				 List<Map<String, String>> list = usercredentials.asMaps(String.class, String.class);
+				 int col=list.size();
+				 //int row=list.get(0).size();
+			     //System.out.println("col" + col);
+				 
+				 for(int k=0; k<list.size(); k++)
+					{	
+					 	//System.out.println("K->"+k);
+					 	//System.out.println(list.get(k).get("User"));
+			    		//System.out.println(list.get(k).get("Password"));
+					}
+					
+				 
+			    	for(int k=0; k<list.size(); k++)
+						{			
+					 				
+
+			    					getWait(2000);
+			    					driver.get(initURL);
+			    					currentURL="";
+			    					user="";
+			    					pwd ="";
+								 	System.out.println("");
+
+						    		System.out.println(list.get(k).get("User"));
+						    		System.out.println(list.get(k).get("Password"));
+						    		
+						    		
+							    	user=(list.get(k).get("User"));
+							    	pwd=(list.get(k).get("Password"));
+							    	
+									getWait(2000);
+									
+									WebElement email=null;
+									email=driver.findElement(By.id("username"));
+									email.sendKeys(user);
+								    WebElement signin=driver.findElement(By.id("btnsignIn"));
+									signin.click();
+									getWait(2000);
+									currentURL="";
+									currentURL=driver.getCurrentUrl();
+								
+
+									if ( currentURL.equalsIgnoreCase(pwdURL) )
+									{	
+										//System.out.println("Current URL-> "+currentURL);
+										//System.out.println("password URL-> "+pwdURL);
+										WebElement pawds=null;
+										pawds=driver.findElement(By.id("passwd"));
+	
+										pawds.sendKeys(pwd);
+										  
+									    getWait(2000);
+	
+											 WebElement submit=driver.findElement(By.id("btnsignIn"));
+											 getWait(2000);
+											 submit.click();
+											 getWait(2000);
+											 currentURL="";
+											 currentURL=driver.getCurrentUrl();
+											 //System.out.println("Current URL-> "+currentURL);
+		
+											 if (currentURL.equalsIgnoreCase(pwdURL) || currentURL.equalsIgnoreCase(initURL))
+												 {
+												 	//System.out.println("K->"+k);
+												 	//System.out.println("Current URL-> "+currentURL+"\n");
+													System.out.println("Wrong password-> "+pwd);
+													continue;
+												 }
+											 else if (currentURL.equalsIgnoreCase(homeURL) )
+												 {
+												 		//System.out.println("K->"+k);
+														//System.out.println("Current URL-> "+currentURL+"\n");
+													 System.out.println("Success"+"( " +user+" / " +pwd+" )");
+														break;
+												 }	
+										}
+										
+									
+										else if(currentURL != pwdURL || currentURL.equalsIgnoreCase(initURL) )
+										{
+											//System.out.println("K->"+k);
+											//System.out.println("Current URL-> "+currentURL);
+											//System.out.println("password URL-> "+pwdURL);
+											//System.out.println("init URL-> "+initURL);
+											System.out.println("Wrong user id-> "+user);
+											continue;
+										}
+									
+						}
+			 }
+			 catch(Exception e)
+			 {
+				 System.out.println("Exception ->"+e);
+			 }
+		 }
 }

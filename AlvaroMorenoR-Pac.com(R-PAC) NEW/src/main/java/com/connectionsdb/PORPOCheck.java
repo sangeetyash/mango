@@ -219,11 +219,11 @@ public class PORPOCheck {
 			            resultSet2 = statement1.executeQuery(selectSql2);
 			            if (resultSet2.next()==false)
 			            {
-			            	System.out.println("Cart has been clear");
+			            	System.out.println("Cart has been cleared");
 			            }
 			            else
 			            {
-			            	break;
+			            	System.out.println("Something Went, Cart has not been cleared");
 			            }
 						           
 			            

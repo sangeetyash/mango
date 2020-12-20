@@ -9,8 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.project.managers.PageObjectManager;
+
+import cucumber.api.DataTable;
 
 public class OrderStatus {
 
@@ -115,5 +118,108 @@ public class OrderStatus {
 	}
 	
 	
+	public void selectNoRecords(String i) throws InterruptedException
+	{
+		getWait(1500);
 
+		// *[@id="tblServiceBureauOrder_length"]/label/select
+
+		Select noRecords = new Select(driver.findElement(By.name("tblOrderStatus_length")));
+		//System.out.println("Overage" + over);
+		/*
+		 * for (int i = 1; i < 6; i++) { String a = Integer.toString(i);
+		 * over.selectByValue(a); getWait(3000); }
+		 */
+		noRecords.selectByValue(i);
+		getWait(1500);
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		
+		getWait(1000);
+		js.executeScript("window.scrollTo(0, 0)"); 
+
+	}
+	
+	public void gotoRPODetailScreen(List<String> rpo) throws InterruptedException
+	{
+		int i =rpo.size();
+		//System.out.println("size"+i);
+
+		for (int v = 0;v< i; v++)
+		{
+			//System.out.println(rpo.get(v).toString());
+		}
+		
+		for(int j=0;j<i;j++)
+		{
+			String rpostring=rpo.get(j).toString();
+			String remarks="Cancelling order " + rpostring;
+			driver.findElement(By.linkText(rpostring)).click();		
+			getWait(1500);
+			//cancelOrder(1,remarks);
+			driver.navigate().back();
+			
+		    getWait(3000);
+		    selectNoRecords("100");
+		}
+		
+	}
+	
+	public void gotoRPODetailScreenAndCancelOrder(List<String> rpo) throws InterruptedException
+	{
+		int i =rpo.size();
+		//System.out.println("size"+i);
+
+		for (int v = 0;v< i; v++)
+		{
+			//System.out.println(rpo.get(v).toString());
+		}
+		
+		for(int j=0;j<i;j++)
+		{
+			String rpostring=rpo.get(j).toString();
+			String remarks="Cancelling order " + rpostring;
+			driver.findElement(By.linkText(rpostring)).click();		
+			getWait(1500);
+			cancelOrder(1,remarks);
+			driver.navigate().back();
+			
+		    getWait(3000);
+		    selectNoRecords("100");
+		}
+		
+	}
+	
+	
+	public void cancelOrder(int a,String remark) throws InterruptedException
+	{
+		//*[@id="btnCancelOrder"]
+		
+		WebElement cancel = driver.findElement(By.id("btnCancelOrder"));
+		cancel.click();
+		if (a == 1)
+		{
+			WebElement ok = driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div[1]"));
+			getWait(3000);
+			ok.click();
+			getWait(3000);
+			WebElement Remark = driver.findElement(By.xpath(".//*[@id='Remark']"));
+			Remark.sendKeys(remark);
+			getWait(1500);
+			//*[@id="Remark"]
+			//*[@id="btnUpdate"]
+			WebElement cancelbtn = driver.findElement(By.xpath(".//*[@id='btnUpdate']"));
+			cancelbtn.click();
+			getWait(1500);
+		}
+	else if (a == 0)
+		{
+			WebElement ok = driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div[2]"));
+			getWait(3000);
+			ok.click();
+		}
+
+	}
+	
 }

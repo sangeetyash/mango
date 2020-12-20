@@ -3,9 +3,19 @@ Feature: R-PACMango.com CRM E-Coomerece Feature Main Finish..
 @testcaseA004
 Scenario Outline: SQL Catalog back n forth
 
-Given Navigate user to Login Page "https://devrtrac.r-pac.com/Login/Index" and "Chrome"
+Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then Login validation check
+| User | Password |
+| admin@AlvaroMoreno.com |  |
+|		|		|
+| sadsd | 100 |
+| admin@AlvaroMoreno.com | asdasdsd  |
+| admin@AlvaroMoreno.com | Lousie#786 |
+
+#Then user enters credentials
+#| admin@AlvaroMoreno.com | Lousie#786 |
+#Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
 Then Logout
@@ -20,7 +30,7 @@ Examples:
 @testcaseA005
 Scenario Outline: SQL Catalog back n forth
 
-Given Navigate user to Login Page "https://devrtrac.r-pac.com/Login/Index" and "Chrome"
+Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
@@ -46,6 +56,7 @@ Then Verify catalog RPO with DB
 | ALMO_MCM01 | 50  |
 Then Print Confirmation and done
 Then Goto Report>Order Status
+#Then Goto Report>Order Status->Cancel Order
 Then Logout
 Then Close Browser	
 
@@ -62,9 +73,9 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_267"
+Then Search Release PO page with CPO ID "2020_677"
 Then Search Vendor ID "001024"
-Then click on PO "2020_267"
+Then click on PO "2020_677"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -72,7 +83,8 @@ Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipmen
 Then Confirm Order
 Then Verify All RPO data with db
 Then Print Confirmation and done
-Then Goto Report>Order Status
+#Then Goto Report>Order Status
+Then Goto Report>Order Status->Cancel Order
 #Then Search for PO "8016"
 Then Logout
 Then Close Browser
