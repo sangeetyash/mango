@@ -151,31 +151,28 @@ public class LoginUserPassword
 					
 				 
 			    	for(int k=0; k<list.size(); k++)
-						{			
-					 				
-
+						{		
 			    					getWait(2000);
 			    					driver.get(initURL);
 			    					currentURL="";
 			    					user="";
 			    					pwd ="";
-								 	System.out.println("");
 
-						    		System.out.println(list.get(k).get("User"));
-						    		System.out.println(list.get(k).get("Password"));
-						    		
+						    		System.out.println("User ID -> "+list.get(k).get("User"));
+						    		System.out.println("Password -> "+list.get(k).get("Password"));
 						    		
 							    	user=(list.get(k).get("User"));
 							    	pwd=(list.get(k).get("Password"));
 							    	
 									getWait(2000);
-									
 									WebElement email=null;
 									email=driver.findElement(By.id("username"));
 									email.sendKeys(user);
+									
 								    WebElement signin=driver.findElement(By.id("btnsignIn"));
 									signin.click();
 									getWait(2000);
+									
 									currentURL="";
 									currentURL=driver.getCurrentUrl();
 								
@@ -184,19 +181,19 @@ public class LoginUserPassword
 									{	
 										//System.out.println("Current URL-> "+currentURL);
 										//System.out.println("password URL-> "+pwdURL);
+										
 										WebElement pawds=null;
 										pawds=driver.findElement(By.id("passwd"));
-	
 										pawds.sendKeys(pwd);
-										  
 									    getWait(2000);
 	
-											 WebElement submit=driver.findElement(By.id("btnsignIn"));
-											 getWait(2000);
-											 submit.click();
-											 getWait(2000);
-											 currentURL="";
-											 currentURL=driver.getCurrentUrl();
+										WebElement submit=driver.findElement(By.id("btnsignIn"));
+									    getWait(2000);
+										submit.click();
+										getWait(2000);
+										
+										currentURL="";
+										currentURL=driver.getCurrentUrl();
 											 //System.out.println("Current URL-> "+currentURL);
 		
 											 if (currentURL.equalsIgnoreCase(pwdURL) || currentURL.equalsIgnoreCase(initURL))
@@ -208,15 +205,16 @@ public class LoginUserPassword
 												 }
 											 else if (currentURL.equalsIgnoreCase(homeURL) )
 												 {
-												 		//System.out.println("K->"+k);
-														//System.out.println("Current URL-> "+currentURL+"\n");
+												 	 //System.out.println("K->"+k);
+													 //System.out.println("Current URL-> "+currentURL+"\n");
 													 System.out.println("Success"+"( " +user+" / " +pwd+" )");
-														break;
+													 break;
 												 }	
 										}
 										
 									
 										else if(currentURL != pwdURL || currentURL.equalsIgnoreCase(initURL) )
+										
 										{
 											//System.out.println("K->"+k);
 											//System.out.println("Current URL-> "+currentURL);

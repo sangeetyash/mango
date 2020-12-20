@@ -708,11 +708,11 @@ public class LoginStepDefinition
 		 releasePO.addToCartsucess();
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Select PO items based on EAN" + "");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 		}
 	 
@@ -728,9 +728,9 @@ public class LoginStepDefinition
 		 Thread.sleep(3000);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
-
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+		 
 		 System.out.println("^Then Add to cart" + item + " and " + qty + "");	 
 		  System.out.println("And  time taken=" +totalTime+" secs\n");
 
@@ -755,12 +755,12 @@ public class LoginStepDefinition
 		 Thread.sleep(1000);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date$" + "");	 
 		
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 
@@ -775,11 +775,11 @@ public class LoginStepDefinition
 		 Thread.sleep(2000);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^goto checkout page$" + "");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 @Then("^AddToCart$")
@@ -793,11 +793,11 @@ public class LoginStepDefinition
 		 Thread.sleep(3000);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^AddToCart$" + "");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 
