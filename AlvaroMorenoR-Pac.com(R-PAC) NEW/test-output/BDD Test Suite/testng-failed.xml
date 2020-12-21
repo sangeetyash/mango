@@ -12,4 +12,15 @@
       </class> <!-- MyRunner.TestRunner -->
     </classes>
   </test> <!-- R-PAC Test(failed) -->
+  <test thread-count="1" name="R-PAC Test1(failed)" parallel="tests">
+    <classes>
+      <class name="MyRunner.TestRunner">
+        <methods>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- MyRunner.TestRunner -->
+    </classes>
+  </test> <!-- R-PAC Test1(failed) -->
 </suite> <!-- Failed suite [BDD Test Suite] -->

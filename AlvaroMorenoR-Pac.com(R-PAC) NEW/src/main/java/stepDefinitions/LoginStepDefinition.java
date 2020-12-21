@@ -3,6 +3,7 @@ package stepDefinitions;
 
 
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,7 +49,8 @@ public class LoginStepDefinition
 	String shID="";
 	String ShoppingCartNo;
 	String rpoListStr="";
-
+	
+	LinkedList<String> linkList=new LinkedList<String>();
 	
 	
 	long startTime,endTime,totalTime,executionTime;
@@ -832,7 +834,8 @@ public class LoginStepDefinition
 	 { 
 		 
 		 startTime = System.currentTimeMillis();
-
+		 
+		 
 		 checkout=pageObjectManager.getcheckOut();
 		 rpoScreen=pageObjectManager.getRPOScreen();
 
@@ -843,11 +846,15 @@ public class LoginStepDefinition
 		 Thread.sleep(3000);
 		 
 		 rpoLIST=null;
+		 linkList=null;
+
 	 
 		 rpoLIST=checkout.return_RPO();
+		 linkList=checkout.return_RPOLinkList();
 		 Thread.sleep(3000);
 		 
 		 checkout.printRPO(rpoLIST);
+		 checkout.printRPOLinkList(linkList);
 		 Thread.sleep(3000);
 		 
 		 rpoListStr="";
@@ -860,11 +867,7 @@ public class LoginStepDefinition
 		 
 		 //lst=checkout.return_RPO();
 		 //shID=checkout.shoppingCart();
-		 
-		 Thread.sleep(2000);
-
-		 checkout.printOrderDetails();
-		 
+		 		 
 		 Thread.sleep(8000);
 		 
 		 checkout.orderDone();

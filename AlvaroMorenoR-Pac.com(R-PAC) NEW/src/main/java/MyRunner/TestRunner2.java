@@ -25,7 +25,7 @@ import gherkin.formatter.Reporter;
         //tags = {"@loginlogout,@catalogorder1,@regression,@testcase5,@testcase6,"
         //	+ "@testcase7,@testcase8,@testcase12,@testcase13,@testcase14,"
        // + "@testcase19,@testcase18,@testcase17,@testcase16"},
-        tags = {"@testcaseA003"},
+        tags = {"@testcaseA004"},
 
         format = {
                 "pretty",
@@ -41,7 +41,7 @@ import gherkin.formatter.Reporter;
         
 		)
 
-public class TestRunner
+public class TestRunner2
 {
     private TestNGCucumberRunner testNGCucumberRunner;
  

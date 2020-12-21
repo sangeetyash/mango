@@ -213,7 +213,7 @@ public class LoginStepDefinition
 		}
 	 
 	 @Then("^With Confirm orders,Search Release PO page with CPO ID \"([^\"]*)\"$")
-	 public void Confirm_Release_PO_page(String RPO) throws InterruptedException 
+	 public void ALMO_CLX01(String RPO) throws InterruptedException 
 	 	{
 		 startTime = System.currentTimeMillis();
 

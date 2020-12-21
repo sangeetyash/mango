@@ -62,6 +62,7 @@ public class CheckOut
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		List<WebElement> itemsfiler1 = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
+		//List<WebElement> itemsfiler1=driver.findElements(By.xpath("//table[@id='tblServiceBureauOrder']/tbody/tr"));
 		int trnofilter1 = itemsfiler1.size() + 1;
 		//System.out.println("itemvise" + trnofilter1);
 		
@@ -280,7 +281,10 @@ public class CheckOut
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		
-		List<WebElement> itemsfiler = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
+		
+		List<WebElement> itemsfiler=driver.findElements(By.xpath("//table[@id='tblEmployee']/tbody/tr"));
+
+		//List<WebElement> itemsfiler = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
 		//*[@id="tblEmployee"]/tbody/tr[1]
 		int trnofilter = itemsfiler.size() + 1;
 		//System.out.println("itemvise" + trnofilter);
@@ -325,6 +329,7 @@ public class CheckOut
 			  Thread.sleep(1500);
 
 			List<WebElement> itemsfiler1 = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
+			
 			int trnofilter1 = itemsfiler1.size() + 1;
 			//System.out.println("itemvise" + trnofilter1);
 			
@@ -378,17 +383,29 @@ public class CheckOut
 	        
 	        return str;
 	 }
+	 public void printRPOLinkList(LinkedList<String> RPO)
+	 {
+		 	String strig1="";
+		 	LinkedList<String> nList= RPO;
+		 	
+			int i =nList.size();
+			System.out.println("size"+i);
+			
+			strig1 = String.join(",", nList); 
+	        System.out.println(strig1);
+	 }
 	 
 	 public  LinkedList<String> return_RPOLinkList() 
 		{
 			
-			//*[@id="tblEmployee"]/tbody/tr[1]/td[1]
-		       //define string array
+			
 		 	LinkedList<String> return_RPOList = new LinkedList<String>();
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 			
-			List<WebElement> itemsfiler = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
+			//List<WebElement> itemsfiler = driver.findElements(By.xpath("//div[@id='dataTableContainer']/table/tbody/tr"));
+			List<WebElement> itemsfiler=driver.findElements(By.xpath("//table[@id='tblEmployee']/tbody/tr"));
+
 			//*[@id="tblEmployee"]/tbody/tr[1]
 			int trnofilter = itemsfiler.size() + 1;
 			//System.out.println("itemvise" + trnofilter);
