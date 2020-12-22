@@ -53,7 +53,7 @@ Examples:
 	
 	
 @testcaseA005
-Scenario Outline:  Catalog back n forth
+Scenario Outline:  Catalog back n forth and cancel order
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
@@ -80,8 +80,8 @@ Then Verify catalog RPO with DB
 | ALMO_MCM01 | 100 |
 | ALMO_MCM01 | 50  |
 Then Print Confirmation and done
-Then Goto Report>Order Status
-#Then Goto Report>Order Status->Cancel Order
+#Then Goto Report>Order Status
+Then Goto Report>Order Status->Cancel Order
 Then Logout
 Then Close Browser	
 
@@ -98,9 +98,9 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_797"
+Then Search Release PO page with CPO ID "2020_207"
 Then Search Vendor ID "001024"
-Then click on PO "2020_797"
+Then click on PO "2020_207"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -127,13 +127,13 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_797"
+Then Search Release PO page with CPO ID "2020_427"
 Then Search Vendor ID "001024"
-Then click on PO "2020_797"
+Then click on PO "2020_427"
 Then AddToCart
-Then Search Release PO page with CPO ID "2020_798"
+Then Search Release PO page with CPO ID "2020_607"
 Then Search Vendor ID "001024"
-Then click on PO "2020_798"
+Then click on PO "2020_607"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -159,13 +159,13 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_797"
+Then Search Release PO page with CPO ID "2020_727"
 Then Search Vendor ID "001024"
-Then click on PO "2020_797"
+Then click on PO "2020_727"
 Then AddToCart
-Then Search Release PO page with CPO ID "2020_798"
-Then Search Vendor ID "001026"
-Then click on PO "2020_798"
+Then Search Release PO page with CPO ID "2020_101"
+Then Search Vendor ID "1862"
+Then click on PO "2020_101"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -198,9 +198,9 @@ Then goto checkout page
 Then Verify Cart With DB
 | Catalog | qty |
 | ALMO_MCM01 | 100 |
-Then Search Release PO page with CPO ID "2020_797"
+Then Search Release PO page with CPO ID "2020_767"
 Then Search Vendor ID "001024"
-Then click on PO "2020_797"
+Then click on PO "2020_767"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -225,9 +225,9 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_797"
+Then Search Release PO page with CPO ID "2020_877"
 Then Search Vendor ID "001024"
-Then click on PO "2020_797"
+Then click on PO "2020_877"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -254,22 +254,22 @@ Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
 #Then Show confirm orders 
-Then With Confirm orders,Search Release PO page with CPO ID "2020_413"
-Then Search Vendor ID "001024"	
-Then click on PO "2020_413"
+Then With Confirm orders,Search Release PO page with CPO ID "2020_280"
+Then Search Vendor ID "000643"	
+Then click on PO "2020_280"
 Then Select PO items based on EAN plus edit order qty
 | ItemCode   | EAN           | qty   |
-| ALMO_CLX01 | 8434658766759 |	50   |
-| ALMO_HXY09 | 8434658767183 |	95   |			
+| ALMO_CLX01 | 8434658660774 |	50   |
+| ALMO_HTG06 | 8434658660835 |	95   |			
 Then Addtocart Confirm Order
 #Then Show confirm orders 
-Then With Confirm orders,Search Release PO page with CPO ID "2020_413"
-Then Search Vendor ID "001024"	
-Then click on PO "2020_413"
+Then With Confirm orders,Search Release PO page with CPO ID "2020_280"
+Then Search Vendor ID "000643"	
+Then click on PO "2020_280"
 Then Select PO items based on EAN plus edit order qty
 | ItemCode   | EAN           | qty   |
-| ALMO_CLX01 | 8434658767107 |	155  |
-| ALMO_HTG06 | 8434658767305 |	123  |			
+| ALMO_HTG06 | 8434658620167 |	155  |
+| ALMO_MCM01 | 8434658620099 |	123  |			
 Then Addtocart Confirm Order
 Then goto checkout page
 #Then Verify All PO data with db
@@ -302,19 +302,19 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_457"
+Then Search Release PO page with CPO ID "2020_967"
 Then Search Vendor ID "001024"
-Then click on PO "2020_457"
+Then click on PO "2020_967"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
-Then With Confirm orders,Search Release PO page with CPO ID "2020_241"
+Then With Confirm orders,Search Release PO page with CPO ID "2020_271"
 Then Search Vendor ID "000669"	
-Then click on PO "2020_241"
+Then click on PO "2020_271"
 Then Select PO items based on EAN plus edit order qty
 | ItemCode   | EAN           | qty   |
-| ALMO_HTG01 | 8434658667735 |	155  |
-| ALMO_HXY01 | 8434658667759 |	123  |			
+| ALMO_HTG01 | 8434658667766 |	255  |
+| ALMO_HXY01 | 8434658667766 |	500  |			
 Then Addtocart Confirm Order
 Then goto checkout page
 Then Verify All PO data with db

@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="BDD Test Suite" duration-ms="101865" started-at="2020-12-20T22:29:26Z" finished-at="2020-12-20T22:31:08Z">
+  <suite name="BDD Test Suite" duration-ms="98614" started-at="2020-12-22T06:57:18Z" finished-at="2020-12-22T06:58:56Z">
     <groups>
       <group name="cucumber">
         <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" class="MyRunner.TestRunner"/>
-        <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@21213b92]" name="feature" class="MyRunner.TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="R-PAC Test" duration-ms="84439" started-at="2020-12-20T22:29:26Z" finished-at="2020-12-20T22:30:51Z">
+    <test name="R-PAC Test" duration-ms="98614" started-at="2020-12-22T06:57:18Z" finished-at="2020-12-22T06:58:56Z">
       <class name="MyRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="setUpClass" is-config="true" duration-ms="415" started-at="2020-12-20T22:29:26Z" finished-at="2020-12-20T22:29:27Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="setUpClass" is-config="true" duration-ms="212" started-at="2020-12-22T06:57:18Z" finished-at="2020-12-22T06:57:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" duration-ms="83797" started-at="2020-12-20T22:29:27Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-20T22:30:51Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="feature" duration-ms="98235" started-at="2020-12-22T06:57:18Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-22T06:58:56Z">
           <params>
             <param index="0">
               <value>
@@ -23,266 +22,14 @@
               </value>
             </param>
           </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=87.0.4280.88)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63248}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: c8c3187fcf9c7b8c0cac390f976c9c78
-*** Element info: {Using=class name, value=user-name}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=87.0.4280.88)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63248}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: c8c3187fcf9c7b8c0cac390f976c9c78
-*** Element info: {Using=class name, value=user-name}
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-at MyRunner.TestRunner.feature(TestRunner.java:57)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=87.0.4280.88)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63248}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: c8c3187fcf9c7b8c0cac390f976c9c78
-*** Element info: {Using=class name, value=user-name}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:405)
-at org.openqa.selenium.By$ByClassName.findElement(By.java:391)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-at pageObjects.LoginUserPassword.logout(LoginUserPassword.java:60)
-at stepDefinitions.LoginStepDefinition.logout(LoginStepDefinition.java:1035)
-at ✽.Then Logout(alvoromareno.feature:18)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="tearDownClass" is-config="true" duration-ms="22" started-at="2020-12-20T22:30:51Z" finished-at="2020-12-20T22:30:51Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@72d818d1]" name="tearDownClass" is-config="true" duration-ms="29" started-at="2020-12-22T06:58:56Z" finished-at="2020-12-22T06:58:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- MyRunner.TestRunner -->
     </test> <!-- R-PAC Test -->
-    <test name="R-PAC Test1" duration-ms="17391" started-at="2020-12-20T22:30:51Z" finished-at="2020-12-20T22:31:08Z">
-      <class name="MyRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@21213b92]" name="setUpClass" is-config="true" duration-ms="24" started-at="2020-12-20T22:30:51Z" finished-at="2020-12-20T22:30:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@21213b92]" name="feature" duration-ms="17308" started-at="2020-12-20T22:30:51Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-12-20T22:31:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[R-PACMango.com CRM E-Coomerece Feature Main Finish..]]>
-              </value>
-            </param>
-          </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: session not created
-from chrome not reachable
-  (Session info: chrome=87.0.4280.88)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-Ordinal0 [0x0119C0C3+3326147]
-Ordinal0 [0x01080851+2164817]
-Ordinal0 [0x00F07140+618816]
-Ordinal0 [0x00EFD404+578564]
-Ordinal0 [0x00EFDACB+580299]
-Ordinal0 [0x00EFED35+585013]
-Ordinal0 [0x00EF9D61+564577]
-Ordinal0 [0x00F082C0+623296]
-Ordinal0 [0x00EA6BDD+224221]
-Ordinal0 [0x00EA5CAC+220332]
-Ordinal0 [0x00EA189B+202907]
-Ordinal0 [0x00E83DF4+81396]
-Ordinal0 [0x00E84DEE+85486]
-Ordinal0 [0x00E84D79+85369]
-Ordinal0 [0x010985DC+2262492]
-GetHandleVerifier [0x01322874+1487204]
-GetHandleVerifier [0x013223CD+1486013]
-GetHandleVerifier [0x0132A368+1518680]
-GetHandleVerifier [0x01322F4E+1488958]
-Ordinal0 [0x0108ED0D+2223373]
-Ordinal0 [0x0109A12B+2269483]
-Ordinal0 [0x0109A26F+2269807]
-Ordinal0 [0x010AECB8+2354360]
-BaseThreadInitThunk [0x764A6359+25]
-RtlGetAppContainerNamedObjectPath [0x77C18944+228]
-RtlGetAppContainerNamedObjectPath [0x77C18914+180]
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: org.openqa.selenium.SessionNotCreatedException: session not created
-from chrome not reachable
-  (Session info: chrome=87.0.4280.88)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-Ordinal0 [0x0119C0C3+3326147]
-Ordinal0 [0x01080851+2164817]
-Ordinal0 [0x00F07140+618816]
-Ordinal0 [0x00EFD404+578564]
-Ordinal0 [0x00EFDACB+580299]
-Ordinal0 [0x00EFED35+585013]
-Ordinal0 [0x00EF9D61+564577]
-Ordinal0 [0x00F082C0+623296]
-Ordinal0 [0x00EA6BDD+224221]
-Ordinal0 [0x00EA5CAC+220332]
-Ordinal0 [0x00EA189B+202907]
-Ordinal0 [0x00E83DF4+81396]
-Ordinal0 [0x00E84DEE+85486]
-Ordinal0 [0x00E84D79+85369]
-Ordinal0 [0x010985DC+2262492]
-GetHandleVerifier [0x01322874+1487204]
-GetHandleVerifier [0x013223CD+1486013]
-GetHandleVerifier [0x0132A368+1518680]
-GetHandleVerifier [0x01322F4E+1488958]
-Ordinal0 [0x0108ED0D+2223373]
-Ordinal0 [0x0109A12B+2269483]
-Ordinal0 [0x0109A26F+2269807]
-Ordinal0 [0x010AECB8+2354360]
-BaseThreadInitThunk [0x764A6359+25]
-RtlGetAppContainerNamedObjectPath [0x77C18944+228]
-RtlGetAppContainerNamedObjectPath [0x77C18914+180]
-
-at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-at MyRunner.TestRunner.feature(TestRunner.java:57)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-Caused by: org.openqa.selenium.SessionNotCreatedException: session not created
-from chrome not reachable
-  (Session info: chrome=87.0.4280.88)
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'DESKTOP-M0JQEN5', ip: '20.0.0.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-Ordinal0 [0x0119C0C3+3326147]
-Ordinal0 [0x01080851+2164817]
-Ordinal0 [0x00F07140+618816]
-Ordinal0 [0x00EFD404+578564]
-Ordinal0 [0x00EFDACB+580299]
-Ordinal0 [0x00EFED35+585013]
-Ordinal0 [0x00EF9D61+564577]
-Ordinal0 [0x00F082C0+623296]
-Ordinal0 [0x00EA6BDD+224221]
-Ordinal0 [0x00EA5CAC+220332]
-Ordinal0 [0x00EA189B+202907]
-Ordinal0 [0x00E83DF4+81396]
-Ordinal0 [0x00E84DEE+85486]
-Ordinal0 [0x00E84D79+85369]
-Ordinal0 [0x010985DC+2262492]
-GetHandleVerifier [0x01322874+1487204]
-GetHandleVerifier [0x013223CD+1486013]
-GetHandleVerifier [0x0132A368+1518680]
-GetHandleVerifier [0x01322F4E+1488958]
-Ordinal0 [0x0108ED0D+2223373]
-Ordinal0 [0x0109A12B+2269483]
-Ordinal0 [0x0109A26F+2269807]
-Ordinal0 [0x010AECB8+2354360]
-BaseThreadInitThunk [0x764A6359+25]
-RtlGetAppContainerNamedObjectPath [0x77C18944+228]
-RtlGetAppContainerNamedObjectPath [0x77C18914+180]
-
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:123)
-at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
-at java.util.Spliterators$ArraySpliterator.tryAdvance(Unknown Source)
-at java.util.stream.ReferencePipeline.forEachWithCancel(Unknown Source)
-at java.util.stream.AbstractPipeline.copyIntoWithCancel(Unknown Source)
-at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
-at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
-at java.util.stream.FindOps$FindOp.evaluateSequential(Unknown Source)
-at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
-at java.util.stream.ReferencePipeline.findFirst(Unknown Source)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:73)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:209)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:132)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
-at stepDefinitions.LoginStepDefinition.navigateUser(LoginStepDefinition.java:79)
-at ✽.Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "chrome"(alvoromareno.feature:7)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@21213b92]" name="tearDownClass" is-config="true" duration-ms="19" started-at="2020-12-20T22:31:08Z" finished-at="2020-12-20T22:31:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- MyRunner.TestRunner -->
-    </test> <!-- R-PAC Test1 -->
   </suite> <!-- BDD Test Suite -->
 </testng-results>

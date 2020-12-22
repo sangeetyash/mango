@@ -7,9 +7,9 @@
 			<class name="MyRunner.TestRunner" />
 		</classes>
 	</test>
-	<test name="R-PAC Test1" >
+	<!-- <test name="R-PAC Test1" >
 		<classes>
 			<class name="MyRunner.TestRunner" />
 		</classes>
-	</test>
+	</test> -->
 </suite>
