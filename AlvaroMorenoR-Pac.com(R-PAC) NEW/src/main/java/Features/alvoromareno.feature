@@ -1,7 +1,7 @@
 Feature: R-PACMango.com CRM E-Coomerece Feature Main Finish..
 	
 	
-	@testcaseA003
+@testcaseA003
 Scenario Outline: SQL Catalog back n forth
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "chrome"
@@ -386,3 +386,24 @@ Then Close Browser
 Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |	
+	
+	@testcaseA019
+Scenario Outline: Normal PO order
+
+Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
+When title of login page
+Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user clicks on login button
+Then user is on home page
+Then Search In-Plant PO page with CPO ID "2020_767"
+Then Search Vendor ID "001024"
+Then click on PO "2020_767"
+Then Submit
+Then Verify All In-Plant RPO data with db
+#Then Goto Report>Order Status
+Then Logout
+Then Close Browser
+
+Examples:
+| items | udateitems |
+| 1111  | 2222  |

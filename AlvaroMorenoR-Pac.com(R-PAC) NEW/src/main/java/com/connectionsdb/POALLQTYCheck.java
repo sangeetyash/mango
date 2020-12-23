@@ -932,4 +932,126 @@ public class POALLQTYCheck {
 		 
 
 	}
+	
+	
+	public void allrpoInplantCheckWithDBParse(String a) throws SQLException
+	{
+		
+
+		try  
+        {
+			
+		    //System.out.println(num);
+	
+					 // Create SELECT SQL statement.
+			            String selectSql = "SELECT * " + 
+					            		"FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser]" + 
+			            		        "WHERE bigIntRPO IN ("+ a +")";
+			            
+			            System.out.println("SQL Query="+selectSql);
+						 connection = DriverManager.getConnection(connectionUrl);
+						 Statement statement = connection.createStatement();
+					     resultSet1= null;
+					   
+			             resultSet1 = statement.executeQuery(selectSql);
+			             
+			             	
+			             int i=1;
+			            // Print results from select statement
+			            
+						/*
+						 * while (resultSet.next()) { System.out.println ( " | " + i + " | " +
+						 * resultSet.getString(1) + " | " + resultSet.getString(2) + " | " +
+						 * resultSet.getString(3) + " | " + resultSet.getString(4) + " | " +
+						 * resultSet.getString(5) + " | " + resultSet.getString(6) + " | " +
+						 * resultSet.getString(7) + " | " + resultSet.getString(8) + " | " +
+						 * resultSet.getString(9) + " | " + resultSet.getString(10) + " | " +
+						 * resultSet.getString(11) + " | " + resultSet.getString(12) + " | " ); i=i+1; }
+						 */
+			            i=1;
+			            
+					            while (resultSet1.next())
+					            {
+
+					            	System.out.println
+					            	(" | N"	 	
+							                + " | " + "bigintShoppingCartNo"
+							                + " | " + "bigintOrderQty"
+							                + " | " + "intStatus"
+							                + " | " + "bigIntRPO"
+							                + " | " + "varItemCode"
+							                + " | ");
+					                System.out.println
+					                (
+					                  " | "	+ i	
+						                + " | " + resultSet1.getString("bigintShoppingCartNo")
+						                + " | " + resultSet1.getString("bigintOrderQty")
+						                + " | " + resultSet1.getString("intStatus")
+						                + " | " + resultSet1.getString("bigIntRPO")
+						                + " | " + resultSet1.getString("varItemCode")
+						                + " | "
+					                );
+					                
+					                
+					                
+					                String status=resultSet1.getString("intStatus");
+							    	//System.out.println("tbl_Cust_Mango_Parser recorde status" + status);
+
+							             if (status.equalsIgnoreCase("6"))
+							             {
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
+							             }
+							             else if(status.equalsIgnoreCase("8"))
+							             {
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Pass\n");
+							             }
+							             else
+							             {
+							            	 System.out.println("tbl_Cust_AlvaroMoreno_Parser table check Fail\n");
+							             }
+					                i=i+1;
+					            }
+					            
+			            //resultSet1.close();
+			            
+			            
+			            
+			            //statement.close();
+					
+
+        }
+		
+        
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet1 != null) {
+                try {
+                	resultSet1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement != null) {
+                try {
+                	statement.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } catch (SQLException e) 
+                { e.printStackTrace();}
+            }
+		}
+		
+		
+		
+    }
+	
 }

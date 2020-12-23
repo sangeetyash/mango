@@ -40,6 +40,21 @@ public class ReleasePO {
 		// WebElement releasePO =driver.findElements(By.xpath("//*[@id="Release"]"));
 		// WebElement releasePO=driver.findElement(By.className("Release"));
 	}
+	
+	public void getInPlantPrintingbyPO() throws InterruptedException {
+		WebElement username = driver.findElement(By.className("Order"));
+		username.click();
+		getWait(4000);
+		// *[@id="Release"]
+		WebElement releasePO = driver.findElement(By.linkText("In-Plant Printing by PO"));
+		releasePO.click();
+		getWait(3000);
+		// *[@id="cssmenu"]/ul/li[2]/ul/li[4]
+		// *[@id="Release"]
+		// WebElement releasePO =driver.findElements(By.xpath("//*[@id="Release"]"));
+		// WebElement releasePO=driver.findElement(By.className("Release"));
+	}
+
 
 	public void getrecords(String i) throws InterruptedException {
 		// name=tblServiceBureauOrder_length
@@ -700,6 +715,30 @@ public class ReleasePO {
 		//System.out.println("^addtocart");
 
 	}
+	
+	public String submit() throws InterruptedException
+	{
+		String rpoListString="";
+		getWait(3000);
+		// *[@id="btnAddtoCart"]
+		WebElement addToCart = driver.findElement(By.id("btnAddtoCart"));
+		addToCart.click();
+		getWait(3000);
+		
+		WebElement rpomsgelement=driver.findElement(By.xpath(".//*[@id='smartAlertScrollArea']"));
+		String success=rpomsgelement.getText();
+		rpoListString=success.substring(37);
+		System.out.println("RPO No. ->"+rpoListString);
+		//*[@id="smartAlertScrollArea"]
+		
+		addToCartsucess();
+		
+		return rpoListString;
+	}
+	
+	//*[@id="smartAlertScrollArea"]
+	//smartAlertButton smartAlertActive
+	//*[@id="smartAlertButtons"]
 
 	public void addToCartWithDoubleClick() throws InterruptedException 
 	{

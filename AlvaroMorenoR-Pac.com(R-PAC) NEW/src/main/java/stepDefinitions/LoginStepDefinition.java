@@ -49,6 +49,7 @@ public class LoginStepDefinition
 	String shID="";
 	String ShoppingCartNo;
 	String rpoListStr="";
+	String inplantrpoListstr="";
 	
 	LinkedList<String> linkList=new LinkedList<String>();
 	
@@ -228,6 +229,36 @@ public class LoginStepDefinition
 		  executionTime=executionTime+totalTime;
 
 		 System.out.println("^user moves to Release PO page and search for PO "+RPO);	 
+	
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
+
+		 
+		}
+	 
+	 @Then("^Search In-Plant PO page with CPO ID \"([^\"]*)\"$")
+	 public void InPlant_PO_page(String RPO) throws InterruptedException 
+	 	{
+		 
+		 startTime = System.currentTimeMillis();
+
+		 releasePO=pageObjectManager.getreleasePO();
+		 Thread.sleep(5000);
+		 releasePO.getInPlantPrintingbyPO();
+		 Thread.sleep(5000);
+		 //releasePO.get100records();
+		 Thread.sleep(2000);
+		 //releasePO.showConfirmed();
+		 Thread.sleep(2000);
+		 //releasePO.showConfirmed();
+		 Thread.sleep(2000);
+		 releasePO.searchCPO(RPO);
+		 Thread.sleep(2000);
+		 
+		 endTime = System.currentTimeMillis();
+		totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
+
+		 System.out.println("^Search In-Plant PO page with CPO ID "+RPO);	 
 	
 		  System.out.println("And  time taken=" +totalTime+" secs\n");
 
@@ -454,6 +485,32 @@ public class LoginStepDefinition
 		 	releasePO.addToCart();
 		 	Thread.sleep(2000);
 		 	releasePO.addToCartsucess();
+		 	
+		 	
+		 	endTime = System.currentTimeMillis();
+			totalTime =(endTime-startTime)/1000;
+			  executionTime=executionTime+totalTime;
+
+			 System.out.println("^Addtocart$" + "");	 
+			  System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
+	 
+	 @Then("^Submit$")
+	 public void getSubmit()throws InterruptedException
+	 {
+		 	inplantrpoListstr="";
+		 	startTime = System.currentTimeMillis();
+
+		 	releasePO=pageObjectManager.getreleasePO();
+		 	Thread.sleep(2000);
+
+			 //releasePO.printArry();
+			 Thread.sleep(2000);
+
+		 	inplantrpoListstr=releasePO.submit();
+		 	Thread.sleep(2000);
+		 	//releasePO.addToCartsucess();
 		 	
 		 	
 		 	endTime = System.currentTimeMillis();
@@ -1228,6 +1285,31 @@ public class LoginStepDefinition
 		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Verify All RPO data with db$" + "");	 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+		
+
+	 }
+	 
+	 @Then("^Verify All In-Plant RPO data with db$")
+	 public void verifyInPlantAllRPOData() throws InterruptedException, SQLException
+	 {
+		 startTime = System.currentTimeMillis();
+
+		 Thread.sleep(1200);
+		 poALLQTYCheck=pageObjectManager.getPOALLQTYCheck();
+		 
+		 poALLQTYCheck.allrpoInplantCheckWithDBParse(inplantrpoListstr);
+		 Thread.sleep(1200);
+		 
+		 poALLQTYCheck.checkRPACTable1(inplantrpoListstr);
+		 Thread.sleep(1200);
+
+		 endTime = System.currentTimeMillis();
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+
+		 System.out.println("^Verify All In-Plant RPO data with db$" + "");	 
 		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 		
