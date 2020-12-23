@@ -153,7 +153,9 @@ public class CheckOut
 		WebElement edate = driver.findElement(By.xpath(".//*[@id='txtdtExpected']"));
 		Thread.sleep(1000);
 		edate.click();
-
+		//*[@id="ui-datepicker-div"]/div/a[2]
+		WebElement nextmonth = driver.findElement(By.xpath(".//*[@id=\"ui-datepicker-div\"]/div/a[2]"));
+		nextmonth.click();
 		WebElement daydate = driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/table/tbody/tr[5]/td[4]/a"));
 		daydate.click();
 		//*[@id="ui-datepicker-div"]/table/tbody/tr[5]/td[4]/a

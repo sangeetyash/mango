@@ -1,5 +1,10 @@
 package pageObjects;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -18,6 +23,18 @@ import cucumber.api.DataTable;
 public class OrderStatus {
 
 	WebDriver driver;
+	
+	String connectionUrl =
+            "jdbc:sqlserver://10.0.0.4:1473;"
+            + "database=r-tracDB;"
+            + "user=Sangeet;"
+            + "password=S@ngeet#2020;"
+            + "encrypt=true;"
+            + "trustServerCertificate=true;"
+            + "loginTimeout=30;";
+	 Statement statement1;
+	 Connection connection;
+	 ResultSet resultSet2;
 	PageObjectManager pageObjectManager;
 	CheckOut checkOut;
 	public OrderStatus(WebDriver driver) 
@@ -86,30 +103,88 @@ public class OrderStatus {
 		// *[@id="tblServiceBureauOrder"]/tbody/tr/td[1]/span/a
 	}
 	
-	public void searchRPO(List<String> rpo) throws InterruptedException {
-		
+	public void searchRPO(String shopID) throws InterruptedException 
+	{
+		try
+		{
+			String RPOString="";
+
 		// *[@id="searchId0"]
-		int i =rpo.size();
+		//int i =rpo.size();
 		//System.out.println("size"+i);
+		long num = Long.parseLong(shopID);
+	    //System.out.println(num);
+		  //SELECT DISTINCT [bigIntRPO]
+				//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
 
-		for (int v = 0;v< i; v++)
+		            String selectSql2=	"SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
+            		+ "where bigintShoppingCartNo  = "+ num  +" AND [bigIntRPO] is not NULL order by [bigIntRPO] desc";
+            	
+		            
+		             System.out.println(selectSql2);
+					 connection = DriverManager.getConnection(connectionUrl);
+					 statement1 = connection.createStatement();
+				    
+					
+		            int j=1;
+		            resultSet2=null;
+		            resultSet2 = statement1.executeQuery(selectSql2);
+		            
+		            while (resultSet2.next())
+		            {
+		                   
+		            	String rec=resultSet2.getString("bigIntRPO");
+				        System.out.println(rec);
+				        WebElement seaech = driver.findElement(By.id("searchId0"));
+						seaech.clear();
+						Thread.sleep(1000);
+
+						//System.out.println(rpo.get(j).toString());
+						seaech.sendKeys(rec);
+						seaech.sendKeys(Keys.ENTER);
+						Thread.sleep(5000);
+				        if(j==1)
+				        {
+				        	RPOString=rec;
+				        }
+				        else
+				        {
+				        	RPOString=RPOString+","+rec;
+				        }
+		            j=j+1;
+		            }    
+				 	
+			
+			        System.out.println(RPOString);
+		}
+		catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
 		{
-			//System.out.println(rpo.get(v).toString());
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
 		}
 		
-		for(int j=0;j<i;j++)
-		{
-			
-		WebElement seaech = driver.findElement(By.id("searchId0"));
-		seaech.clear();
-		Thread.sleep(1000);
-
-		//System.out.println(rpo.get(j).toString());
-		seaech.sendKeys(rpo.get(j).toString());
-		seaech.sendKeys(Keys.ENTER);
-		Thread.sleep(5000);
-		}
-		// *[@id="tblServiceBureauOrder"]/tbody/tr/td[1]/span/a
 	}
 	
 	public void getWait(int a) throws InterruptedException 
@@ -141,53 +216,179 @@ public class OrderStatus {
 
 	}
 	
-	public void gotoRPODetailScreen(List<String> rpo) throws InterruptedException
+	public void gotoRPODetailScreen(String shopID) throws InterruptedException
 	{
-		int i =rpo.size();
-		//System.out.println("size"+i);
-
-		for (int v = 0;v< i; v++)
+		try
 		{
-			//System.out.println(rpo.get(v).toString());
+			String RPOString="";
+
+		// *[@id="searchId0"]
+		//int i =rpo.size();
+		//System.out.println("size"+i);
+		long num = Long.parseLong(shopID);
+	    //System.out.println(num);
+		  //SELECT DISTINCT [bigIntRPO]
+				//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
+
+		            String selectSql2=	"SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
+            		+ "where bigintShoppingCartNo  = "+ num  +" AND [bigIntRPO] is not NULL order by [bigIntRPO] desc";
+            	
+		            
+		             System.out.println(selectSql2);
+					 connection = DriverManager.getConnection(connectionUrl);
+					 statement1 = connection.createStatement();
+				    
+					
+		            int j=1;
+		            resultSet2=null;
+		            resultSet2 = statement1.executeQuery(selectSql2);
+		            
+		            while (resultSet2.next())
+		            {
+		                   
+		            	String rec=resultSet2.getString("bigIntRPO");
+				        System.out.println(rec);
+				        //String rpostring=rpo.get(j).toString();
+						String remarks="Cancelling RPO-> " + rec + " for testing";
+						driver.findElement(By.linkText(rec)).click();		
+						getWait(1500);
+						//cancelOrder(1,remarks);
+						driver.navigate().back();
+						
+					    getWait(3000);
+					    selectNoRecords("100");
+				        if(j==1)
+				        {
+				        	RPOString=rec;
+				        }
+				        else
+				        {
+				        	RPOString=RPOString+","+rec;
+				        }
+		            j=j+1;
+		            }    
+				 	
+			
+			        System.out.println(RPOString);
+		}
+		catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
 		}
 		
-		for(int j=0;j<i;j++)
-		{
-			String rpostring=rpo.get(j).toString();
-			String remarks="Cancelling order " + rpostring;
-			driver.findElement(By.linkText(rpostring)).click();		
-			getWait(1500);
-			//cancelOrder(1,remarks);
-			driver.navigate().back();
-			
-		    getWait(3000);
-		    selectNoRecords("100");
-		}
 		
 	}
 	
-	public void gotoRPODetailScreenAndCancelOrder(List<String> rpo) throws InterruptedException
+	public void gotoRPODetailScreenAndCancelOrder(String shopID) throws InterruptedException
 	{
-		int i =rpo.size();
-		//System.out.println("size"+i);
-
-		for (int v = 0;v< i; v++)
+		
+		try
 		{
-			//System.out.println(rpo.get(v).toString());
+			String RPOString="";
+
+		// *[@id="searchId0"]
+		//int i =rpo.size();
+		//System.out.println("size"+i);
+		long num = Long.parseLong(shopID);
+	    //System.out.println(num);
+		  //SELECT DISTINCT [bigIntRPO]
+				//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
+
+		            String selectSql2=	"SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
+            		+ "where bigintShoppingCartNo  = "+ num  +" AND [bigIntRPO] is not NULL order by [bigIntRPO] desc";
+            	
+		            
+		             System.out.println(selectSql2);
+					 connection = DriverManager.getConnection(connectionUrl);
+					 statement1 = connection.createStatement();
+				    
+					
+		            int j=1;
+		            resultSet2=null;
+		            resultSet2 = statement1.executeQuery(selectSql2);
+		            
+		            while (resultSet2.next())
+		            {
+		                   
+		            	String rec=resultSet2.getString("bigIntRPO");
+				        System.out.println(rec);
+				        
+				        //String rpostring=rpo.get(j).toString();
+						String remarks="Cancelling order " + rec +" for testing";
+						driver.findElement(By.linkText(rec)).click();		
+						getWait(1500);
+						cancelOrder(1,remarks);
+						driver.navigate().back();
+						
+					    getWait(3000);
+					    selectNoRecords("100");
+				        if(j==1)
+				        {
+				        	RPOString=rec;
+				        }
+				        else
+				        {
+				        	RPOString=RPOString+","+rec;
+				        }
+		            j=j+1;
+		            }    
+				 	
+			
+			        System.out.println(RPOString);
+		}
+		catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
 		}
 		
-		for(int j=0;j<i;j++)
-		{
-			String rpostring=rpo.get(j).toString();
-			String remarks="Cancelling order " + rpostring;
-			driver.findElement(By.linkText(rpostring)).click();		
-			getWait(1500);
-			cancelOrder(1,remarks);
-			driver.navigate().back();
-			
-		    getWait(3000);
-		    selectNoRecords("100");
-		}
+		
+		
 		
 	}
 	

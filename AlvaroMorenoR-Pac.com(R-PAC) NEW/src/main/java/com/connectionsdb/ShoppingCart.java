@@ -16,14 +16,13 @@ public class ShoppingCart {
 
 	WebDriver driver;
 	String connectionUrl =
-            "jdbc:sqlserver://13.71.7.63:1473;"
+            "jdbc:sqlserver://10.0.0.4:1473;"
             + "database=r-tracDB;"
             + "user=Sangeet;"
             + "password=S@ngeet#2020;"
             + "encrypt=true;"
             + "trustServerCertificate=true;"
             + "loginTimeout=30;";
-
     ResultSet resultSet, resultSet1, resultSet2 = null;
     Connection connection;
     Statement statement,statement1;

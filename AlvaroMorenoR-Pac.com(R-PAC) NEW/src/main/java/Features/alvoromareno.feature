@@ -66,19 +66,19 @@ Then goto checkout page
 Then Verify Cart With DB
 | Catalog | qty |
 | ALMO_MCM01 | 100 |
-Then goto catalog screen and PO selection validation check
-Then Plus Add to cart "ALMO_MCM01" and "50"
-Then goto checkout page
-Then Verify Cart With DB
-| Catalog | qty |
-| ALMO_MCM01 | 100 |
-| ALMO_MCM01 | 50  |
+#Then goto catalog screen and PO selection validation check
+#Then Plus Add to cart "ALMO_MCM01" and "50"
+#Then goto checkout page
+#Then Verify Cart With DB
+#| Catalog | qty |
+#| ALMO_MCM01 | 100 |
+#| ALMO_MCM01 | 50  |
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
 Then Confirm Order
 Then Verify catalog RPO with DB
 | Catalog | qty |
 | ALMO_MCM01 | 100 |
-| ALMO_MCM01 | 50  |
+#| ALMO_MCM01 | 50  |
 Then Print Confirmation and done
 #Then Goto Report>Order Status
 Then Goto Report>Order Status->Cancel Order
@@ -98,9 +98,9 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_207"
+Then Search Release PO page with CPO ID "2020_452_2"
 Then Search Vendor ID "001024"
-Then click on PO "2020_207"
+Then click on PO "2020_452_2"
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -294,6 +294,8 @@ Examples:
 	| 1111  | 2222  |
 	
 
+
+
 @testcaseA017
 Scenario Outline: Normal and show confirm order in shopping cart check back forth operations also change qty both orders
 
@@ -337,5 +339,50 @@ Then Close Browser
 Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |
-	
-			
+		
+		
+@testcaseA018
+Scenario Outline: show confirm order in shopping cart check back forth operations also change qty both orders
+
+Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
+When title of login page
+Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user clicks on login button
+Then user is on home page
+Then With Confirm orders,Search Release PO page with CPO ID "2020_102"
+Then Search Vendor ID "000692"	
+Then click on PO "2020_102"
+Then Select PO items based on EAN plus edit order qty
+| ItemCode   | EAN           | qty   |
+| ALMO_CLX01 | 8434658662587 |	255  |
+| ALMO_MCM01 | 8434658662587 |	500  |			
+Then Addtocart Confirm Order
+Then goto checkout page
+Then Verify All PO data with db
+Then Click on CPO "2020_102"
+Then Select PO items based on EAN plus edit order qty
+| ItemCode   | EAN           | qty   |
+| ALMO_CLX01 | 8434658662587 |	255  |
+| ALMO_MCM01 | 8434658662587 |	500  |		
+Then Addtocart
+Then goto checkout page
+Then Verify All PO data with db
+#Then Click on CPO "7R05"
+#Then Select PO items based on EAN plus edit order qty
+#| EAN           | qty  |	
+#| 8445306386885 | 19 |	
+#Then Addtocart
+#Then goto checkout page
+#Then Verify All PO data with db
+Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
+Then Confirm Order
+Then Verify All RPO data with db
+Then Print Confirmation and done
+Then Goto Report>Order Status
+#Then Goto Report>Order Status->Cancel Order
+Then Logout
+Then Close Browser	
+
+Examples:
+	| items | udateitems | 
+	| 1111  | 2222  |	

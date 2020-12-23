@@ -22,14 +22,14 @@ public class POALLQTYCheck {
 	CheckOut checkOut;
 	
 	String connectionUrl =
-            "jdbc:sqlserver://13.71.7.63:1473;"
+            "jdbc:sqlserver://10.0.0.4:1473;"
             + "database=r-tracDB;"
             + "user=Sangeet;"
             + "password=S@ngeet#2020;"
             + "encrypt=true;"
             + "trustServerCertificate=true;"
             + "loginTimeout=30;";
-
+	
     ResultSet resultSet, resultSet1, resultSet2, resultSet3,resultSet4,resultSet5,resultSet6,resultSet7= null;
     Connection connection;
     Statement statement,statement1;

@@ -484,10 +484,10 @@ public class LoginStepDefinition
 
 		 	endTime = System.currentTimeMillis();
 			totalTime =(endTime-startTime)/1000;
-			  executionTime=executionTime+totalTime;
+			executionTime=executionTime+totalTime;
 
 			 System.out.println("^Addtocart Confirm Order$");	 
-			  System.out.println("And  time taken=" +totalTime+" secs\n");
+			 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 //Then goto Catalog screen
@@ -501,12 +501,11 @@ public class LoginStepDefinition
 		  catalogItems.getCatlogScreen(); 
 		  Thread.sleep(2000);
 		  endTime = System.currentTimeMillis();
-			totalTime =(endTime-startTime)/1000;
-			  executionTime=executionTime+totalTime;
+		  totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
 
-			 System.out.println("^goto catalog screen and PO selection validation check" + "");	 
-			  System.out.println("And  time taken=" +totalTime+" secs\n");
-
+		  System.out.println("^goto catalog screen and PO selection validation check" + "");	 
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 
@@ -520,18 +519,15 @@ public class LoginStepDefinition
 		  Thread.sleep(2000);
 		  
 		  endTime = System.currentTimeMillis();
-			totalTime =(endTime-startTime)/1000;
-			  executionTime=executionTime+totalTime;
+		  totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
 
-			 System.out.println("^Plus Add to cart" + "");	 
-		
-			  System.out.println("And  time taken=" +totalTime+" secs\n");
+		  System.out.println("^Plus Add to cart" + "");	 
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
 
-		  
 	 }
-	// Then check catlog PO selected and quantity should be more than zero
-
 	 
+	// Then check catlog PO selected and quantity should be more than zero
 	 @Then("^Then check catlog PO selected and quantity should be more than zero$")
 	 public void checkCatalogScreenValidations()throws InterruptedException
 	 {
@@ -541,11 +537,11 @@ public class LoginStepDefinition
 		 catalogItems.addToCartWithMessage1();
 		 Thread.sleep(3000);
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Then check catlog PO selected and quantity should be more than zero" + "");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 
@@ -559,11 +555,11 @@ public class LoginStepDefinition
 		 orderStatus.searchCPO(suid);
 		
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Search for PO" + suid + "");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 
 		 
 		 
@@ -578,12 +574,11 @@ public class LoginStepDefinition
 		 releasePO.selectOverage(overage);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Select overage" + overage +"");	 
-	
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 	 
 		}
 	 
@@ -597,13 +592,12 @@ public class LoginStepDefinition
 		 loginUserPassword.usercredentials(usercredentials);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^user enters credentials" +"");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
-
-				 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+ 
 		}
 	 
 	 @Then("^Deselect previous and Select PO items based on EAN$")
@@ -617,13 +611,14 @@ public class LoginStepDefinition
 		 
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Deselect previous and Select PO items based on EAN" +"");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
  
 		}
+	 
 	 @Then("^Select PO items based on EAN$")
 	 public void getEANSelect(DataTable dtEAN) throws Throwable 
 	 	{
@@ -632,12 +627,11 @@ public class LoginStepDefinition
 		 releasePO=pageObjectManager.getreleasePO();
 		 releasePO.selectPOEAN(dtEAN);
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Select PO items based on EAN" +"");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
-
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 		 
 		}
 	 
@@ -653,11 +647,11 @@ public class LoginStepDefinition
 		// releasePO.printArryEAN(dtEAN);
 		 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Select PO items based on EAN plus edit order qty" +"");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
  
 		}
 	 @Then("^Deselect all$")
@@ -670,13 +664,11 @@ public class LoginStepDefinition
 		 Thread.sleep(3000);
 
 		 endTime = System.currentTimeMillis();
-		totalTime =(endTime-startTime)/1000;
-		  executionTime=executionTime+totalTime;
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^Select PO items based on EAN" +"");	 
-		  System.out.println("And  time taken=" +totalTime+" secs\n");
-
-		 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
 		 
 		}
 	 
@@ -830,7 +822,7 @@ public class LoginStepDefinition
 	 }
 	 
 	 @Then("^Confirm Order$")
-	 public void confirm_order()throws InterruptedException 
+	 public void confirm_order()throws InterruptedException, SQLException 
 	 { 
 		 
 		 startTime = System.currentTimeMillis();
@@ -859,7 +851,7 @@ public class LoginStepDefinition
 		 
 		 rpoListStr="";
 
-		 rpoListStr=checkout.getRPOListString(rpoLIST);
+		 rpoListStr=rpoScreen.getRPOListFromDB(ShoppingCartNo);
 		 Thread.sleep(2000);
 		 
 		 rpoScreen.checkRPACTable1(rpoListStr);
@@ -935,7 +927,7 @@ public class LoginStepDefinition
 		 //Thread.sleep(2000);
 		 
 		 checkout.printRPO(rpoLIST);
-		 orderStatus.gotoRPODetailScreen(rpoLIST);
+		 orderStatus.gotoRPODetailScreen(ShoppingCartNo);
 		 Thread.sleep(2000);
 
 		 endTime = System.currentTimeMillis();
@@ -963,7 +955,7 @@ public class LoginStepDefinition
 		 //Thread.sleep(2000);
 		 
 		 checkout.printRPO(rpoLIST);
-		 orderStatus.gotoRPODetailScreen(rpoLIST);
+		 orderStatus.gotoRPODetailScreenAndCancelOrder(ShoppingCartNo);
 		 Thread.sleep(2000);
 
 		 endTime = System.currentTimeMillis();

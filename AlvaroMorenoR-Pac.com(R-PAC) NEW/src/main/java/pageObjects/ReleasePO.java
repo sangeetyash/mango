@@ -176,7 +176,7 @@ public class ReleasePO {
 				check.click();
 			}
 				getWait(5000);
-				selectAllItems();
+				//selectAllItems();
 				//*[@id="tblServiceBureauOrder"]/tbody/tr[1]/td[2]/span/a
 	}
 	//*[@id="tblServiceBureauOrder"]/tbody/tr[1]/td[2]/span/a
@@ -497,7 +497,8 @@ public class ReleasePO {
 			WebElement OGqty = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[3]"));
 			WebElement orderqty = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[4]/input"));
 			WebElement EAN = driver.findElement(By.xpath("//table[@id='tblPODetails']/tbody/tr[" + r + "]/td[5]"));
-
+			orderqty.clear();
+			orderqty.sendKeys("0");
 			//WebElement EAN = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[6]"));
 			//WebElement supplier = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[3]"));
 			//WebElement format = driver.findElement(By.xpath("//table[@id='tblPOMango']/tbody/tr[" + r + "]/td[4]"));

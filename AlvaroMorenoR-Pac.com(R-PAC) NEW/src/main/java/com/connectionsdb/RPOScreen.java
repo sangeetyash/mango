@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import com.project.managers.*;
@@ -22,7 +23,7 @@ public class RPOScreen {
 	CheckOut checkOut;
 	
 	String connectionUrl =
-            "jdbc:sqlserver://13.71.7.63:1473;"
+            "jdbc:sqlserver://10.0.0.4:1473;"
             + "database=r-tracDB;"
             + "user=Sangeet;"
             + "password=S@ngeet#2020;"
@@ -33,6 +34,8 @@ public class RPOScreen {
     ResultSet resultSet, resultSet1, resultSet2, resultSet3,resultSet4,resultSet5,resultSet6,resultSet7= null;
     Connection connection;
     Statement statement,statement1;
+	public List<String> sList;
+
 	public RPOScreen(WebDriver driver) 
 	{ 
 		this.driver = driver;
@@ -749,6 +752,89 @@ public class RPOScreen {
 		 
 
 	}
+	
+	
+	public String getRPOListFromDB(String c) throws SQLException
+	{			String RPOString="";
+				sList = null;
+
+		try  
+        {
+			long num = Long.parseLong(c);
+		    //System.out.println(num);
+			  //SELECT DISTINCT [bigIntRPO]
+					//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
+
+			            String selectSql2=	"SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
+	            		+ "where bigintShoppingCartNo  = "+ num  +" AND [bigIntRPO] is not NULL order by [bigIntRPO] desc";
+	            	
+			            
+			             System.out.println(selectSql2);
+						 connection = DriverManager.getConnection(connectionUrl);
+						 Statement statement1 = connection.createStatement();
+					    
+			             
+			             	
+			          
+			            int j=1;
+			            resultSet2=null;
+			            resultSet2 = statement1.executeQuery(selectSql2);
+			            
+			            while (resultSet2.next())
+			            {
+			                   
+			            	String rec=resultSet2.getString("bigIntRPO");
+					        System.out.println(rec);
+					        if(j==1)
+					        {
+					        	RPOString=rec;
+					        }
+					        else
+					        {
+					        	RPOString=RPOString+","+rec;
+					        }
+			            j=j+1;
+			            }    
+					 	
+						//int i =sList.size();
+						//System.out.println("size"+i);
+						
+						//RPOString = String.join(",", sList); 
+				        System.out.println(RPOString);
+        }
+		
+        
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+		}
+		return RPOString;
+		
+
+    }
 	
     }
 	

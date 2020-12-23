@@ -17,7 +17,7 @@ public class SqlConnection
 {
 	WebDriver driver;
 	String connectionUrl =
-            "jdbc:sqlserver://13.71.7.63:1473;"
+            "jdbc:sqlserver://10.0.0.4:1473;"
             + "database=r-tracDB;"
             + "user=Sangeet;"
             + "password=S@ngeet#2020;"
