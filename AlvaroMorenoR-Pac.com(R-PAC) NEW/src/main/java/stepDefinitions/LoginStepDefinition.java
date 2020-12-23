@@ -1024,6 +1024,8 @@ public class LoginStepDefinition
 
 	 }
 	 
+	 
+	 
 	 @Then("^Close Browser$")
 	 public void close_the_browser() throws InterruptedException
 	 {
