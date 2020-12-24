@@ -132,7 +132,8 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   
+		                   wait(2500);
+
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
 				        WebElement seaech = driver.findElement(By.id("searchId0"));
@@ -245,7 +246,8 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   
+		                   wait(2500);
+
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
 				        //String rpostring=rpo.get(j).toString();
@@ -332,7 +334,8 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   
+		                   wait(2500);
+
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
 				        
@@ -421,6 +424,183 @@ public class OrderStatus {
 			ok.click();
 		}
 
+	}
+	
+	
+	public void gotoInplantRPODetailScreen(String RPOLIST) throws InterruptedException
+	{
+		try
+		{
+			String RPOString="";
+
+		// *[@id="searchId0"]
+		//int i =rpo.size();
+		//System.out.println("size"+i);
+		//long num = Long.parseLong(shopID);
+	    //System.out.println(num);
+		  //SELECT DISTINCT [bigIntRPO]
+				//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
+
+		   String selectSql2="SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
+           		+ "where bigIntRPO  in ("+ RPOLIST +")";
+		            
+		             System.out.println(selectSql2);
+					 connection = DriverManager.getConnection(connectionUrl);
+					 statement1 = connection.createStatement();
+				    
+					
+		            int j=1;
+		            resultSet2=null;
+		            resultSet2 = statement1.executeQuery(selectSql2);
+		            
+		            while (resultSet2.next())
+		            {
+		                   wait(2500);
+
+		            	String rec=resultSet2.getString("bigIntRPO");
+				        System.out.println(rec);
+				        //String rpostring=rpo.get(j).toString();
+						String remarks="Cancelling RPO-> " + rec + " for testing";
+						driver.findElement(By.linkText(rec)).click();		
+						getWait(1500);
+						//cancelOrder(1,remarks);
+						driver.navigate().back();
+						
+					    getWait(3000);
+					    selectNoRecords("100");
+				        if(j==1)
+				        {
+				        	RPOString=rec;
+				        }
+				        else
+				        {
+				        	RPOString=RPOString+","+rec;
+				        }
+		            j=j+1;
+		            }    
+				 	
+			
+			        System.out.println(RPOString);
+		}
+		catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+		}
+		
+		
+	}
+	
+	public void gotoRPODetailScreenInplantAndCancelOrder(String RPOLIST) throws InterruptedException
+	{
+		
+		try
+		{
+			String RPOString="";
+
+		// *[@id="searchId0"]
+		//int i =rpo.size();
+		//System.out.println("size"+i);
+		//long num = Long.parseLong(shopID);
+	    //System.out.println(num);
+		  //SELECT DISTINCT [bigIntRPO]
+				//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
+
+		            String selectSql2=	"SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
+            		+ "where bigIntRPO  in ("+ RPOLIST  +")";
+            	
+		            
+		             System.out.println(selectSql2);
+					 connection = DriverManager.getConnection(connectionUrl);
+					 statement1 = connection.createStatement();
+				    
+					
+		            int j=1;
+		            resultSet2=null;
+		            resultSet2 = statement1.executeQuery(selectSql2);
+		            
+		            while (resultSet2.next())
+		            {
+		                   wait(2500);
+		            	String rec=resultSet2.getString("bigIntRPO");
+				        System.out.println(rec);
+				        
+				        //String rpostring=rpo.get(j).toString();
+						String remarks="Cancelling order " + rec +" for testing";
+						driver.findElement(By.linkText(rec)).click();		
+						getWait(1500);
+						cancelOrder(1,remarks);
+						driver.navigate().back();
+						
+					    getWait(3000);
+					    selectNoRecords("100");
+				        if(j==1)
+				        {
+				        	RPOString=rec;
+				        }
+				        else
+				        {
+				        	RPOString=RPOString+","+rec;
+				        }
+		            j=j+1;
+		            }    
+				 	
+			
+			        System.out.println(RPOString);
+		}
+		catch (SQLException e) 
+        {
+            e.printStackTrace();
+        }
+		finally
+		{
+            if (resultSet2 != null) {
+                try {
+                	resultSet2.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (statement1 != null) {
+                try {
+                	statement1.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+            if (connection != null) 
+            {
+                try 
+                {
+                	connection.close();
+                } 
+                catch (SQLException e) { e.printStackTrace();}
+            }
+		}
+		
+		
+		
+		
 	}
 	
 }

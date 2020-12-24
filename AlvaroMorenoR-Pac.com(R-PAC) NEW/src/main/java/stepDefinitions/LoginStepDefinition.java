@@ -1026,6 +1026,62 @@ public class LoginStepDefinition
 	 
 	 
 	 
+	 @Then("Goto Report>InPlant Order Status$")
+	 public void Inplant_order_status_check()throws InterruptedException
+	 {
+		 startTime = System.currentTimeMillis();
+
+		 orderStatus=pageObjectManager.getOrderStatus();
+		 
+		 orderStatus.getOrderStutus();
+		 Thread.sleep(2000);
+		 
+		 //orderStatus.getSearch();
+		 //Thread.sleep(2000);
+		 //orderStatus.searchRPO(rpoLIST);
+		 //Thread.sleep(2000);
+		 
+		 //checkout.printRPO(rpoLIST);
+		 orderStatus.gotoInplantRPODetailScreen(inplantrpoListstr);
+		 Thread.sleep(2000);
+
+		 endTime = System.currentTimeMillis();
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+
+		 System.out.println("^Goto Report>InPlant Order Status" + "");	 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
+	 
+	 @Then("Goto Report>Inplant Order Status->Cancel Order$")
+	 public void Inplant_order_status_check_cancel()throws InterruptedException
+	 {
+		 startTime = System.currentTimeMillis();
+
+		 orderStatus=pageObjectManager.getOrderStatus();
+		 
+		 orderStatus.getOrderStutus();
+		 Thread.sleep(2000);
+		 
+		 //orderStatus.getSearch();
+		 //Thread.sleep(2000);
+		 //orderStatus.searchRPO(rpoLIST);
+		 //Thread.sleep(2000);
+		 
+		 //checkout.printRPO(rpoLIST);
+		 orderStatus.gotoRPODetailScreenInplantAndCancelOrder(inplantrpoListstr);
+		 Thread.sleep(2000);
+
+		 endTime = System.currentTimeMillis();
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+
+		 System.out.println("^Goto Report>Inplant Order Status->Cancel Order" + "");	 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
+	 
 	 @Then("^Close Browser$")
 	 public void close_the_browser() throws InterruptedException
 	 {

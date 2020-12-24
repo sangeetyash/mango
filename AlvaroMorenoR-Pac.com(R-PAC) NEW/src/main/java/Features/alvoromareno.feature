@@ -388,19 +388,20 @@ Examples:
 	| 1111  | 2222  |	
 	
 	@testcaseA019
-Scenario Outline: Normal PO order
+Scenario Outline: In Plant order and cancelllation
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search In-Plant PO page with CPO ID "2020_767"
+Then Search In-Plant PO page with CPO ID "2020_452_3"
 Then Search Vendor ID "001024"
-Then click on PO "2020_767"
+Then click on PO "2020_452_3"
 Then Submit
 Then Verify All In-Plant RPO data with db
-#Then Goto Report>Order Status
+#Then Goto Report>InPlant Order Status
+Then Goto Report>Inplant Order Status->Cancel Order
 Then Logout
 Then Close Browser
 
