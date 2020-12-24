@@ -108,7 +108,6 @@ public class OrderStatus {
 		try
 		{
 			String RPOString="";
-
 		// *[@id="searchId0"]
 		//int i =rpo.size();
 		//System.out.println("size"+i);
@@ -132,7 +131,8 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   wait(2500);
+		                   //wait(2500);
+		       			selectNoRecords("100");
 
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
@@ -230,6 +230,7 @@ public class OrderStatus {
 	    //System.out.println(num);
 		  //SELECT DISTINCT [bigIntRPO]
 				//  FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] where bigIntShoppingCartNo =3000006454 and [bigIntRPO] is not NULL
+		selectNoRecords("100");
 
 		            String selectSql2=	"SELECT DISTINCT [bigIntRPO] FROM [AlvaroMorenoDB].[dbo].[tbl_Cust_AlvaroMoreno_Parser] "
             		+ "where bigintShoppingCartNo  = "+ num  +" AND [bigIntRPO] is not NULL order by [bigIntRPO] desc";
@@ -246,7 +247,8 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   wait(2500);
+		                  // wait(2500);
+		       			selectNoRecords("100");
 
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
@@ -334,7 +336,8 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   wait(2500);
+		                   //wait(2500);
+		       			selectNoRecords("100");
 
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
@@ -455,7 +458,7 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   wait(2500);
+		                   //wait(2500);
 
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
@@ -543,7 +546,7 @@ public class OrderStatus {
 		            
 		            while (resultSet2.next())
 		            {
-		                   wait(2500);
+		                  // wait(2500);
 		            	String rec=resultSet2.getString("bigIntRPO");
 				        System.out.println(rec);
 				        

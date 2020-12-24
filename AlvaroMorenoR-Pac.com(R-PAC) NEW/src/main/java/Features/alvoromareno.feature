@@ -395,9 +395,9 @@ When title of login page
 Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search In-Plant PO page with CPO ID "2020_452_3"
+Then Search In-Plant PO page with CPO ID "2020_451_8"
 Then Search Vendor ID "001024"
-Then click on PO "2020_452_3"
+Then click on PO "2020_451_8"
 Then Submit
 Then Verify All In-Plant RPO data with db
 #Then Goto Report>InPlant Order Status
