@@ -340,6 +340,7 @@ Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |
 		
+	
 		
 @testcaseA018
 Scenario Outline: show confirm order in shopping cart check back forth operations also change qty both orders
@@ -387,7 +388,9 @@ Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |	
 	
-	@testcaseA019
+
+	
+@testcaseA019
 Scenario Outline: In Plant order and cancelllation
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
