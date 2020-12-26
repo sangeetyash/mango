@@ -50,8 +50,7 @@ Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |
 	
-	
-	
+
 @testcaseA005
 Scenario Outline:  Catalog back n forth and cancel order
 
@@ -217,6 +216,7 @@ Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |
 	
+	
 @testcaseA013
 Scenario Outline: Normal PO -> Create RPO and Cancel order
 
@@ -244,6 +244,7 @@ Then Close Browser
 Examples:
 | items | udateitems |
 | 1111  | 2222  |
+
 
 @testcaseA016
 Scenario Outline: Show confirm order in shopping cart check back forth operations also change qty both orders
@@ -293,8 +294,6 @@ Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |
 	
-
-
 
 @testcaseA017
 Scenario Outline: Normal and show confirm order in shopping cart check back forth operations also change qty both orders
