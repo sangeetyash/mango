@@ -446,6 +446,62 @@ public class LoginStepDefinition
 		  System.out.println("And  time taken=" +totalTime+" secs\n");
 
 		 	 	}
+	 @Then("^Add COO as \"(.*)\",Garment part as \"(.*)\" and Content$")
+	 public void AddCOOContent(String CO,String garment,DataTable COOContent) throws InterruptedException 
+	 	{
+		 startTime = System.currentTimeMillis();
+		 releasePO=pageObjectManager.getreleasePO();
+		 releasePO.selectCOOContent(CO,garment,COOContent);
+
+		 Thread.sleep(3000);
+		 //releasePO.itemvise();
+		 //releasePO.selectAllItems();
+		// releasePO.checkoverageCalculation();
+
+		 Thread.sleep(2000);
+
+		 //releasePO.itemvise();
+
+		 Thread.sleep(2000);
+		 //releasePO.selectOverage(over);
+		 //releasePO.checkoverageCalculation();
+
+		 endTime = System.currentTimeMillis();
+		totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
+
+		 System.out.println("^Add COO and Content" + CO );	 
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
+
+		 	 	}
+	 @Then("^Add Care Code$")
+	 public void AddCareCode(DataTable CareCode) throws InterruptedException 
+	 	{
+		 startTime = System.currentTimeMillis();
+		 releasePO=pageObjectManager.getreleasePO();
+		 releasePO.selectCareCode(CareCode);
+
+		 Thread.sleep(3000);
+		 //releasePO.itemvise();
+		 //releasePO.selectAllItems();
+		// releasePO.checkoverageCalculation();
+
+		 Thread.sleep(2000);
+
+		 //releasePO.itemvise();
+
+		 Thread.sleep(2000);
+		 //releasePO.selectOverage(over);
+		 //releasePO.checkoverageCalculation();
+
+		 endTime = System.currentTimeMillis();
+		totalTime =(endTime-startTime)/1000;
+		  executionTime=executionTime+totalTime;
+
+		 System.out.println("^Add Add Care Codes");	 
+		  System.out.println("And  time taken=" +totalTime+" secs\n");
+
+		 	 	}
 	 
 	 //AddToCart with double click
 	 

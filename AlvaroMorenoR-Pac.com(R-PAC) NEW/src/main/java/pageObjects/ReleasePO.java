@@ -122,7 +122,128 @@ public class ReleasePO {
 		Thread.sleep(3000);
 
 	}
+	
+	public void selectCOOContent(String COO,String gar,DataTable dtn) throws InterruptedException
+	{
+		//*[@id="ALMO_CLX01"]
+		WebElement create = driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']"));
+		if(create.isDisplayed())
+		{
+			
+			//ddlGarmentPart1
+			//ddlFabComPart10
+			//ddlPER10
+			
+	    	System.out.println("Create Button found");
 
+			create.click();
+			getWait(1500);
+
+			Select COOSelect = new Select(driver.findElement(By.name("COOId")));
+			System.out.println("COOSelect" + COO);
+			COOSelect.selectByVisibleText(COO);
+			getWait(1500);
+			
+			Select garSelect = new Select(driver.findElement(By.id("ddlGarmentPart1")));
+			System.out.println("garSelect" + gar);
+			garSelect.selectByVisibleText(gar);
+			getWait(1500);
+			
+			List<Map<String, String>> list = dtn.asMaps(String.class, String.class);
+		    int col=list.size();
+		    int row=list.get(0).size();
+		   
+			/*
+			 * int index = 0; for (WebElement option : dropDown.getOptions()) { if
+			 * (option.getText().equalsIgnoreCase(fieldValue)) break; index++; }
+			 * dropDown.selectByIndex(index);
+			 */
+	    	//System.out.println("col" + col);
+	    	for(int i=0; i<list.size(); i++) 
+	    	
+	    	{
+	    		
+	   	    	String FabricComponentstr=(list.get(i).get("FabricComponent"));
+		    	
+		    	String Percentagestr=(list.get(i).get("Percentage"));
+		    	
+		    	Select ddlFabComPart10Select = new Select(driver.findElement(By.id("ddlFabComPart10")));
+				System.out.println("ddlFabComPart10Select" + FabricComponentstr);
+				ddlFabComPart10Select.selectByVisibleText(FabricComponentstr);
+				getWait(1500);
+				
+				
+				WebElement percent=driver.findElement(By.id("ddlPER10"));
+				System.out.println("ddlPER10" + Percentagestr);
+				percent.sendKeys(Percentagestr);
+				getWait(1500);
+				
+			
+	    	}
+		}
+		else 
+		{
+	    	System.out.println("Create Button not found");
+
+		}
+		
+		
+	}
+
+	
+	public void selectCareCode(DataTable dtnc) throws InterruptedException
+	{
+		List<Map<String, String>> list = dtnc.asMaps(String.class, String.class);
+	    int col=list.size();
+	    int row=list.get(0).size();
+	   
+		/*
+		 * int index = 0; for (WebElement option : dropDown.getOptions()) { if
+		 * (option.getText().equalsIgnoreCase(fieldValue)) break; index++; }
+		 * dropDown.selectByIndex(index);
+		 */
+    	//System.out.println("col" + col);
+    	for(int i=0; i<list.size(); i++) 
+    	
+    	{
+    		
+   	    	String Washstr=(list.get(i).get("Wash"));
+	    	
+	    	String Bleachstr=(list.get(i).get("Bleach"));
+	    	
+	    	String Ironingstr=(list.get(i).get("Ironing"));
+	    	
+	    	String DryCleaningstr=(list.get(i).get("DryCleaning"));
+
+	    	String DryWiringstr=(list.get(i).get("DryWiring"));
+	    	
+	    	Select WashSelect = new Select(driver.findElement(By.name("WashId")));
+			System.out.println("Wash" + Washstr);
+			WashSelect.selectByVisibleText(Washstr);
+			getWait(1500);
+
+			Select BleachSelect = new Select(driver.findElement(By.name("BleachId")));
+			System.out.println("BleachSelect" + Bleachstr);
+			BleachSelect.selectByVisibleText(Bleachstr);
+			getWait(1500);
+
+			Select IroningSelect = new Select(driver.findElement(By.name("IronId")));
+			System.out.println("IroningSelect" + Ironingstr);
+			IroningSelect.selectByVisibleText(Ironingstr);
+			getWait(1500);
+
+			Select DryCleaningSelect = new Select(driver.findElement(By.name("DryCleanId")));
+			System.out.println("DryCleaningSelect" + DryCleaningstr);
+			DryCleaningSelect.selectByVisibleText(DryCleaningstr);
+			getWait(1500);
+
+			Select DryWiringSelect = new Select(driver.findElement(By.name("DryId")));
+			System.out.println("DryWiringSelect" + DryWiringstr);
+			DryWiringSelect.selectByVisibleText(DryWiringstr);
+			getWait(1500);
+    	} 	
+	    	 
+	}
 	public void searchSupplier(String suppiler_id) throws InterruptedException {
 		WebElement seaech1 = driver.findElement(By.id("searchId1"));
 		seaech1.sendKeys(suppiler_id);

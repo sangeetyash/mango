@@ -94,12 +94,18 @@ Scenario Outline: Normal PO order
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_452_2"
+Then Search Release PO page with CPO ID "2020_451_6"
 Then Search Vendor ID "001024"
-Then click on PO "2020_452_2"
+Then click on PO "2020_451_6"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -129,10 +135,22 @@ Then user is on home page
 Then Search Release PO page with CPO ID "2020_427"
 Then Search Vendor ID "001024"
 Then click on PO "2020_427"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then Search Release PO page with CPO ID "2020_607"
 Then Search Vendor ID "001024"
 Then click on PO "2020_607"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -161,10 +179,22 @@ Then user is on home page
 Then Search Release PO page with CPO ID "2020_727"
 Then Search Vendor ID "001024"
 Then click on PO "2020_727"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then Search Release PO page with CPO ID "2020_101"
 Then Search Vendor ID "1862"
 Then click on PO "2020_101"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -200,6 +230,12 @@ Then Verify Cart With DB
 Then Search Release PO page with CPO ID "2020_767"
 Then Search Vendor ID "001024"
 Then click on PO "2020_767"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
@@ -228,6 +264,12 @@ Then user is on home page
 Then Search Release PO page with CPO ID "2020_877"
 Then Search Vendor ID "001024"
 Then click on PO "2020_877"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
 Then AddToCart
 Then goto checkout page
 Then Verify All PO data with db
