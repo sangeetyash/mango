@@ -97,9 +97,9 @@ When title of login page
 Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_451_6"
+Then Search Release PO page with CPO ID "2020_451_14"
 Then Search Vendor ID "001024"
-Then click on PO "2020_451_6"
+Then click on PO "2020_451_14"
 Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 | FabricComponent | Percentage |
 | 	 ACRYLIC       | 	100		| 
