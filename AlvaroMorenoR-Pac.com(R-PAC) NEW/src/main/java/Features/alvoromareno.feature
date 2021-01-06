@@ -97,16 +97,17 @@ When title of login page
 Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_451_14"
+Then Search Release PO page with CPO ID "2020_453_5"
 Then Search Vendor ID "001024"
-Then click on PO "2020_451_14"
+Then click on PO "2020_453_5"
 Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 | FabricComponent | Percentage |
 | 	 ACRYLIC       | 	100		| 
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then goto checkout page
 Then Verify All PO data with db
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
@@ -129,7 +130,7 @@ Scenario Outline: Multiple cart diff PO and and same vendor id
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then Search Release PO page with CPO ID "2020_427"
@@ -141,7 +142,8 @@ Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then Search Release PO page with CPO ID "2020_607"
 Then Search Vendor ID "001024"
 Then click on PO "2020_607"
@@ -151,7 +153,8 @@ Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then goto checkout page
 Then Verify All PO data with db
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
@@ -173,7 +176,7 @@ Scenario Outline: Multiple cart diff PO and and diff vendor id
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then Search Release PO page with CPO ID "2020_727"
@@ -185,7 +188,8 @@ Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then Search Release PO page with CPO ID "2020_101"
 Then Search Vendor ID "1862"
 Then click on PO "2020_101"
@@ -195,7 +199,8 @@ Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then goto checkout page
 Then Verify All PO data with db
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
@@ -218,7 +223,7 @@ Scenario Outline:  Normal PO and Catelog in cart and checkout
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then goto catalog screen and PO selection validation check
@@ -236,7 +241,8 @@ Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then goto checkout page
 Then Verify All PO data with db
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
@@ -258,7 +264,7 @@ Scenario Outline: Normal PO -> Create RPO and Cancel order
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then Search Release PO page with CPO ID "2020_877"
@@ -270,7 +276,8 @@ Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 Then Add Care Code
 | Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
 | HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
-Then AddToCart
+Then Save Reference
+Then AddToCart with Create Label
 Then goto checkout page
 Then Verify All PO data with db
 Then Select Bill To,Ship To,selct Production location Vendor PO, Requird Shipment Date  
@@ -293,26 +300,40 @@ Scenario Outline: Show confirm order in shopping cart check back forth operation
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 #Then Show confirm orders 
-Then With Confirm orders,Search Release PO page with CPO ID "2020_280"
-Then Search Vendor ID "000643"	
-Then click on PO "2020_280"
+Then With Confirm orders,Search Release PO page with CPO ID "2020_267"
+Then Search Vendor ID "001024"	
+Then click on PO "2020_267"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
+Then Save Reference
 Then Select PO items based on EAN plus edit order qty
-| ItemCode   | EAN           | qty   |
-| ALMO_CLX01 | 8434658660774 |	50   |
-| ALMO_HTG06 | 8434658660835 |	95   |			
+| ItemCode   | EAN           | qty     |
+| ALMO_CLX01 | 8434658766476 |	100  |
+| ALMO_HXY01 | 8434658766582 |	99  |	
 Then Addtocart Confirm Order
 #Then Show confirm orders 
-Then With Confirm orders,Search Release PO page with CPO ID "2020_280"
-Then Search Vendor ID "000643"	
-Then click on PO "2020_280"
+Then With Confirm orders,Search Release PO page with CPO ID "2020_267"
+Then Search Vendor ID "001024"	
+Then click on PO "2020_267"
+Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
+| FabricComponent | Percentage |
+| 	 ACRYLIC       | 	100		| 
+Then Add Care Code
+| Wash      | Bleach        | Ironing         | DryCleaning | DryWiring |
+| HAND WASH | DO NOT BLEACH | DO NOT USE IRON | DRY CLEAN    | TUMBLE DRY   |
+Then Save Reference
 Then Select PO items based on EAN plus edit order qty
-| ItemCode   | EAN           | qty   |
-| ALMO_HTG06 | 8434658620167 |	155  |
-| ALMO_MCM01 | 8434658620099 |	123  |			
+| ItemCode   | EAN           | qty     |
+| ALMO_CLX01 | 8434658766476 |	95  |
+| ALMO_HXY01 | 8434658766582 |	96  |			
 Then Addtocart Confirm Order
 Then goto checkout page
 #Then Verify All PO data with db
@@ -342,7 +363,7 @@ Scenario Outline: Normal and show confirm order in shopping cart check back fort
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then Search Release PO page with CPO ID "2020_967"
@@ -388,7 +409,7 @@ Scenario Outline: show confirm order in shopping cart check back forth operation
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then With Confirm orders,Search Release PO page with CPO ID "2020_102"

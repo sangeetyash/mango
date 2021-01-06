@@ -126,18 +126,20 @@ public class ReleasePO {
 	public void selectCOOContent(String COO,String gar,DataTable dtn) throws InterruptedException
 	{
 		//*[@id="ALMO_CLX01"]
-		WebElement create = driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']"));
-		if(create.isDisplayed())
+		if(driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']")).isEnabled())
 		{
 			
 			//ddlGarmentPart1
 			//ddlFabComPart10
 			//ddlPER10
-			
+			//*[@id="ALMO_CLX01"]
 	    	System.out.println("Create Button found");
-
+	    	WebElement create=driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']"));
 			create.click();
 			getWait(1500);
+			
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("window.scrollBy(0,400)");
 
 			Select COOSelect = new Select(driver.findElement(By.name("COOId")));
 			System.out.println("COOSelect" + COO);
@@ -193,56 +195,93 @@ public class ReleasePO {
 	
 	public void selectCareCode(DataTable dtnc) throws InterruptedException
 	{
-		List<Map<String, String>> list = dtnc.asMaps(String.class, String.class);
-	    int col=list.size();
-	    int row=list.get(0).size();
-	   
-		/*
-		 * int index = 0; for (WebElement option : dropDown.getOptions()) { if
-		 * (option.getText().equalsIgnoreCase(fieldValue)) break; index++; }
-		 * dropDown.selectByIndex(index);
-		 */
-    	//System.out.println("col" + col);
-    	for(int i=0; i<list.size(); i++) 
-    	
-    	{
-    		
-   	    	String Washstr=(list.get(i).get("Wash"));
-	    	
-	    	String Bleachstr=(list.get(i).get("Bleach"));
-	    	
-	    	String Ironingstr=(list.get(i).get("Ironing"));
-	    	
-	    	String DryCleaningstr=(list.get(i).get("DryCleaning"));
-
-	    	String DryWiringstr=(list.get(i).get("DryWiring"));
-	    	
-	    	Select WashSelect = new Select(driver.findElement(By.name("WashId")));
-			System.out.println("Wash" + Washstr);
-			WashSelect.selectByVisibleText(Washstr);
-			getWait(1500);
-
-			Select BleachSelect = new Select(driver.findElement(By.name("BleachId")));
-			System.out.println("BleachSelect" + Bleachstr);
-			BleachSelect.selectByVisibleText(Bleachstr);
-			getWait(1500);
-
-			Select IroningSelect = new Select(driver.findElement(By.name("IronId")));
-			System.out.println("IroningSelect" + Ironingstr);
-			IroningSelect.selectByVisibleText(Ironingstr);
-			getWait(1500);
-
-			Select DryCleaningSelect = new Select(driver.findElement(By.name("DryCleanId")));
-			System.out.println("DryCleaningSelect" + DryCleaningstr);
-			DryCleaningSelect.selectByVisibleText(DryCleaningstr);
-			getWait(1500);
-
-			Select DryWiringSelect = new Select(driver.findElement(By.name("DryId")));
-			System.out.println("DryWiringSelect" + DryWiringstr);
-			DryWiringSelect.selectByVisibleText(DryWiringstr);
-			getWait(1500);
-    	} 	
+		if(driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']")).isEnabled())
+		{
+				List<Map<String, String>> list = dtnc.asMaps(String.class, String.class);
+			    int col=list.size();
+			    int row=list.get(0).size();
+			   
+				/*
+				 * int index = 0; for (WebElement option : dropDown.getOptions()) { if
+				 * (option.getText().equalsIgnoreCase(fieldValue)) break; index++; }
+				 * dropDown.selectByIndex(index);
+				 */
+		    	//System.out.println("col" + col);
+		    	for(int i=0; i<list.size(); i++) 
+		    	
+		    	{
+		    		
+		   	    	String Washstr=(list.get(i).get("Wash"));
+			    	
+			    	String Bleachstr=(list.get(i).get("Bleach"));
+			    	
+			    	String Ironingstr=(list.get(i).get("Ironing"));
+			    	
+			    	String DryCleaningstr=(list.get(i).get("DryCleaning"));
+		
+			    	String DryWiringstr=(list.get(i).get("DryWiring"));
+			    	
+			    	Select WashSelect = new Select(driver.findElement(By.name("WashId")));
+					System.out.println("Wash" + Washstr);
+					WashSelect.selectByVisibleText(Washstr);
+					getWait(1500);
+		
+					Select BleachSelect = new Select(driver.findElement(By.name("BleachId")));
+					System.out.println("BleachSelect" + Bleachstr);
+					BleachSelect.selectByVisibleText(Bleachstr);
+					getWait(1500);
+		
+					Select IroningSelect = new Select(driver.findElement(By.name("IronId")));
+					System.out.println("IroningSelect" + Ironingstr);
+					IroningSelect.selectByVisibleText(Ironingstr);
+					getWait(1500);
+		
+					Select DryCleaningSelect = new Select(driver.findElement(By.name("DryCleanId")));
+					System.out.println("DryCleaningSelect" + DryCleaningstr);
+					DryCleaningSelect.selectByVisibleText(DryCleaningstr);
+					getWait(1500);
+		
+					Select DryWiringSelect = new Select(driver.findElement(By.name("DryId")));
+					System.out.println("DryWiringSelect" + DryWiringstr);
+					DryWiringSelect.selectByVisibleText(DryWiringstr);
+					getWait(1500);
+		    	} 	
+		}
+		else
+		{System.out.println("Create Button not found");}
 	    	 
+	}
+	
+	public void savereferences() throws InterruptedException
+	{
+		if(driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']")).isEnabled())
+		{
+			WebElement selectAllRef = driver.findElement(By.xpath(".//*[@id='selectAll']"));
+			selectAllRef.click();
+			
+			WebElement save = driver.findElement(By.xpath(".//*[@id='btnSave']"));
+			save.click();
+			Thread.sleep(2000);
+			WebElement ok1 = driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div"));
+			Thread.sleep(3000);
+			// WebElement ok=driver.findElement(By.className("smartAlertButton
+			// smartAlertActive"));
+			ok1.click();
+			/*
+			 * Thread.sleep(3000); WebElement ok =
+			 * driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div"));
+			 * ok.click();
+			 */
+
+			
+		
+		}
+		else
+		{
+			System.out.println("Create Button not found");
+		}
+	    	
+			
 	}
 	public void searchSupplier(String suppiler_id) throws InterruptedException {
 		WebElement seaech1 = driver.findElement(By.id("searchId1"));
@@ -686,8 +725,8 @@ public class ReleasePO {
 					 actions.moveToElement(orderqty);
 					 actions.perform();
 					 orderqty.clear();
-					 //wait(1500);
-					 orderqty.sendKeys(corqtyC);
+					 Thread.sleep(500);
+                 orderqty.sendKeys(corqtyC);
 					//*[@id="heading"]
 					//*[@id="spnPODetails"]
 					 js.executeScript("window.scrollTo(0, 0)"); 
@@ -836,6 +875,24 @@ public class ReleasePO {
 		//System.out.println("^addtocart");
 
 	}
+	public void referencealert() throws InterruptedException 
+	{
+		if(driver.findElement(By.xpath(".//*[@id='ALMO_CLX01']")).isEnabled())
+		{
+		getWait(3000);
+		// *[@id="btnAddtoCart"]
+		WebElement okref = driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div[1]"));
+		okref.click();
+		getWait(3000);
+		//System.out.println("^addtocart");
+		}
+		else
+		{
+	    	System.out.println("Create Button not found");
+		}
+
+	}
+	//*[@id="smartAlertButtons"]/div[1]
 	
 	public String submit() throws InterruptedException
 	{

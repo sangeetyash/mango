@@ -502,9 +502,24 @@ public class LoginStepDefinition
 		  System.out.println("And  time taken=" +totalTime+" secs\n");
 
 		 	 	}
-	 
+	 @Then("^Save Reference$")
+	 public void saveReference() throws InterruptedException 
+	 	{
+		 startTime = System.currentTimeMillis();
+		 releasePO=pageObjectManager.getreleasePO();
+		 releasePO.savereferences();
+
+		 Thread.sleep(3000);
+		
+		 endTime = System.currentTimeMillis();
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+
+		 System.out.println("^Save Reference");	 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	}
 	 //AddToCart with double click
-	 
 	 @Then("^Addtocart with double click$")
 	 public void getAddtocartdoubleclick()throws InterruptedException
 	 {
@@ -527,30 +542,6 @@ public class LoginStepDefinition
 
 	 }
 	 //Then Addtocart
-	 @Then("^Addtocart$")
-	 public void getAddtocart()throws InterruptedException
-	 {
-		 	startTime = System.currentTimeMillis();
-
-		 	releasePO=pageObjectManager.getreleasePO();
-		 	Thread.sleep(2000);
-
-			 //releasePO.printArry();
-			 Thread.sleep(2000);
-
-		 	releasePO.addToCart();
-		 	Thread.sleep(2000);
-		 	releasePO.addToCartsucess();
-		 	
-		 	
-		 	endTime = System.currentTimeMillis();
-			totalTime =(endTime-startTime)/1000;
-			  executionTime=executionTime+totalTime;
-
-			 System.out.println("^Addtocart$" + "");	 
-			  System.out.println("And  time taken=" +totalTime+" secs\n");
-
-	 }
 	 
 	 @Then("^Submit$")
 	 public void getSubmit()throws InterruptedException
@@ -591,6 +582,9 @@ public class LoginStepDefinition
 
 		 	releasePO.addToCart();
 		 	Thread.sleep(2000);
+		 	releasePO.referencealert();
+		 	Thread.sleep(2000);
+
 		 	releasePO.qtyAlert();
 		 	Thread.sleep(2000);
 		 	releasePO.addToCartsucess();
@@ -922,15 +916,67 @@ public class LoginStepDefinition
 
 		 releasePO=pageObjectManager.getreleasePO();
 		 releasePO.addToCart();
-		 releasePO.addToCartsucess();
-		 Thread.sleep(3000);
-		 
+		 	Thread.sleep(2000);
+		 	//releasePO.referencealert();
+		 	Thread.sleep(2000);
+
+		 	releasePO.addToCartsucess();
+		 	
 		 endTime = System.currentTimeMillis();
 		 totalTime =(endTime-startTime)/1000;
 		 executionTime=executionTime+totalTime;
 
 		 System.out.println("^AddToCart$" + "");	 
 		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
+	 
+	 @Then("^AddToCart with Create Label$")
+	 public void getAddToCartCareLabel()throws InterruptedException 
+	 {
+		 startTime = System.currentTimeMillis();
+
+		 releasePO=pageObjectManager.getreleasePO();
+		 releasePO.addToCart();
+		 	Thread.sleep(2000);
+		 	releasePO.referencealert();
+		 	Thread.sleep(2000);
+
+		 	releasePO.addToCartsucess();
+		 	
+		 endTime = System.currentTimeMillis();
+		 totalTime =(endTime-startTime)/1000;
+		 executionTime=executionTime+totalTime;
+
+		 System.out.println("^AddToCart$" + "");	 
+		 System.out.println("And  time taken=" +totalTime+" secs\n");
+
+	 }
+	 @Then("^Addtocart$")
+	 public void getAddtocart()throws InterruptedException
+	 {
+		 	startTime = System.currentTimeMillis();
+
+		 	releasePO=pageObjectManager.getreleasePO();
+		 	Thread.sleep(2000);
+
+			 //releasePO.printArry();
+			 Thread.sleep(2000);
+
+		 	releasePO.addToCart();
+		 	Thread.sleep(2000);
+		 	//releasePO.referencealert();
+		 	Thread.sleep(2000);
+
+		 	releasePO.addToCartsucess();
+		 	
+		 	
+		 	endTime = System.currentTimeMillis();
+			totalTime =(endTime-startTime)/1000;
+			  executionTime=executionTime+totalTime;
+
+			 System.out.println("^Addtocart$" + "");	 
+			  System.out.println("And  time taken=" +totalTime+" secs\n");
 
 	 }
 	 
