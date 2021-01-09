@@ -20,7 +20,7 @@ Then Close Browser
 #Then user enters credentials
 #| admin@AlvaroMoreno.com | Lousie#786 |
 #Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
-
+#
 Examples:
 	| items | udateitems | 
 	| 1111  | 2222  |
