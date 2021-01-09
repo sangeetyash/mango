@@ -2,7 +2,7 @@ Feature: R-PACMango.com CRM E-Coomerece Feature Main Finish..
 	
 	
 @testcaseA003
-Scenario Outline: SQL Catalog back n forth
+Scenario Outline: Login Validations
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "chrome"
 When title of login page
@@ -27,7 +27,7 @@ Examples:
 	
 	
 @testcaseA004
-Scenario Outline: SQL Catalog back n forth
+Scenario Outline: Login Validations
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "chrome"
 When title of login page
