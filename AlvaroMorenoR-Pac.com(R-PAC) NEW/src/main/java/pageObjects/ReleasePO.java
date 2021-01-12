@@ -726,7 +726,7 @@ public class ReleasePO {
 					 actions.perform();
 					 orderqty.clear();
 					 Thread.sleep(500);
-                 orderqty.sendKeys(corqtyC);
+                     orderqty.sendKeys(corqtyC);
 					//*[@id="heading"]
 					//*[@id="spnPODetails"]
 					 js.executeScript("window.scrollTo(0, 0)"); 
@@ -1005,7 +1005,7 @@ public class ReleasePO {
             	{
                 System.out.print(newArra[i][j]+"\r"); 
             	}
-                //System.out.print("\n"); 
+                //System.out.print("\n"); //
             }
 		}    
 	}
