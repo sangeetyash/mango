@@ -8,7 +8,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+//import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import cucumber.api.DataTable;
 //import cucumber.api.DataTable;
@@ -21,10 +21,10 @@ import com.connectionsdb.*;
 import com.project.managers.*;
 //import MyRunner.TestRunner;
 
-import java.util.List;
+//import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 public class LoginStepDefinition 
 //extends TestRunner
 
