@@ -135,6 +135,7 @@ public class LoginUserPassword
 			 String homeURL="http://devalvaromoreno.r-pac.com/Dashboard/LandingPage";
 			 String initURL="http://devrtrac.r-pac.com/";
 			 String user,pwd,currentURL="";
+			 int i=0;
 			 try 
 			 {
 				 List<Map<String, String>> list = usercredentials.asMaps(String.class, String.class);
@@ -157,7 +158,8 @@ public class LoginUserPassword
 			    					currentURL="";
 			    					user="";
 			    					pwd ="";
-
+			    					i=k+1;
+						    		System.out.println("Iteration : "+i);
 						    		System.out.println("User ID -> "+list.get(k).get("User"));
 						    		System.out.println("Password -> "+list.get(k).get("Password"));
 						    		
@@ -200,14 +202,14 @@ public class LoginUserPassword
 												 {
 												 	//System.out.println("K->"+k);
 												 	//System.out.println("Current URL-> "+currentURL+"\n");
-													System.out.println("Wrong password-> "+pwd);
+													System.out.println("Result : Wrong password-> "+"( " +user+" / " +pwd+" )"+"\n");
 													continue;
 												 }
 											 else if (currentURL.equalsIgnoreCase(homeURL) )
 												 {
 												 	 //System.out.println("K->"+k);
 													 //System.out.println("Current URL-> "+currentURL+"\n");
-													 System.out.println("Success"+"( " +user+" / " +pwd+" )");
+													 System.out.println("Result : Success"+"( " +user+" / " +pwd+" )"+"\n");
 													 break;
 												 }	
 										}
@@ -220,7 +222,7 @@ public class LoginUserPassword
 											//System.out.println("Current URL-> "+currentURL);
 											//System.out.println("password URL-> "+pwdURL);
 											//System.out.println("init URL-> "+initURL);
-											System.out.println("Wrong user id-> "+user);
+											System.out.println("Result : Wrong user id-> "+"( " +user+" / " +pwd+" )"+"\n");
 											continue;
 										}
 									

@@ -599,7 +599,6 @@ public class OrderStatus {
                 } 
                 catch (SQLException e) { e.printStackTrace();}
             }
-            
 		}
 		
 		
