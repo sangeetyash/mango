@@ -12,6 +12,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		 <maven.compiler.source>1.8</maven.compiler.source>
+ 		 <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 
@@ -155,7 +157,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>R-PACCucumberTestNG</projectName>  <!-- Replace with project name -->
+							<projectName>AlvaroMorenoR-Pac.com(R-PAC) NEW</projectName>  <!-- Replace with project name -->
 							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
 							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
 							<buildNumber>1</buildNumber>

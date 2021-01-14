@@ -52,7 +52,7 @@ public class CatalogItems {
 			getWait(2000);
 			
 			  WebElement msg=driver.findElement(By.id("smartAlertScrollArea")); 
-			  String msg1= "Please select PO Number"; //String msg2= "Qunatity Cannot be zero.";
+			  String msg1= "Please select Catalog Item"; //String msg2= "Qunatity Cannot be zero.";
 			  
 			  //System.out.println("Alert Message->"+ msg.getText());
 			  

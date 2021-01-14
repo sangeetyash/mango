@@ -35,9 +35,9 @@ Then Login validation check
 | User                   | Password   |
 |		                 |		      |
 | sadsd 				 | 100        |
-| admin@AlvaroMoreno.com |            |
-| admin@AlvaroMoreno.com | asdasdsd   |
-| admin@AlvaroMoreno.com | Lousie#786 |
+| User@alvaromorono.com |            |
+| User@alvaromorono.com | asdasdsd   |
+| User@alvaromorono.com | User@123 |
 Then user clicks on login button
 Then user is on home page
 Then Logout
@@ -56,7 +56,7 @@ Scenario Outline:  Catalog back n forth and cancel order
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
-Then user enters "admin@AlvaroMoreno.com" and "Lousie#786"
+Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
 Then goto catalog screen and PO selection validation check
@@ -97,9 +97,9 @@ When title of login page
 Then user enters "User@alvaromorono.com" and "User@123"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "2020_453_5"
+Then Search Release PO page with CPO ID "2020_451_14"
 Then Search Vendor ID "001024"
-Then click on PO "2020_453_5"
+Then click on PO "2020_451_14"
 Then Add COO as "MADE IN INDIA",Garment part as "MAIN FABRIC" and Content
 | FabricComponent | Percentage |
 | 	 ACRYLIC       | 	100		| 

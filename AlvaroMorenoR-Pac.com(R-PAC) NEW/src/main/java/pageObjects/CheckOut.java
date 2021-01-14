@@ -127,8 +127,16 @@ public class CheckOut
 		 * 
 		 * Assert.assertEquals(msg1, msg.getText());
 		 */
-			  getWait(2000); 
-
+			  getWait(3000); 
+			//*[@id="smartAlertButtons"]/div
+			  
+			  if(driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div")).isEnabled())
+			  {
+				  WebElement ok =
+							 driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div"));
+				  getWait(1000); 
+				  ok.click();
+			  }
 		/*
 		 * //WebElement ok =
 		 * driver.findElement(By.xpath(".//*[@id='smartAlertButtons']/div"));
