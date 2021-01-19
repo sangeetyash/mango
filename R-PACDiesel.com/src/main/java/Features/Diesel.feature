@@ -97,14 +97,15 @@ When title of login page
 Then user enters "Admin@diesel.com" and "Lousie#786"
 Then user clicks on login button
 Then user is on home page
-Then Search Release PO page with CPO ID "CK_IN20201979"
-Then Search Vendor ID "IN000055"
-Then click on PO "CK_IN20201979"
+Then Search Release PO page with CPO ID "C_HK2020129"
+Then Search Vendor ID "HK000208"
+Then click on PO "C_HK2020129"
 Then AddToCart with Create Label
 Then goto checkout page
 Then Verify All PO data with db
 Then Ship To,selct Production location Vendor PO, Requird Shipment Date 
 Then Confirm Order
+Then Verify All RPO data with db
 Then Print Confirmation and done
 #Then Goto Report>Order Status
 Then Goto Report>Order Status->Cancel Order
