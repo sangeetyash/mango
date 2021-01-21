@@ -296,7 +296,7 @@ Examples:
 
 
 @testcaseA016
-Scenario Outline: Show confirm order in shopping cart check back forth operations also change qty both orders
+	Scenario Outline: Show confirm order in shopping cart check back forth operations also change qty both orders
 
 Given Navigate user to Login Page "http://devrtrac.r-pac.com/" and "Chrome"
 When title of login page
