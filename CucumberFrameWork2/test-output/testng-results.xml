@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="BDD Test Suite" duration-ms="21763" started-at="2021-01-31T17:30:14Z" finished-at="2021-01-31T17:30:36Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@29ca901e]" name="feature" class="MyRunner.TestRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="R-PAC Test" duration-ms="21763" started-at="2021-01-31T17:30:14Z" finished-at="2021-01-31T17:30:36Z">
+      <class name="MyRunner.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:MyRunner.TestRunner@29ca901e]" name="setUpClass" is-config="true" duration-ms="193" started-at="2021-01-31T17:30:14Z" finished-at="2021-01-31T17:30:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:MyRunner.TestRunner@29ca901e]" name="feature" duration-ms="21356" started-at="2021-01-31T17:30:14Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-01-31T17:30:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[R-PACMango.com CRM E-Coomerece Feature Main Finish..]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:MyRunner.TestRunner@29ca901e]" name="tearDownClass" is-config="true" duration-ms="68" started-at="2021-01-31T17:30:35Z" finished-at="2021-01-31T17:30:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- MyRunner.TestRunner -->
+    </test> <!-- R-PAC Test -->
+  </suite> <!-- BDD Test Suite -->
+</testng-results>

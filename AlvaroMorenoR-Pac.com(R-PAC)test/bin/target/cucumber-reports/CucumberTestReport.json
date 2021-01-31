@@ -1,0 +1,166 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 51,
+        "name": "Login Validations",
+        "description": "",
+        "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..;login-validations;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 20212537600,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Navigate user to Login Page \"http://devrtrac.r-pac.com/\" and \"chrome\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://devrtrac.r-pac.com/",
+                  "offset": 29
+                },
+                {
+                  "val": "chrome",
+                  "offset": 62
+                }
+              ],
+              "location": "LoginStepDefinition.navigateUser(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13684500,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "title of login page",
+            "match": {
+              "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 73517817800,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Login validation check",
+            "match": {
+              "location": "LoginStepDefinition.loginValidations(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "User",
+                  "Password"
+                ],
+                "line": 35
+              },
+              {
+                "cells": [
+                  "",
+                  ""
+                ],
+                "line": 36
+              },
+              {
+                "cells": [
+                  "sadsd",
+                  "100"
+                ],
+                "line": 37
+              },
+              {
+                "cells": [
+                  "User@alvaromorono.com",
+                  ""
+                ],
+                "line": 38
+              },
+              {
+                "cells": [
+                  "User@alvaromorono.com",
+                  "asdasdsd"
+                ],
+                "line": 39
+              },
+              {
+                "cells": [
+                  "User@alvaromorono.com",
+                  "User@123"
+                ],
+                "line": 40
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 71800,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "user clicks on login button",
+            "match": {
+              "location": "LoginStepDefinition.user_clicks_on_login_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 68700,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "user is on home page",
+            "match": {
+              "location": "LoginStepDefinition.user_is_on_hopme_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18042193400,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "Logout",
+            "match": {
+              "location": "LoginStepDefinition.logout()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3668357800,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Close Browser",
+            "match": {
+              "location": "LoginStepDefinition.close_the_browser()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 29,
+            "name": "@testcaseA004"
+          }
+        ]
+      }
+    ],
+    "name": "R-PACMango.com CRM E-Coomerece Feature Main Finish..",
+    "description": "",
+    "id": "r-pacmango.com-crm-e-coomerece-feature-main-finish..",
+    "keyword": "Feature",
+    "uri": "alvoromareno.feature"
+  }
+]
