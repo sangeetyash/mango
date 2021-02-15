@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Administration Module">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+
+		<listener class-name="com.dataseers.qa.util.WebEventListener" />
+
+		<listener
+			class-name="com.dataseers.qa.ExtentReportListner.ExtentReportListenerNG" />
+	</listeners>
+
+
+	<test name="Register_Test"> 
+		<classes> 
+ 			<class name="com.dataseers.qa.testcases.Register_Test" /> 
+		</classes> 
+ 	</test> 
+
+
+<!-- 	<test name="login_fail_test"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dataseers.qa.testcases.LoginFail_Test" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+	<test name="Sucesslogin_Test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.Sucesslogin_Test" />
+		</classes>
+	</test>
+
+	<test name="HomePage_Test"> 
+	 <classes> 
+	 <class name="com.dataseers.qa.testcases.HomePage_Test" /> 
+	 </classes> 
+	 </test> 
+	
+<test name="Edit_Profile_Test_test"> 
+		<classes>
+			<class name="com.dataseers.qa.testcases.EditProfile_Test" />
+		</classes>
+	</test>
+<!-- 	<test name="Change_Password_Test"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dataseers.qa.testcases.ChangePassword_Test" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<test name="Add_client_Test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddClient_Test" />
+		</classes>
+	</test> <!-- Test -->
+	 
+	 <test name="Add_User_Test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddUser_Test" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Add_Role_Test"> 
+	<classes> 
+ 			<class name="com.dataseers.qa.testcases.addRole_Test1" /> 
+ 		</classes> 
+ 	</test>
+
+<!-- 	<test name="Edit_Role_Test"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dataseers.qa.testcases.EditRole_Test" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+ <test name="Add_Cluster_Test"> 
+	 <classes> 
+	 <class name="com.dataseers.qa.testcases.AddCluster_Test" /> 
+	 </classes> 
+	 </test>
+
+	<test name="AddReportGroup_Test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddReportGroup_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<!--<test name="SearchAuditLog_Test">-->
+		<!--<classes> -->
+			<!-- <class name="com.dataseers.qa.testcases.SearchAuditLog_Test" /> -->
+		<!-- </classes> -->
+	<!-- </test>  Test -->
+	
+	<test name="ApiKeys_Test1">
+		<classes>
+			<class name="com.dataseers.qa.testcases.ApiKeys_Test1" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="WorkUnit_Test1">
+		<classes>
+			<class name="com.dataseers.qa.testcases.WorkUnit_Test1" />
+		</classes>
+	</test> <!-- Test -->
+
+<test name="Account_watchlist">
+		<classes>
+			<class name="com.dataseers.qa.testcases.Add_Account_Watchlist_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Account_holder_watchlist">
+		<classes>
+			<class name="com.dataseers.qa.testcases.Add_Acc_holder_Watchlist_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Merchant_watchlist">
+		<classes>
+			<class name="com.dataseers.qa.testcases.Add_Merchant_Watchlist_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Alerts">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddAlerts_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Cases">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddCases_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Add_Processor">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddProcessor" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Add_Reason_codes">
+		<classes>
+			<class name="com.dataseers.qa.testcases.ReasonCodes_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Add_ACH_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddACH_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Add_BAI2_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddBAI2_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Add_MerchantMaster_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddMerchantMaster" />
+		</classes>
+	</test> <!-- Test -->
+	
+		<test name="FileTracker_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.FileTracker_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RiskIndicator_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.RiskIndicator_Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="SeerID_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddSeerID" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="SeerIQ_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddSeerIQ" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="SeerScan_test">
+		<classes>
+			<class name="com.dataseers.qa.testcases.AddSeerScan" />
+		</classes>
+	</test> <!-- Test -->
+</suite> 
+
+	
+
+
+
+

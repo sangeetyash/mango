@@ -84,7 +84,6 @@ public class LoginStepDefinition
 		  System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
 		  driver = new FirefoxDriver(); 
 		  }
-		 	
 		  else 
 		  {
 			  System.out.println("Invalid unsupported browser");

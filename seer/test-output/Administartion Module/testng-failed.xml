@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Administartion Module]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="com.dataseers.qa.util.WebEventListener"/>
+    <listener class-name="com.dataseers.qa.ExtentReportListner.ExtentReportListenerNG"/>
+  </listeners>
+  <test name="Register_Test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.Register_Test"/>
+    </classes>
+  </test> <!-- Register_Test -->
+  <test name="login_fail_test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.LoginFail_Test"/>
+    </classes>
+  </test> <!-- login_fail_test -->
+  <test name="login_Success_test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.Sucesslogin_Test"/>
+    </classes>
+  </test> <!-- login_Success_test -->
+  <test name="Edit_Profile_Test_test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.EditProfile_Test"/>
+    </classes>
+  </test> <!-- Edit_Profile_Test_test -->
+  <test name="Add_User_Test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.AddUser_Test"/>
+    </classes>
+  </test> <!-- Add_User_Test -->
+  <test name="AddReportGroup_Test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.AddReportGroup_Test"/>
+    </classes>
+  </test> <!-- AddReportGroup_Test -->
+  <test name="AddProgramGroup_Test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.AddProgramGroup_Test"/>
+    </classes>
+  </test> <!-- AddProgramGroup_Test -->
+  <test name="SearchAuditLog_Test">
+    <classes>
+      <class name="com.dataseers.qa.testcases.SearchAuditLog_Test"/>
+    </classes>
+  </test> <!-- SearchAuditLog_Test -->
+  <test name="ApiKeys_Test1">
+    <classes>
+      <class name="com.dataseers.qa.testcases.ApiKeys_Test1"/>
+    </classes>
+  </test> <!-- ApiKeys_Test1 -->
+  <test name="WorkUnit_Test1">
+    <classes>
+      <class name="com.dataseers.qa.testcases.WorkUnit_Test1"/>
+    </classes>
+  </test> <!-- WorkUnit_Test1 -->
+</suite> <!-- Failed suite [Administartion Module] -->

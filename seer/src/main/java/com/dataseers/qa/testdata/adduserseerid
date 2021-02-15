@@ -1,0 +1,168 @@
+public void userdetailsPage ()
+	{
+
+		CSVReader reader = null;
+		String CsvData = null;
+
+		try
+		{
+
+			reader = new CSVReader(new FileReader("C://Users/INTEL/eclipse-workspace/Dataseers_UI/src/main/java/com/dataseers/qa/testdata/KYCdata.csv"));
+			String[] cell;
+			int i = 0;
+			List<String> list = new ArrayList<String>();
+//			Scanner sc = new Scanner(System.in);
+//			System.out.println("Enter row number: ");
+//			int rowNum = sc.nextInt();
+			while ((cell = reader.readNext()) != null) {
+		
+				String First_Name = cell[0];
+				String Last_Name = cell[1];
+				String Phone_Number = cell[2];
+				String SSN = cell[3];
+				String  Street_address = cell[4];
+				String City = cell[5];
+				String State = cell[6];
+				String Zip = cell[7];
+				if(i==2) {
+					CsvData = First_Name+","+Last_Name+","+Phone_Number+","+SSN+","+Street_address+","+City+","+State+","+Zip;
+						
+					log.info("Enter first name");
+					wait.until(ExpectedConditions.visibilityOf(first_name));
+					first_name.sendKeys(First_Name);
+
+					log.info("Enter last name");
+					wait.until(ExpectedConditions.visibilityOf(last_name));
+					last_name.sendKeys(Last_Name);
+
+					log.info("Enter Email");
+					wait.until(ExpectedConditions.visibilityOf(email));
+					email.sendKeys("apurohit@dataseers.in");
+
+					log.info("Enter Phone number");
+					wait.until(ExpectedConditions.visibilityOf(Phone_number));
+					Phone_number.sendKeys(Phone_Number);
+
+					log.info("Enter Date of birth");
+					wait.until(ExpectedConditions.visibilityOf(DOB));
+					actions.sendKeys(DOB, LocalDate.now().minusYears(33).minusMonths(8).minusDays(2).toString(), Keys.ENTER).perform();	
+
+					log.info("Enter SSN number");
+					wait.until(ExpectedConditions.visibilityOf(SSN_no));
+					SSN_no.click();;
+					SSN_no.sendKeys(SSN);
+					
+					log.info("Enter street address");
+					wait.until(ExpectedConditions.visibilityOf(street1));
+					street1.sendKeys(Street_address);
+
+					log.info("Enter city");
+					wait.until(ExpectedConditions.visibilityOf(city));
+					city.sendKeys(City);
+
+					log.info("Enter state");
+					wait.until(ExpectedConditions.visibilityOf(state));
+					state.sendKeys(State);
+
+					log.info("Enter zip");
+					wait.until(ExpectedConditions.visibilityOf(zip));
+					zip.sendKeys(Zip);
+				}
+				i = i+1;
+			}
+			 System.out.println(CsvData);
+			}
+
+		catch(IOException e)
+		{
+			Assert.fail("User details not filled");
+		}
+	}
+	
+	
+		
+//	public void userdetailsPage ()
+//	{
+//
+//		CSVReader reader = null;
+//		String CsvData = null;
+//
+//		try
+//		{
+//
+//			reader = new CSVReader(new FileReader("C://Users/INTEL/eclipse-workspace/Dataseers_UI/src/main/java/com/dataseers/qa/testdata/KYCdata.csv"));
+//			String[] cell;
+//			int i = 0;
+//			List<String> list = new ArrayList<String>();
+////			Scanner sc = new Scanner(System.in);
+////			System.out.println("Enter row number: ");
+////			int rowNum = sc.nextInt();
+//			while ((cell = reader.readNext()) != null) {
+//		
+//				
+//				String First_Name = cell[0];
+//				String Last_Name = cell[1];
+//				String Phone_Number = cell[2];
+//				String SSN = cell[3];
+//				String  Street_address = cell[4];
+//				String City = cell[5];
+//				String State = cell[6];
+//				String Zip = cell[7];
+//				
+////				 Random objGenerator = new Random();
+////				int randomNumber = objGenerator.nextInt(9);
+////				System.out.println("Random No : " + randomNumber); 
+//				if(i==3) {
+//					CsvData = First_Name+","+Last_Name+","+Phone_Number+","+SSN+","+Street_address+","+City+","+State+","+Zip;
+//						
+//					log.info("Enter first name");
+//					wait.until(ExpectedConditions.visibilityOf(first_name));
+//					first_name.sendKeys(First_Name);
+//
+//					log.info("Enter last name");
+//					wait.until(ExpectedConditions.visibilityOf(last_name));
+//					last_name.sendKeys(Last_Name);
+//
+//					log.info("Enter Email");
+//					wait.until(ExpectedConditions.visibilityOf(email));
+//					email.sendKeys("apurohit@dataseers.in");
+//
+//					log.info("Enter Phone number");
+//					wait.until(ExpectedConditions.visibilityOf(Phone_number));
+//					Phone_number.sendKeys(Phone_Number);
+//
+//					log.info("Enter Date of birth");
+//					wait.until(ExpectedConditions.visibilityOf(DOB));
+//					actions.sendKeys(DOB, LocalDate.now().minusYears(33).minusMonths(8).minusDays(2).toString(), Keys.ENTER).perform();	
+//
+//					log.info("Enter SSN number");
+//					wait.until(ExpectedConditions.visibilityOf(SSN_no));
+//					SSN_no.click();;
+//					SSN_no.sendKeys(SSN);
+//					
+//					log.info("Enter street address");
+//					wait.until(ExpectedConditions.visibilityOf(street1));
+//					street1.sendKeys(Street_address);
+//
+//					log.info("Enter city");
+//					wait.until(ExpectedConditions.visibilityOf(city));
+//					city.sendKeys(City);
+//
+//					log.info("Enter state");
+//					wait.until(ExpectedConditions.visibilityOf(state));
+//					state.sendKeys(State);
+//
+//					log.info("Enter zip");
+//					wait.until(ExpectedConditions.visibilityOf(zip));
+//					zip.sendKeys(Zip);
+//				}
+//				i = i+1;
+//			}
+//			 System.out.println(CsvData);
+//			}
+//
+//		catch(IOException e)
+//		{
+//			Assert.fail("User details not filled");
+//		}
+//	}

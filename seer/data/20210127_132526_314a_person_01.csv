@@ -1,0 +1,2 @@
+tracking_number,last_name,first_name,middle_name,suffix,alias_last_name,alias_first_name,alias_middle_name,alias_suffix,number,number_type,dob,street,city,state,zip,country,phone
+654321,Smith,John,Robert,,Smith,Johnny,,,123456789,SSN/ITIN,1/1/1980,555 Main Street,Nowhere,GA,12345,US,

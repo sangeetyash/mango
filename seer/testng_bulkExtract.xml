@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite2">
+	<test name="Test1">
+		<parameter name="DataType" value="Account Number"></parameter>
+		<parameter name="TypeOfInfo" value="Account Book"></parameter>
+		<parameter name="FileName"
+			value="data//bulkExtractData//account_number_account_01.csv"></parameter>
+
+		<classes>
+			<class name="com.dataseers.qa.test1.BulkExtractPageTest" />
+		</classes>
+	</test>
+
+	<test name="Test2">
+		<parameter name="DataType" value="Account Number"></parameter>
+		<parameter name="TypeOfInfo" value="Transaction Log"></parameter>
+		<parameter name="FileName"
+			value="data//bulkExtractData//account_number_transactions_01.csv"></parameter>
+
+		<classes>
+			<class name="com.dataseers.qa.test1.BulkExtractPageTest" />
+		</classes>
+	</test>
+
+	<test name="Test3">
+		<parameter name="DataType" value="Card Number"></parameter>
+		<parameter name="TypeOfInfo" value="Account Book"></parameter>
+		<parameter name="FileName"
+			value="data//bulkExtractData//card_number_account_template_01.csv"></parameter>
+
+		<classes>
+			<class name="com.dataseers.qa.test1.BulkExtractPageTest" />
+		</classes>
+	</test>
+
+</suite>
