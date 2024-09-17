@@ -1,0 +1,36 @@
+pipeline {
+    agent  any
+    stages {
+            stage('Run functional test cases') {
+                steps {
+                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} with parameter ${params.tagName}"
+                    //echo "mvn clean install -Dcucumber.options=\"--tags ${params.tagName}\""
+                    sh "chmod -R 777 ./Drivers"
+					sh "google-chrome --version"
+                    sh "mvn clean install -Dcucumber.options=\"--tags ${params.tagName}\""
+                }
+             }
+            stage('Generate Cucmber Reports') {
+                steps {
+                    cucumber buildStatus: "UNSTABLE",
+                    fileIncludePattern: "**/cucumber.json",
+                    jsonReportDirectory: 'target'
+                }
+             }
+			 stage('Send Email Notification with attachment') {
+                steps {
+					emailext attachmentsPattern: 'target/cucumber-reports/*.html,log4j-test-automation.log', body: '''${SCRIPT, template="groovy-html.template"}''',
+                    subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} -Automation Report",
+                    mimeType: 'text/html',to: "saurabh.gadgil@currenciesdirect.com,Sanket.Yadav@currenciesdirect.com,tanuj.kaundal@bnt-soft.com,mahesh.gurjal@bnt-soft.com,Dinesh.Dube@currenciesdirect.com,Neil.Jenner@currenciesdirect.com,Adam.Bird@currenciesdirect.com,rohit.surve@bnt-soft.com,Sathiya.Sundaram@currenciesdirect.com"
+                 }
+             }
+
+
+    }
+    post {
+          always {
+               cleanWs deleteDirs: true, notFailBuild: true
+               sendSlackNotifications currentBuild.result
+          }
+    }
+}
